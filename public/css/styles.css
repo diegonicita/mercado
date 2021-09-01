@@ -35,15 +35,12 @@ p { font-size: 12px; }
 }
 
 #burger-menu {   
-    display: table;  
-    align-items: center; 
-    text-align: center;      
+    display: table; 
     background-color: blue;
     color: white;     
     border-radius: 5px;
     padding: 11px;   
-    margin: 0 auto;
-    margin-top: 1rem;   
+    margin: 0 auto;     
     font-size: 1.3rem;
 }
 
@@ -81,6 +78,8 @@ p { font-size: 12px; }
 
 .pie-de-pagina-articulo {    
     margin-top: 40px;
+    max-width: 300px;
+    min-width: 200px;
 }
 
 .copyright {
