@@ -1,5 +1,6 @@
 # mercadoliebre
 Proyecto de un Comercio Electrónico (eCommerce)
+<img src="/public/img/" alt="My cool logo"/>
 
 ## Pasos realizados
 1. Crear un proyecto en Node con Express para poder visualizar el sitio web.
