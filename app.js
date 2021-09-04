@@ -10,6 +10,7 @@ app.use(morgan('tiny'));
 
 app.listen(port, () => console.log('Server Running on port: ' + port));
 
+app.get('/test', (req, res) => {res.sendFile(path.join(__dirname, "views/test.html"))});
 app.get('/', (req, res) => {res.sendFile(path.join(__dirname, "views/home.html"))});
 app.get('*', (req, res) => {res.status(404).send('404 not found. <br> ¡Houston, tenemos problemas!');})
 

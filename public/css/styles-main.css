@@ -1,0 +1,73 @@
+body {
+    background-color: #ebebed;
+    font-size: 12px;
+    font-family: Roboto;
+    }
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    font-family: Roboto;
+}
+
+section h2 { 
+    font-size: 24px;         
+}
+section h3 {
+    font-size: 16x;         
+}
+
+.caja-general-articulo { 
+    margin: 5px 5px 5px 5px;    
+    background-color: white;
+    display: inline-block;    
+    box-shadow: 0px 0px 0px rgb(100,100,100);
+    max-width: 250px;
+    min-width: 180px;
+}
+ 
+.articulo-imagen {
+    margin: 0 auto;   
+}
+
+.caja-interior-articulo {
+    border-top: 1px solid #ebebed; 
+    padding: 15px;    
+    background-color: white;
+    display: block;    
+}
+
+.articulo-icon {
+    color: #39b54a;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 20px;    
+}
+
+.descuentos {
+    font-size: 16px;     
+    font-family: Roboto;
+    color: #39b54a;
+}
+
+.descripciones {
+    font-size: 16px;   
+    display: none;
+}
+
+.precios {
+    font-size: 18px;     
+    font-family: Roboto;
+}
+
+@media(min-width: 361px)
+{    
+   .descripciones{
+       display: block;
+   }  
+
+   .caja-general-articulo { 
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+}
+}
+

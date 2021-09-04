@@ -1,0 +1,86 @@
+header {
+        background-color: #EAC926;  
+        font-family: Roboto;
+        }
+
+#banner-mercado-libre {     
+        padding: 20px; 
+        width: 50vw;
+        min-width: 180px;
+        }
+
+#search-bar-input {     
+        background-color: white; 
+        padding: 2px;    
+        text-align: left;      
+        border: 2px solid #666; 
+        color: #666;
+        width: 50vw; 
+        /*min-width: 178px;*/
+        height: 1.5rem; 
+        display: inline;  
+        font-size: 12px;
+         }
+    
+#search-bar-lupa {
+        background-color: white; 
+        padding: 2px;        
+        border: 1px solid gray;     
+        display: inline;
+        position: relative; 
+        left: 30px;    
+        }
+
+#compra-en-cuotas {
+        margin-right: 0px;
+        padding: 10px;
+        text-align: center;  
+        font-size: 12px;      
+        }
+
+.icono-header {   
+        color: black;   
+        padding-left: 2px;
+        font-size: 12px;      
+        }
+
+a       { 
+        text-decoration: none; 
+        color:black; 
+        font-size: 12px;        
+        }
+
+#burger-menu {   
+        display: table;  
+        align-items: center; 
+        text-align: center;      
+        background-color: blue;
+        color: white;     
+        border-radius: 5px;
+        padding: 11px;   
+        margin: 0 auto;
+        margin-top: 1rem;   
+        font-size: 1.3rem;
+        }
+
+.site-navbar{
+        display: none;
+}
+
+.login-navbar {
+        display: none;
+}
+
+@media(min-width: 361px)
+        {    
+        .site-navbar{
+                display: block;
+        }
+        
+        .login-navbar {
+                display: block;
+        }
+        #burger-menu {   
+                display: none;                
+                }
+        }

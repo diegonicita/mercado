@@ -1,0 +1,26 @@
+footer {
+    font-family: Roboto;
+    font-size: 12px;
+}
+
+.icono-pie-de-pagina {      
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #1259c3;;    
+}
+
+#pie-de-pagina {
+    text-align: center;
+    margin: 0 auto;    
+    width: 80%;
+}
+
+.pie-de-pagina-articulo {    
+    margin-top: 40px;
+}
+
+.copyright {
+    text-align: left;    
+    padding: 10px;
+    color: #666;    
+}
