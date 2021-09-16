@@ -11,63 +11,245 @@ main {
 }
 
 section h2 { 
-    font-size: 24px;         
+    font-size: 24px;   
+    text-align: left;  
+    padding: 10px;    
 }
-section h3 {
-    font-size: 16x;         
+
+.contenedor-main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;     
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .caja-general-articulo { 
-    margin: 5px 5px 5px 5px;    
-    background-color: white;
-    display: inline-block;    
-    box-shadow: 0px 0px 0px rgb(100,100,100);
-    max-width: 250px;
-    min-width: 180px;
+    margin: 5px;    
+    background-color: white;        
+    /* box-shadow: 0px 0px 0px rgb(100,100,100); */
+    width: 100%;       
+    padding: 10px 10px; 
+    position: relative;
+}
+
+.caja-general-articulo:hover { 
+   box-shadow: 0px 0px 0px rgb(100,100,100);
 }
  
 .articulo-imagen {
-    margin: 0 auto;   
+    margin: 0 auto;  
+    width: 100%;
+    padding: 10px;     
 }
 
 .caja-interior-articulo {
-    border-top: 1px solid #ebebed; 
-    padding: 15px;    
+    border-top: 1px solid #ebebed;     
     background-color: white;
-    display: block;    
+    display: flex;  
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content:flex-start;    
+    padding: 10px; 
+    position: relative;
 }
 
 .articulo-icon {
-    color: #39b54a;
-    border: 1px solid green;
-    padding: 10px;
-    border-radius: 20px;    
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;   
+    border: 1px solid #39b54a;    
+    background-color: #fff;
+    border-radius: 50%;    
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    flex-grow: 0;
+    /*order: 1;*/       
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
 }
 
-.descuentos {
-    font-size: 16px;     
-    font-family: Roboto;
-    color: #39b54a;
+.caja-general-articulo:hover .articulo-icon {
+    transform: rotateZ(-90deg);
 }
 
-.descripciones {
-    font-size: 16px;   
+.descripciones {    
+    font-size: 12px;  
+    font-weight: 200;  
+    text-align: left; 
+    margin-top: 5px;    
+    margin-bottom: 5px; 
+    display: inline-block; 
     display: none;
+    transform: opacity 1seg;
+    opacity: 0;
+}
+
+.caja-general-articulo:hover .descripciones{   
+    opacity: 1.0;
+    /* border: 1px solid red; */
 }
 
 .precios {
-    font-size: 18px;     
+    font-size: 16px;     
     font-family: Roboto;
+    width: 30%;
+    /* flex-grow: 0.1; */
+    text-align: left;
 }
 
-@media(min-width: 361px)
-{    
+.descuentos {
+    font-size: 14px;     
+    font-family: Roboto;
+    color: #39b54a;
+    width: 70%;
+    /*flex-grow: 0.7;*/
+    /*justify-self: self-end;*/
+    /*margin-left: 10px;*/
+    text-align: left;
+}
+
+.formulario-register, .formulario-login
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;   
+    flex: 0 auto;
+    width: 100%;   
+}
+
+.formulario-register-container, .formulario-login-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.formulario-register label, .formulario-login label
+{
+    padding: 5px 10px;
+    text-decoration: underline;    
+}
+
+.formulario-register div, .formulario-login div
+{
+    padding: 5px 10px;
+    border: 1px dashed gray;    
+    display: flex;
+    flex-direction: column;    
+}
+
+.formulario-register button, .formulario-login button
+{
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+ .formulario-register input[type="password"], 
+ .formulario-register input[type="text"], 
+ .formulario-register input[type="file"],
+ .formulario-register input[type="datetime-local"],
+ .formulario-login input[type="password"], 
+ .formulario-login input[type="text"], 
+ .formulario-login input[type="file"],
+ .formulario-login input[type="datetime-local"]
+{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid gray; 
+    border-radius: 6px;
+    margin-bottom: 10px; 
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    width: 100%;
+}
+
+.formulario-login input:invalid {
+
+}
+
+.formulario-register input:invalid {
+    border: 2px dashed red;
+  }
+
+.formulario-login input:invalid:required {
+    background-image: none;
+}
+.formulario-register input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+  }
+ 
+.formulario-login input:valid,
+.formulario-register input:valid {
+    border: 2px solid black;
+  }
+
+.formulario-register-titulo, .formulario-login-titulo
+{
+font-size: 16px;
+font-weight: bolder;
+padding: 10px;
+}
+
+@media(min-width: 500px)
+{        
+    .contenedor-main
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .caja-general-articulo {
+     width: 45%;
+    }
+
    .descripciones{
        display: block;
    }  
 
-   .caja-general-articulo { 
+   .caja-general-articulo:hover { 
     box-shadow: 0px 0px 10px rgb(100,100,100);
+   }
+
+    .precios {
+        font-size: 12px; 
+        width: 40%;
+    }
+    
+    .descuentos {
+        font-size: 10px;
+        width: 60%;
+    }
+
+    .formulario-register, .formulario-login
+    {
+    width: 80%;
+    }
+
+
 }
+
+@media(min-width: 768px)
+{    
+    .caja-general-articulo {
+        width: 22%;
+       } 
+       
+    .formulario-register, .formulario-login
+    {
+    width: 40%;
+    }
+
+
 }
 

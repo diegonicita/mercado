@@ -1,86 +1,146 @@
-header {
+.header-main {
         background-color: #EAC926;  
-        font-family: Roboto;
+        font-family: Roboto;    
+        padding: 0.5vw;
+        display: flex;    
+        width: 100%; 
+        flex-wrap: wrap;  
+        align-items: center; 
+        justify-content: center;                    
         }
 
-#banner-mercado-libre {     
-        padding: 20px; 
-        width: 50vw;
-        min-width: 180px;
+.header-banner { 
+        width: 48vw;
+        display: inline-block;
+        margin: auto;
+        padding: 10px;
+        /* background-color: red; */
+        }
+        
+.header-ads { 
+        width: 96vw;         
+        /* background-color: red; */
         }
 
-#search-bar-input {     
-        background-color: white; 
-        padding: 2px;    
-        text-align: left;      
-        border: 2px solid #666; 
-        color: #666;
-        width: 50vw; 
-        /*min-width: 178px;*/
-        height: 1.5rem; 
-        display: inline;  
-        font-size: 12px;
-         }
-    
-#search-bar-lupa {
-        background-color: white; 
-        padding: 2px;        
-        border: 1px solid gray;     
-        display: inline;
-        position: relative; 
-        left: 30px;    
+.header-search-bar { 
+        width: 48vw;
+        /* background-color: blue; */
+        display: flex;
         }
 
-#compra-en-cuotas {
-        margin-right: 0px;
+.header-compra-en-cuotas {
+        width: 96vw;
         padding: 10px;
         text-align: center;  
-        font-size: 12px;      
+        font-size: 12px;        
+        /* background-color: yellow;      */
+        }
+   
+.header-search-bar-input {
+        /* background-color: tomato; */
+        width: 100%;       
+}
+
+.header-search-bar-lupa {
+        /* background-color:green; */
+        padding: 4px;
+        font-size: 12px;          
+}
+
+.header-left-menu {
+        /* background-color:white; */
+        display: none;        
+        justify-content: flex-start;          
+}
+
+.header-right-menu {
+        /* background-color:gray; */
+        display: none;  
+        justify-content: flex-end;      
+}
+
+.header-left-menu ul, .header-right-menu ul{
+        display: flex; 
+        flex-wrap: nowrap;                  
+}
+
+.header-left-menu ul li, .header-right-menu ul li{
+        padding: 5px;   
+        list-style-type: none;                                     
+}
+
+.header-left-menu ul li a, .header-right-menu ul li a
+{
+        text-decoration: none;
+        color:black; 
+        font-size: 10px; 
         }
 
-.icono-header {   
+.header-compra-en-cuotas-icono, .header-right-menu-icono {   
         color: black;   
         padding-left: 2px;
         font-size: 12px;      
+        display: inline-block
         }
 
-a       { 
-        text-decoration: none; 
-        color:black; 
-        font-size: 12px;        
-        }
+.header-burger-menu-container
+{
+        text-align: center;
+        padding-bottom: 10px;
+}        
 
-#burger-menu {   
-        display: table;  
+.header-burger-menu-button {  
         align-items: center; 
         text-align: center;      
         background-color: blue;
         color: white;     
         border-radius: 5px;
-        padding: 11px;   
-        margin: 0 auto;
-        margin-top: 1rem;   
+        padding: 10px 10px;   
+        margin: 0 auto;        
         font-size: 1.3rem;
         }
 
-.site-navbar{
-        display: none;
-}
-
-.login-navbar {
-        display: none;
-}
-
-@media(min-width: 361px)
-        {    
-        .site-navbar{
-                display: block;
-        }
-        
-        .login-navbar {
-                display: block;
-        }
-        #burger-menu {   
-                display: none;                
+@media(min-width: 500px) { 
+        .header-banner { 
+                width: 30vw;                 
                 }
-        }
+        
+        .header-search-bar { 
+                width: 30vw;        
+                }  
+        .header-compra-en-cuotas
+                {
+                width: 30vw;
+                } 
+        .header-burger-menu-container
+        {
+        display: none;
+        } 
+        .header-left-menu {
+        display: flex;
+        width: 46vw;
+        }        
+        .header-right-menu {
+        display: flex;
+        width: 46vw;
+        }        
+ }
+
+ @media(min-width: 768px) { 
+        .header-banner { 
+                width: 20vw;                 
+                }
+        
+        .header-search-bar { 
+                width: 30vw;        
+                }  
+        .header-compra-en-cuotas {
+                width: 40vw;
+                font-size: 14px;
+                } 
+.header-left-menu ul li a, .header-right-menu ul li a
+                {              
+                font-size: 14px; 
+                }
+             
+ }

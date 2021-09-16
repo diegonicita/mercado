@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="images/favicon.ico"/>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mercado Liebre</title>
+        <link href="css/styles.css" rel="stylesheet"/>
+        <link href="css/styles-header.css" rel="stylesheet"/>
+        <link href="css/styles-pie.css" rel="stylesheet"/>
+        <link href="css/styles-main.css" rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>    
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header class="header-main">        
+        <div class="header-banner">
+            <img src="./images/logo-mercado-liebre.svg" alt="Mercado Liebre">            
+        </div>
+        <div class="header-search-bar">
+            <input class="header-search-bar-input" type="text" placeholder="Buscar productos, marcas">                    
+            <button class="fa fa-search header-search-bar-lupa" type="submit"></button>                    
+        </div>
+        <div class="header-compra-en-cuotas">
+                <i class="fas fa-hand-holding-usd header-compra-en-cuotas-icono"></i>
+                Compra en cuotas y sin tarjeta de credito
+        </div>
+        <div class="header-burger-menu-container">
+            <a href="#"></a><i class="fas fa-bars header-burger-menu-button"></i>
+        </div>
+        <nav class="header-left-menu">
+                <ul>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Tiendas Oficiales</a></li>
+                    <li><a href="#">Vender</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+        </nav>
+        <nav class="header-right-menu">
+                <ul>
+                    <li><a href="/register">Crea tu cuenta</a><i class="far fa-address-card header-right-menu-icono"></i></li>
+                    <li><a href="/login">Ingresa</a> <i class="fas fa-sign-in-alt header-right-menu-icono"></i></li>
+                    <li><a href="#">Mis Compras</a><i class="fas fa-shopping-basket header-right-menu-icono"></i></li>                
+                </ul>
+        </nav>
+        <div>
+            <img class="header-ads" src="./images/img-home-banner.jpg" alt="publicidad">            
+        </div>
+    </header> 
+<main>
+    <div class="formulario-login-container">
+        <div class="formulario-login-titulo">Logueate!</div>        
+        <form action="/" method="GET" class="formulario-login">
+        <label for="nombre"> Nombre de Usuario</label>
+        <input class="formulario-register-input" type="text" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
+        <label for="password"> Contraseña</label>
+        <input class="formulario-register-input" type="password" id="password" name="password" placeholder="Ingresa tu password" required>
+         <button class="formulario-register-button" type="submit" id="button" name="button">Ingresar</button>
+        </form>    
+    </div>
+</main>
+</body>
+</html>
