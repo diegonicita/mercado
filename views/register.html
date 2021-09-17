@@ -65,9 +65,10 @@
             
             <label for="perfil">Perfil del usuario (obligatorio)</label> 
                 <div style="flex-direction: row;">                                 
-                <label for="perfil">Comprar<input style="padding: 0" type="radio" name="perfil" value="comprar"></label>            
-                <label for="perfil">Vender<input type="radio" name="perfil" value="vender"></label>
+                <label for="comprar">Comprar <input type="radio" name="perfil" id="comprar" value="comprar"></label>            
+                <label for="vender">Vender <input type="radio" name="perfil" id="vender" value="vender"></label>
                 </div>
+
             <label for="categorias">Categorías de interés</label>
             <div>
                 <label>Electro <input type="checkbox" name="categorias" value="electro"></label>
@@ -82,7 +83,7 @@
                 <input class="formulario-register-input" type="password" id="password" name="password" placeholder="Password" required>            
             <label for="passwordConfirmatoria"> Confirma contraseña (obligatorio)</label>
                 <input class="formulario-register-input" type="password" id="passwordConfirmatoria" name="passwordConfirmatoria" placeholder="Confirmar Password" required>            
-            <div style="flex-direction: row;">
+            <div style="flex-direction: row; width: 100%; margin: auto;">
                 <button type="submit" name="" value="">Enviar</button>
                 <button type="reset" name="" value="">Borrar</button>
             </div>

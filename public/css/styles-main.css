@@ -152,6 +152,7 @@ padding: 10px;
 {    
     margin: 0 0 .4285714286em .4285714286em;
     color: grey;
+    padding-top: 10px;
     /* text-decoration: underline;     */
 }
 
@@ -214,14 +215,14 @@ padding: 10px;
 }
 
 .formulario-register input:invalid {
-    border: 2px dashed red;
+    /* border: 2px dashed red; */
   }
 
 .formulario-login input:invalid:required {
     background-image: none;
 }
 .formulario-register input:invalid:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
+    /* background-image: linear-gradient(to right, pink, lightgreen); */
   }
  
 .formulario-login input:valid,
