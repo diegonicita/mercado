@@ -16,7 +16,9 @@
 <body>
     <header class="header-main">        
         <div class="header-banner">
+            <a href="/"> 
             <img src="./images/logo-mercado-liebre.svg" alt="Mercado Liebre">            
+            </a>
         </div>
         <div class="header-search-bar">
             <input class="header-search-bar-input" type="text" placeholder="Buscar productos, marcas">                    
@@ -44,9 +46,9 @@
                     <li><a href="#">Mis Compras</a><i class="fas fa-shopping-basket header-right-menu-icono"></i></li>                
                 </ul>
         </nav>
-        <div>
+        <!-- <div>
             <img class="header-ads" src="./images/img-home-banner.jpg" alt="publicidad">            
-        </div>
+        </div> -->
     </header> 
     <main class="formulario-register-container"> 
         <div class="formulario-register-titulo">Registrate!</div>
@@ -59,8 +61,9 @@
             <input class="formulario-register-input" type="text" id="email" name="email" placeholder="Correo Electronico" required>            
             
             <label for="fechaDeNacimiento"> Fecha de nacimiento</label>      
-            <input class="formulario-register-input" type="datetime-local" id="fechaDeNacimiento" name="fechaDeNacimiento">             
+            <input class="formulario-register-input" type="date" id="fechaDeNacimiento" name="fechaDeNacimiento">             
             <label for="domicilio"> Domicilio</label>     
+            
             <input class="formulario-register-input" type="text" id="domicilio" name="domicilio" placeholder="Domicilio">            
             
             <label for="perfil">Perfil del usuario (obligatorio)</label> 

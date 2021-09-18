@@ -1,22 +1,34 @@
-footer {
-    font-family: Roboto;
-    font-size: 12px;
-}
-
-.icono-pie-de-pagina {      
-    margin-bottom: 10px;
-    font-size: 2em;
-    color: #1259c3;;    
-}
+/* footer {    
+    font-size: 12px; 
+} */
 
 #pie-de-pagina {
     text-align: center;
     margin: 0 auto;    
     width: 80%;
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icono-pie-de-pagina {      
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #1259c3;      
 }
 
 .pie-de-pagina-articulo {    
     margin-top: 40px;
+    margin-right: 20px;
+    max-width: 250px; 
+    text-align: center;   
+    margin: auto;
+}
+
+.pie-de-pagina-articulo p {    
+    text-align: center;
+    color: #666;    
 }
 
 .copyright {
@@ -24,3 +36,16 @@ footer {
     padding: 10px;
     color: #666;    
 }
+
+@media(min-width: 768px)
+{ 
+    .pie-de-pagina-articulo {    
+        max-width: 250px;
+    }
+
+    #pie-de-pagina {        
+        flex-direction: row; 
+        flex-wrap: nowrap;       
+    }
+}
+
