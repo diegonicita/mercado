@@ -1,7 +1,6 @@
 .header-main {
         background-color: #EAC926;  
-        font-family: Roboto;    
-        padding: 0.5vw;
+        font-family: Roboto;            
         display: flex;    
         width: 100%; 
         flex-wrap: wrap;  
@@ -23,29 +22,50 @@
         }
 
 .header-search-bar { 
-        width: 48vw;
-        /* background-color: blue; */
-        display: flex;
+        width: 48vw;        
+        flex-grow: 3;  
+        padding: 10px;   
+        /* display: flex; */
+        /* justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;         */
         }
+.header-search-bar form
+{
+display: flex;
+}
+
+.header-search-bar form input[type=search]
+        {
+         flex-basis: 40%;
+         flex-grow: 3;
+         padding: 5px;
+         width: 100px;
+         font-size: 1rem;
+         /* border: 1px solid gray;          */
+         /* height: 28px; */
+         }
+
+.header-search-bar form button
+ {      
+        flex-basis: 10%;
+        flex-grow: 0;
+        padding: 5px;        
+        background: #fff;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        /* border: 1px solid gray */
+}
 
 .header-compra-en-cuotas {
         width: 96vw;
         padding: 10px;
         text-align: center;  
-        font-size: 12px;        
+        font-size: 12px;    
+        flex-grow: 0.1;    
         /* background-color: yellow;      */
-        }
-   
-.header-search-bar-input {
-        /* background-color: tomato; */
-        width: 100%;       
-}
-
-.header-search-bar-lupa {
-        /* background-color:green; */
-        padding: 4px;
-        font-size: 12px;          
-}
+        } 
 
 .header-left-menu {
         /* background-color:white; */
@@ -101,10 +121,11 @@
         }
 
 @media(min-width: 500px) { 
+        
+        /* Proporciones para Tablet */
         .header-banner { 
                 width: 30vw;                 
-                }
-        
+                }        
         .header-search-bar { 
                 width: 30vw;        
                 }  
@@ -112,10 +133,13 @@
                 {
                 width: 30vw;
                 } 
+        /* Icono Hamburguesa Oculto */                
         .header-burger-menu-container
         {
         display: none;
         } 
+        
+        /* Muestra los menus */                
         .header-left-menu {
         display: flex;
         width: 46vw;
@@ -129,16 +153,13 @@
  @media(min-width: 768px) { 
         .header-banner { 
                 width: 20vw;                 
-                }
-        
-        .header-search-bar { 
-                width: 30vw;        
-                }  
+                }       
+       
         .header-compra-en-cuotas {
                 width: 40vw;
                 font-size: 14px;
                 } 
-.header-left-menu ul li a, .header-right-menu ul li a
+        .header-left-menu ul li a, .header-right-menu ul li a
                 {              
                 font-size: 14px; 
                 }
