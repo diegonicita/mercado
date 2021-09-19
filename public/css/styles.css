@@ -6,3 +6,515 @@
     box-sizing: border-box;    
     /* border: 1px dotted rgba(128, 128, 128, 0.185); */
 }
+
+/* BODY */
+
+body {
+    background-color: #ebebed;
+    font-size: 12px;
+    font-family: Roboto;
+    }
+
+/* HEADER */
+
+.header-main {
+    background-color: #EAC926;  
+    font-family: Roboto;            
+    display: flex;    
+    width: 100%; 
+    flex-wrap: wrap;  
+    align-items: center; 
+    justify-content: center;                    
+    }
+
+.header-banner { 
+    width: 48vw;
+    display: inline-block;
+    margin: auto;
+    padding: 10px;
+    /* background-color: red; */
+    }
+    
+.header-ads {         
+    width:100%; 
+    justify-self:center; 
+    display: flex;      
+    }
+
+.header-ads img    {
+    width: 100%;
+    }
+
+.header-search-bar { 
+    width: 48vw;        
+    flex-grow: 3;  
+    padding: 10px; 
+    }
+
+.header-search-bar form
+    {
+    display: flex;
+    }
+
+.header-search-bar form input[type=search]
+    {
+     flex-basis: 40%;
+     flex-grow: 3;
+     padding: 5px;
+     width: 100px;
+     font-size: 1rem;
+     border: 1px solid gray;         
+     /* height: 28px; */
+     }
+
+.header-search-bar form button
+{      
+    /* flex-basis: 10%; */
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 5px; 
+    height: 32px;   
+    width: 32px;    
+    background: #fff;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border: 1px solid gray
+}
+
+.header-compra-en-cuotas {
+    width: 96vw;
+    padding: 10px;
+    text-align: center;  
+    font-size: 12px;    
+    flex-grow: 0.1no;    
+    /* background-color: yellow;      */
+    } 
+
+.header-left-menu {
+    /* background-color:white; */
+    display: none;        
+    justify-content: flex-start;          
+}
+
+.header-right-menu {
+    /* background-color:gray; */
+    display: none;  
+    justify-content: flex-end;      
+}
+
+.header-left-menu ul, .header-right-menu ul{
+    display: flex; 
+    flex-wrap: nowrap;                  
+}
+
+.header-left-menu ul li, .header-right-menu ul li{
+    padding: 5px;   
+    list-style-type: none;                                     
+}
+
+.header-left-menu ul li a, .header-right-menu ul li a
+{
+    text-decoration: none;
+    color:black; 
+    font-size: 10px; 
+    }
+
+.header-compra-en-cuotas-icono, .header-right-menu-icono {   
+    color: black;   
+    padding-left: 2px;
+    font-size: 12px;      
+    display: inline-block
+    }
+
+.header-burger-menu-container
+{
+    text-align: center;
+    padding-bottom: 10px;
+}        
+
+.header-burger-menu-button {  
+    align-items: center; 
+    text-align: center;      
+    background-color: #1259c3;
+    color: white;     
+    border-radius: 5px;
+    padding: 10px 10px;   
+    margin: 0 auto;        
+    font-size: 1.3rem;
+    }
+
+/* MAIN */
+
+main {
+    width: 90%;
+    margin: 0 auto;
+    font-family: Roboto;
+}
+
+section h2 { 
+    font-size: 24px;   
+    text-align: left;  
+    padding: 10px;    
+}
+
+.contenedor-main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;     
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.caja-general-articulo { 
+    margin: 5px;    
+    background-color: white;        
+    /* box-shadow: 0px 0px 0px rgb(100,100,100); */
+    width: 100%;       
+    padding: 10px 10px; 
+    position: relative;
+}
+
+.caja-general-articulo:hover { 
+   box-shadow: 0px 0px 0px #ebebeb;
+}
+ 
+.caja-general-articulo img {
+    margin: 0 auto;  
+    width: 100%;
+    padding: 10px;     
+}
+
+.caja-interior-articulo {
+    border-top: 1px solid #ebebed;     
+    background-color: white;
+    display: flex;  
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content:flex-start;    
+    padding: 10px; 
+    position: relative;
+}
+
+.articulo-icon {
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;   
+    border: 1px solid #39b54a;    
+    background-color: #fff;
+    border-radius: 50%;    
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    flex-grow: 0;
+    /*order: 1;*/       
+    transition: transform 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.caja-general-articulo:hover .articulo-icon {
+    transform: rotateZ(-90deg);
+}
+
+.descripciones {    
+    font-size: 12px;  
+    font-weight: 200;  
+    text-align: left; 
+    margin-top: 5px;    
+    margin-bottom: 5px; 
+    display: inline-block; 
+    display: none;
+    transform: opacity 1seg;
+    opacity: 0;
+}
+
+.caja-general-articulo:hover .descripciones{   
+    opacity: 1.0;
+    /* border: 1px solid red; */
+}
+
+.precios {
+    font-size: 16px;     
+    font-family: Roboto;
+    width: 30%;
+    /* flex-grow: 0.1; */
+    text-align: left;
+}
+
+.descuentos {
+    font-size: 14px;     
+    font-family: Roboto;
+    color: #39b54a;
+    width: 70%;
+    /*flex-grow: 0.7;*/
+    /*justify-self: self-end;*/
+    /*margin-left: 10px;*/
+    text-align: left;
+}
+
+.formulario-register-container, .formulario-login-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 16px 32px;
+}
+
+.formulario-login-container a {
+text-decoration: none;
+}
+
+.formulario-register-titulo, .formulario-login-titulo
+{
+font-size: 1.25rem;
+font-weight: bolder;
+width: 100%;
+letter-spacing: .0125rem;
+padding: 10px;
+}
+
+.formulario-register, .formulario-login
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: flex-start;       
+    width: 100%;    
+}
+
+.formulario-register label, .formulario-login label
+{    
+    margin: 0 0 .4285714286em .4285714286em;
+    color:#666;
+    padding-top: 10px;    
+    font-weight: bold;
+}
+
+#label-sin-weight {
+    font-weight: 200;    
+}
+
+.formulario-register div, .formulario-login div
+{
+    padding: 5px 10px; 
+}
+
+.formulario-register-perfil-usuario
+{
+    flex-direction: row;   
+}
+
+.formulario-register-botones-container
+{
+flex-direction: row; 
+width: 100%; 
+margin: auto;
+}
+
+.formulario-register button, .formulario-login button
+{    
+    margin-top: 5px;   
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border: 2px solid #1259c3;
+    border-radius: 5px;
+    font-weight: 600;
+    box-shadow: none;
+    transition: background-color 0.5s;
+    background-color: #1259c3;
+    color: white;
+    cursor: pointer;
+}
+
+.formulario-login button:hover, .formulario-register button:hover {
+    background-color: #0022AA;        
+}
+
+.olvidaste-contrasenia {
+    color: #0022AA;
+    font-weight: bold;
+    font-size: 16px;
+    justify-content: flex-start;    
+}
+
+ .formulario-register input[type="password"], 
+ .formulario-register input[type="text"], 
+ .formulario-register input[type="file"],
+ .formulario-register input[type="date"],
+ .formulario-login input[type="password"], 
+ .formulario-login input[type="text"], 
+ .formulario-login input[type="file"],
+ .formulario-login input[type="datetime-local"]
+{
+    background-color: white;
+    padding: 15px;
+    border: 3px solid #ebebeb;; 
+    border-radius: 6px;
+    margin-bottom: 10px; 
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    width: 100%;
+}
+
+.formulario-login input:invalid {
+
+}
+
+.formulario-register input:invalid {
+    /* border: 2px dashed red; */
+  }
+
+.formulario-login input:invalid:required {
+    background-image: none;
+}
+.formulario-register input:invalid:required {
+    /* background-image: linear-gradient(to right, pink, lightgreen); */
+  }
+ 
+.formulario-login input:valid,
+.formulario-register input:valid {
+    /* border: 2px solid black; */
+  }
+
+/* FOOTER */
+
+#pie-de-pagina {
+    text-align: center;
+    margin: 0 auto;    
+    width: 80%;
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icono-pie-de-pagina {      
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #1259c3;      
+}
+
+.pie-de-pagina-articulo {    
+    margin-top: 40px;
+    margin-right: 20px;
+    max-width: 250px; 
+    text-align: center;   
+    margin: auto;
+}
+
+.pie-de-pagina-articulo p {    
+    text-align: center;
+    color: #666;    
+}
+
+.copyright {
+    text-align: left;    
+    padding: 10px;
+    color: #666;    
+}
+
+@media(min-width: 500px) { 
+    
+    /* Proporciones para Tablet */
+    .header-banner { 
+            width: 30vw;                 
+            }        
+    .header-search-bar { 
+            width: 30vw;        
+            }  
+    .header-compra-en-cuotas
+            {
+            width: 30vw;
+            } 
+    /* Icono Hamburguesa Oculto */                
+    .header-burger-menu-container
+    {
+    display: none;
+    } 
+    
+    /* Muestra los menus */                
+    .header-left-menu {
+    display: flex;
+    width: 46vw;
+    }        
+    .header-right-menu {
+    display: flex;
+    width: 46vw;
+    }  
+    
+    .contenedor-main
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .caja-general-articulo {
+     width: 45%;
+    }
+
+   .descripciones{
+       display: block;
+   }  
+
+   .caja-general-articulo:hover { 
+    box-shadow: 0px 0px 10px rgb(100,100,100);
+   }
+
+    .precios {
+        font-size: 12px; 
+        width: 40%;
+    }
+    
+    .descuentos {
+        font-size: 10px;
+        width: 60%;
+    }
+}
+
+@media(min-width: 768px) { 
+    .header-banner { 
+            width: 20vw;                 
+            }       
+   
+    .header-compra-en-cuotas {
+            width: 40vw;
+            font-size: 14px;
+            } 
+    .header-left-menu ul li a, .header-right-menu ul li a
+            {              
+            font-size: 14px; 
+            }
+    .caja-general-articulo {
+        width: 22%;
+        } 
+        
+    .formulario-register-container, .formulario-login-container
+        {
+        width: 60%;        } 
+
+    .pie-de-pagina-articulo {    
+        max-width: 250px;
+        }
+
+    #pie-de-pagina {        
+        flex-direction: row; 
+        flex-wrap: nowrap;       
+    }
+         
+}
+
