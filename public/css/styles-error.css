@@ -1,0 +1,23 @@
+.terminal {    
+    width: 90px;    
+    height: 90px;    
+    background: url("/images/camioneta-on-fire.png");
+    background-position-x: 0px;
+    background-position-y: 0px;
+    margin: left;
+    animation: playX 1s steps(2) infinite,
+               playY 2s steps(2) infinite;  
+    position: fixed;
+    top: 10px; 
+    left: 30px; 
+
+  }
+
+  @keyframes playX {
+    from {background-position-x: 0px;}
+    to {background-position-x: -180px;}
+  }
+  @keyframes playY {
+    from {background-position-y: 0px;}
+    to {background-position-y: -180px;}
+  }
