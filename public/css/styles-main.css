@@ -39,7 +39,7 @@ section h2 {
    box-shadow: 0px 0px 0px #ebebeb;
 }
  
-.articulo-imagen {
+.caja-general-articulo img {
     margin: 0 auto;  
     width: 100%;
     padding: 10px;     
@@ -129,6 +129,10 @@ section h2 {
     padding: 16px 32px;
 }
 
+.formulario-login-container a {
+text-decoration: none;
+}
+
 .formulario-register-titulo, .formulario-login-titulo
 {
 font-size: 1.25rem;
@@ -153,6 +157,11 @@ padding: 10px;
     margin: 0 0 .4285714286em .4285714286em;
     color:#666;
     padding-top: 10px;    
+    font-weight: bold;
+}
+
+#label-sin-weight {
+    font-weight: 200;    
 }
 
 .formulario-register div, .formulario-login div
@@ -162,7 +171,7 @@ padding: 10px;
 
 .formulario-register-perfil-usuario
 {
-    flex-direction: row;
+    flex-direction: row;   
 }
 
 .formulario-register-botones-container

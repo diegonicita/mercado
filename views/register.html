@@ -68,17 +68,19 @@
             
             <label for="perfil">Perfil del usuario (obligatorio)</label> 
                 <div class="formulario-register-perfil-usuario">
-                    <label for="comprar">Comprar <input type="radio" name="perfil" id="comprar" value="comprar"></label>            
-                    <label for="vender">Vender <input type="radio" name="perfil" id="vender" value="vender"></label>
+                    <label id="label-sin-weight" for="comprar"> Comprar </label>
+                    <input type="radio" name="perfil" id="comprar" value="comprar">            
+                    <label id="label-sin-weight" for="vender"> Vender </label>
+                    <input type="radio" name="perfil" id="vender" value="vender">
                 </div>
 
             <label for="categorias">Categorías de interés</label>
             <div>
-                <label>Electro <input type="checkbox" name="categorias" value="electro"></label>
-                <label>Moda <input type="checkbox" name="categorias" value="moda"></label>
-                <label>Hogar <input type="checkbox" name="categorias" value="hogar"></label>
-                <label>Juguetería <input type="checkbox" name="categorias" value="jugueteria"></label>
-                <label>Vida sana <input type="checkbox" name="categorias" value="vida-sana"></label>
+                <label id="label-sin-weight" for="electro">Electro</label> <input type="checkbox" name="categorias" id="electro" value="electro">
+                <label id="label-sin-weight" for="moda">Moda</label> <input type="checkbox" name="categorias" id="moda" value="moda">
+                <label id="label-sin-weight" for="hogar">Hogar</label> <input type="checkbox" name="categorias" id="hogar" value="hogar">
+                <label id="label-sin-weight" for="jugueteria">Juguetería</label> <input type="checkbox" name="categorias" id="jugueteria" value="jugueteria">
+                <label id="label-sin-weight" for="vida-sana">Vida sana</label> <input type="checkbox" name="categorias" id="vida-sana" value="vida-sana">
             </div>
             <label for="subeTuFoto">Sube tu Foto</label>                      
                 <input class="formulario-register-input" type="file" id="subeTuFoto" name="subeTuFoto">            
