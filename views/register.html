@@ -48,9 +48,7 @@
                     <li><a href="#">Mis Compras</a><i class="fas fa-shopping-basket header-right-menu-icono"></i></li>                
                 </ul>
         </nav>
-        <!-- <div>
-            <img class="header-ads" src="./images/img-home-banner.jpg" alt="publicidad">            
-        </div> -->
+        
     </header> 
     <main class="formulario-register-container"> 
         <div class="formulario-register-titulo">Registrate!</div>
@@ -69,9 +67,9 @@
             <input class="formulario-register-input" type="text" id="domicilio" name="domicilio" placeholder="Domicilio">            
             
             <label for="perfil">Perfil del usuario (obligatorio)</label> 
-                <div style="flex-direction: row;">                                 
-                <label for="comprar">Comprar <input type="radio" name="perfil" id="comprar" value="comprar"></label>            
-                <label for="vender">Vender <input type="radio" name="perfil" id="vender" value="vender"></label>
+                <div class="formulario-register-perfil-usuario"></div>
+                    <label for="comprar">Comprar <input type="radio" name="perfil" id="comprar" value="comprar"></label>            
+                    <label for="vender">Vender <input type="radio" name="perfil" id="vender" value="vender"></label>
                 </div>
 
             <label for="categorias">Categorías de interés</label>
@@ -88,7 +86,7 @@
                 <input class="formulario-register-input" type="password" id="password" name="password" placeholder="Password" required>            
             <label for="passwordConfirmatoria"> Confirma contraseña (obligatorio)</label>
                 <input class="formulario-register-input" type="password" id="passwordConfirmatoria" name="passwordConfirmatoria" placeholder="Confirmar Password" required>            
-            <div style="flex-direction: row; width: 100%; margin: auto;">
+            <div class="formulario-register-botones-container">
                 <button type="submit" name="" value="">Enviar</button>
                 <button type="reset" name="" value="">Borrar</button>
             </div>
