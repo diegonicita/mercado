@@ -1,0 +1,32 @@
+DROP DATABASE IF EXISTS heroku_ff9b331b5cb3e0d;
+CREATE DATABASE heroku_ff9b331b5cb3e0d;
+USE heroku_ff9b331b5cb3e0d;
+
+CREATE TABLE `usuarios` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `nombre` VARCHAR(255) NOT NULL,
+   `email` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `productos` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `titulo` VARCHAR(100) NOT NULL,
+   `fecha_de_creacion` DATETIME NOT NULL,
+   `fecha_de_modificacion` DATETIME,
+   `descripcion` TEXT,
+   `eliminable` TINYINT DEFAULT 1,
+   `precio` INT,
+   `descuento` INT,
+   `imagen` VARCHAR(100),
+   `categoria` INT DEFAULT 1,
+   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `categorias` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(255),
+   PRIMARY KEY (`id`)
+);
+
+ALTER TABLE `productos` ADD CONSTRAINT `FK_8b39e278-d59c-4ea4-b605-8a3553cf8882` FOREIGN KEY (`categoria`) REFERENCES `categorias`(`id`) ON DELETE SET DEFAULT ;

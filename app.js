@@ -11,9 +11,23 @@ app.set('view engine', 'ejs')
 
 app.listen(port, () => console.log('Server Running on port: ' + port));
 
+const db = require('./database/models');
+const { Product } = require('./database/models')
+
 app.get('/login', (req, res) => {res.render("login")});
 app.get('/register', (req, res) => {res.render("register")});
-app.get('/', (req, res) => {res.render("home")});
+
+
+app.get('/', (req, res) => {
+
+    Product.findAll()
+        .then( 
+            p => { 
+            res.render("home", {productos: p});
+            })
+        .catch( error => res.send(error));
+});
+
 app.get('/error', (req, res) => {res.render("error")});
 app.get('*', (req, res) => {res.render("error")});
 

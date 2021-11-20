@@ -53,7 +53,7 @@
             <h2>Basado en tu ultima visita</h2>            
         
         <div class="contenedor-main">
-            <article class="caja-general-articulo">
+            <!-- <article class="caja-general-articulo">
                 <img src="images\img-cafetera-moulinex.jpg" alt="Cafetera Moulinex">
                 <div class="caja-interior-articulo">                      
                     <p class="precios">$6.770</p>
@@ -61,9 +61,9 @@
                     <i class="fas fa-truck articulo-icon"></i>                                                                      
                 </div>
                 <h3 class="descripciones">Cafetera Moulinex</h3>
-            </article>
+            </article> -->
 
-            <article class="caja-general-articulo">
+            <!-- <article class="caja-general-articulo">
                 <img src="images\img-macbook-pro-2019.jpg" alt="MacBook Pro 2019">
                 <div class="caja-interior-articulo">                      
                     <p class="precios">$230.000</p>
@@ -71,9 +71,9 @@
                     <i class="fas fa-truck articulo-icon"></i>                                                                  
                 </div>
                 <h3 class="descripciones">MacBook Pro 2019</h3>
-            </article>
+            </article> -->
 
-            <article class="caja-general-articulo">
+            <!-- <article class="caja-general-articulo">
                 <img src="images\img-samsung-galaxy-s10.jpg" alt="Samsung galaxy S10">
                 <div class="caja-interior-articulo">                     
                     <p class="precios">$70.500</p>
@@ -81,17 +81,21 @@
                     <i class="fas fa-truck articulo-icon"></i>
                 </div>
                     <h3 class="descripciones">Samsung Galaxy S10</h3>                
-            </article>
+            </article> -->
+
+            <% productos.forEach( p => { %>
 
             <article class="caja-general-articulo">                
-                <img src="images\img-tv-samsung-smart.jpg" alt="Samsung Smart TV">
+                <img src="images\img-tv-samsung-smart.jpg" alt="<%= p.titulo %>">
                 <div class="caja-interior-articulo">                      
                     <p class="precios">$23.200</p>
                     <p class="descuentos">5% off</p>                    
                     <i class="fas fa-truck articulo-icon"></i>
                 </div>
-                    <h3 class="descripciones">SmartTv Samsung 43</h3>                
+                    <h3 class="descripciones"><%= p.titulo %></h3>                
             </article>
+
+            <% }) %>
         </div>
 
         </section>
