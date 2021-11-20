@@ -11,25 +11,32 @@ app.set('view engine', 'ejs')
 
 app.listen(port, () => console.log('Server Running on port: ' + port));
 
-const db = require('./database/models');
-const { Product } = require('./database/models')
+const mainRoutes = require('./routes/main.js');
+const userRoutes = require('./routes/user.js');
+// const productsRoutes = require('./routes/products.js');
 
-app.get('/login', (req, res) => {res.render("login")});
-app.get('/register', (req, res) => {res.render("register")});
+app.use("/", mainRoutes);
+app.use("/users", userRoutes);
 
+// app.use("/products", productsRoutes);
 
-app.get('/', (req, res) => {
+// const db = require('./database/models');
+// const { Product } = require('./database/models')
 
-    Product.findAll()
-        .then( 
-            p => { 
-            res.render("home", {productos: p});
-            })
-        .catch( error => res.send(error));
-});
+// app.get('/login', (req, res) => {res.render("login")});
+// app.get('/register', (req, res) => {res.render("register")});
+// app.get('/', (req, res) => {
 
-app.get('/error', (req, res) => {res.render("error")});
-app.get('*', (req, res) => {res.render("error")});
+//     Product.findAll()
+//         .then( 
+//             p => { 
+//             res.render("home", {productos: p});
+//             })
+//         .catch(error => res.send(error));
+// });
+
+// app.get('/error', (req, res) => {res.render("error")});
+// app.get('*', (req, res) => {res.render("error")});
 
 // Paleta de colores
 
