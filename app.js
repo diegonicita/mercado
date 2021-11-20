@@ -7,14 +7,15 @@ const morgan = require('morgan');
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 app.use(morgan('tiny'));
+app.set('view engine', 'ejs')
 
 app.listen(port, () => console.log('Server Running on port: ' + port));
 
-app.get('/login', (req, res) => {res.sendFile(path.join(__dirname, "./views/login.html"))});
-app.get('/register', (req, res) => {res.sendFile(path.join(__dirname, "./views/register.html"))});
-app.get('/', (req, res) => {res.sendFile(path.join(__dirname, "./views/home.html"))});
-app.get('/error', (req, res) => {res.sendFile(path.join(__dirname, "./views/error.html"))});
-app.get('*', (req, res) => {res.sendFile(path.join(__dirname, "./views/error.html"))});
+app.get('/login', (req, res) => {res.render("login")});
+app.get('/register', (req, res) => {res.render("register")});
+app.get('/', (req, res) => {res.render("home")});
+app.get('/error', (req, res) => {res.render("error")});
+app.get('*', (req, res) => {res.render("error")});
 
 // Paleta de colores
 
