@@ -2,24 +2,14 @@ module.exports = (sequelize, dataTypes) => {
 
 let alias = "Product";
 let cols = {
-   id: {
-     type: dataTypes.INTEGER,
-     allowNull: false,
-     primaryKey: true
-   },
-   titulo: {
-    type: dataTypes.STRING(100),
-    allowNull: false
-   },
+   id: {type: dataTypes.INTEGER,allowNull: false,primaryKey: true},
+   titulo: { type: dataTypes.STRING(100), allowNull: false},
    fecha_de_creacion:
    {
      type: dataTypes.DATE,
      allowNull: false
    },
-   fecha_de_modificacion:
-   {
-     type: dataTypes.DATE,     
-   },
+   fecha_de_modificacion: { type: dataTypes.DATE},
    descripcion:   
    {
      type: dataTypes.TEXT,
@@ -30,10 +20,7 @@ let cols = {
      type: dataTypes.TINYINT,  
      default: 1   
    },
-   precio:   
-   {
-     type: dataTypes.INTEGER       
-   },
+   precio:{type: dataTypes.INTEGER },
    descuento:   
    {
      type: dataTypes.INTEGER       
@@ -42,11 +29,7 @@ let cols = {
    {
      type: dataTypes.STRING(100)
    },
-   categoria:   
-   {
-     type: dataTypes.INTEGER,
-     default: 1
-   },
+   categoria: { type: dataTypes.INTEGER, default: 1 },
  };
  let config = {
    tableName: 'productos',
