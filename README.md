@@ -1,12 +1,9 @@
-# mercado liebre
-<img src="/public/images/favicon.ico" alt="My cool logo" width="100px" height="100px">
+![mercado liebre](https://github.com/diegonicita/mercadoliebre/blob/56031165587bd19abfa06c9776639ae7f9a819d6/public/images/logo.png)
 
 https://mercado-liebre-diego-nicita.herokuapp.com/
 
-## Proyecto de un Comercio Electrónico (eCommerce)
+## Proyecto de un Comercio Electrónico (eCommerce) realizado en Digital House 2021
 
 ### Pasos realizados
-1. Crear un proyecto en Node con Express para poder visualizar el sitio web.
-2. Crear un archivo HTML y una carpeta public con las imagenes
-3. Crear una carpeta public con un archivo CSS. Agregado de diferentes iconos.
-4. Diseño adaptativo.
+1. Rama main: sin conexion a una database MySQL
+2. Rama database: con conexion a una database usando Sequelize y MySQL
