@@ -1,7 +1,19 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = process.env.PORT || 7000;
+
+// server.js
+console.log(`Your port is ${process.env.PORT}`); // undefined
+const dotenv = require('dotenv');
+dotenv.config();
+
+console.log("Your port is " + process.env.PORT); // 3000
+console.log("Your username is " + process.env.USERDATABASE); // root
+console.log("Your password is " + process.env.PASSWORD); //
+console.log("Your database is " + process.env.DATABASE); //
+console.log("Your host is " + process.env.HOST); //
+console.log("Your dialect is " + process.env.DIALECT); //
+
 const morgan = require('morgan');
 
 const publicPath = path.resolve(__dirname, "./public");
@@ -9,7 +21,7 @@ app.use(express.static(publicPath));
 app.use(morgan('tiny'));
 app.set('view engine', 'ejs')
 
-app.listen(port, () => console.log('Server Running on port: ' + port));
+app.listen(process.env.PORT, () => console.log('Server Running on port: ' + process.env.PORT));
 
 const mainRoutes = require('./routes/main.js');
 const userRoutes = require('./routes/user.js');

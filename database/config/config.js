@@ -1,10 +1,10 @@
 module.exports = 
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": process.env.USERDATABASE,
+    "password": process.env.PASSWORD,
+    "database": process.env.DATABASE,
+    "host": process.env.HOST,
     "dialect": "mysql"
   },
   "test": {
@@ -15,7 +15,7 @@ module.exports =
     "dialect": "mysql"
   },
   "production": {
-    "username": process.env.USERNAME,
+    "username": process.env.USERDATABASE,
     "password": process.env.PASSWORD,
     "database": process.env.DATABASE,
     "host": process.env.HOST,
