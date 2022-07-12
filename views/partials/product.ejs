@@ -1,4 +1,6 @@
+  
 <article class="caja-general-articulo"> 
+    <a href="/products/detail/<%= p.id %>">    
     <% let imagen = "/images/" + p.imagen %>
     <img src= <%= imagen %> alt="<%= p.titulo %>">
     <div class="caja-interior-articulo">                      
@@ -7,4 +9,5 @@
         <i class="fas fa-truck articulo-icon"></i>
     </div>
         <h3 class="descripciones"><%= p.titulo %></h3>                
+    </a>
 </article>
