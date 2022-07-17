@@ -50,7 +50,7 @@ figure {
 }
 
 img {
-  width: 100%;
+ width: 80%;
 }
 
 input,
@@ -74,20 +74,23 @@ hr {
     }
 
 .header-banner { 
-    width: 48vw;
+    width: 18vw;
     display: inline-block;
     margin: auto;
+    margin-left: 10px;
     padding: 10px;
     /* background-color: red; */
     }
     
-.header-ads {         
+.header-ads {   
+    border-top: 1px solid #AAAAAA;
+    margin-top: 5px;      
     width:100%; 
     justify-self:center; 
     display: flex;      
     }
 
-.header-ads img    {
+.header-ads img {    
     width: 100%;
     }
 
@@ -108,10 +111,16 @@ hr {
      flex-grow: 3;
      padding: 5px;
      width: 100px;
-     font-size: 1rem;
-     border: 1px solid gray;         
+     font-size: 1.2rem;
+     border: 1px solid #EEE;     
+     border-bottom: 1px solid #999;    
      /* height: 28px; */
      }
+
+     .header-search-bar form input[type=search]::placeholder { 
+      color: #CCC;
+      opacity: 1;
+    }
 
 .header-search-bar form button
 {      
@@ -125,7 +134,9 @@ hr {
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    border: 1px solid gray
+    border: 1px solid #EEE;
+    border-bottom: 1px solid #999;
+
 }
 
 .header-compra-en-cuotas {
