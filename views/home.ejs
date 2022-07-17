@@ -6,13 +6,9 @@
         
         <div class="contenedor-main">        
 
-            <% productos.forEach( p => { 
-                
-                console.log(typeof(toThousand))
-                
-                %>
+            <% productos.forEach( p => { %>
 
-            <%- include ("partials/product", {p : p, toThousand}) %>
+            <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
 
             <% }) %>
         </div>
