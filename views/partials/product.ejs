@@ -3,9 +3,10 @@
     <a href="/products/detail/<%= p.id %>">    
     <% let imagen = "/images/" + p.imagen %>
     <img src= <%= imagen %> alt="<%= p.titulo %>">
-    <div class="caja-interior-articulo">                      
-        <p class="precios">$23.200</p>
-        <p class="descuentos">5% off</p>                    
+    <div class="caja-interior-articulo">                              
+        <p class="precios-small">$ <%=toThousand(p.precio)%> </p>
+        <p class="descuentos"><%= p.descuento %>% off</p>        
+        <p class="precios">$<%=toThousand((p.precio - p.precio*p.descuento/100))%> </p>                            
         <i class="fas fa-truck articulo-icon"></i>
     </div>
         <h3 class="descripciones"><%= p.titulo %></h3>                

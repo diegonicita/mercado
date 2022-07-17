@@ -8,7 +8,7 @@
 
             <% productos.forEach( p => { %>
 
-            <%- include ("partials/product", {p : p}) %>
+            <%- include ("partials/product", {p : p, toThousand}) %>
 
             <% }) %>
         </div>
