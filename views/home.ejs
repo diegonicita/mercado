@@ -5,10 +5,10 @@
             <h2>Basado en tu ultima visita</h2>            
         
         <div class="contenedor-main">        
-
+            <% var toThou = toThousand %>
             <% productos.forEach( p => { %>
 
-            <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
+            <%- include ("partials/product", {p : p, toThousand: toThou}) %>
 
             <% }) %>
         </div>
