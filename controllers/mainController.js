@@ -9,7 +9,7 @@ const controller = {
             Product.findAll()
               .then( 
                     p => { 
-                    res.render("home", {productos: p, toThousand});
+                    res.render("home", {productos: p, toThousand });
                     })
               .catch(error => res.send(error));
         },
