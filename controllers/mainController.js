@@ -1,6 +1,6 @@
 // const db = require('../database/models');
 const { Product } = require('../database/models');
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+var toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
     index: (req, res) => 
