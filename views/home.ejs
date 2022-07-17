@@ -5,7 +5,7 @@
             <h2>Basado en tu ultima visita</h2>            
         
         <div class="contenedor-main">        
-            <% var toThou = toThousand %>
+            <% var toThou = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); %>
             <% productos.forEach( p => { %>
 
             <%- include ("partials/product", {p : p, toThousand: toThou}) %>
