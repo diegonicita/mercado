@@ -5,10 +5,10 @@
             <h2>Basado en tu ultima visita</h2>            
         
         <div class="contenedor-main">        
-            <% var toThou = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); %>
+
             <% productos.forEach( p => { %>
 
-            <%- include ("partials/product", {p : p, toThousand: toThou}) %>
+            <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
 
             <% }) %>
         </div>
@@ -22,7 +22,7 @@
             
             <% productos.forEach( p => { %>
 
-                <%- include ("partials/product", {p : p}) %>    
+                <%- include ("partials/product", {p : p, toThousand: toThousand}) %>    
                 <% }) %>
         </div>       
         </section>         
