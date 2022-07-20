@@ -1,0 +1,131 @@
+.formulario-register-container,
+.formulario-login-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 16px 32px;
+}
+
+.formulario-login-container a {
+  text-decoration: none;
+}
+
+.formulario-register-titulo,
+.formulario-login-titulo {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  width: 100%;
+  letter-spacing: .0125rem;
+  padding: 10px;
+}
+
+.formulario-register,
+.formulario-login {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.formulario-register label,
+.formulario-login label {
+  margin: 0 0 .4285714286em .4285714286em;
+  color: #666;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+#label-sin-weight {
+  font-weight: 200;
+}
+
+.formulario-register div,
+.formulario-login div {
+  padding: 5px 10px;
+}
+
+.formulario-register-perfil-usuario {
+  flex-direction: row;
+}
+
+.formulario-register-botones-container {
+  flex-direction: row;
+  width: 100%;
+  margin: auto;
+}
+
+.formulario-register button,
+.formulario-login button {
+  margin-top: 5px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border: 2px solid #1259c3;
+  border-radius: 5px;
+  font-weight: 600;
+  box-shadow: none;
+  transition: background-color 0.5s;
+  background-color: #1259c3;
+  color: white;
+  cursor: pointer;
+}
+
+.formulario-login button:hover,
+.formulario-register button:hover {
+  background-color: #0022AA;
+}
+
+.olvidaste-contrasenia {
+  color: #0022AA;
+  font-weight: bold;
+  font-size: 16px;
+  justify-content: flex-start;
+}
+
+.formulario-register input[type="password"],
+.formulario-register input[type="text"],
+.formulario-register input[type="file"],
+.formulario-register input[type="date"],
+.formulario-login input[type="password"],
+.formulario-login input[type="text"],
+.formulario-login input[type="file"],
+.formulario-login input[type="datetime-local"] {
+  background-color: white;
+  padding: 15px;
+  border: 3px solid #ebebeb;
+  ;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.formulario-login input:invalid {}
+
+.formulario-register input:invalid {
+  /* border: 2px dashed red; */
+}
+
+.formulario-login input:invalid:required {
+  background-image: none;
+}
+
+.formulario-register input:invalid:required {
+  /* background-image: linear-gradient(to right, pink, lightgreen); */
+}
+
+.formulario-login input:valid,
+.formulario-register input:valid {
+  /* border: 2px solid black; */
+}

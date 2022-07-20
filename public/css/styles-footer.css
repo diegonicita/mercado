@@ -1,0 +1,37 @@
+
+/* FOOTER */
+
+#pie-de-pagina {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .icono-pie-de-pagina {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #1259c3;
+  }
+  
+  .pie-de-pagina-articulo {
+    margin-top: 40px;
+    margin-right: 20px;
+    max-width: 250px;
+    text-align: center;
+    margin: auto;
+  }
+  
+  .pie-de-pagina-articulo p {
+    text-align: center;
+    color: #666;
+  }
+  
+  .copyright {
+    text-align: left;
+    padding: 10px;
+    color: #666;
+  }
