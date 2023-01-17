@@ -1,20 +1,14 @@
 <%- include ("partials/header") %>
 
-    <main class="formulario-register-container"> 
+    <main>
+        <br />
+        <br />
+        <br />
+        <div class="formulario-register-container"> 
         <div class="formulario-register-titulo">Registrate!</div>
         <form action="/" method="POST" class="formulario-register">
             <label for="nombre">Nombre y Apellido (obligatorio)</label>
-            <input class="formulario-register-input" type="text" id="nombre" name="nombre" placeholder="Juan Perez" required>
-            <label for="usuario">Usuario (obligatorio)</label>
-            <input class="formulario-register-input" type="text" id="usuario" name="usuario" placeholder="juanitoPerez" required>            
-            <label for="email">E-mail (obligatorio)</label>
-            <input class="formulario-register-input" type="text" id="email" name="email" placeholder="Correo Electronico" required>            
-            
-            <label for="fechaDeNacimiento"> Fecha de nacimiento</label>      
-            <input class="formulario-register-input" type="date" id="fechaDeNacimiento" name="fechaDeNacimiento">             
-            <label for="domicilio"> Domicilio</label>     
-            
-            <input class="formulario-register-input" type="text" id="domicilio" name="domicilio" placeholder="Domicilio">            
+                <input class="formulario-register-input" type="text" id="nombre" name="nombre" placeholder="Juan Perez" required>
             
             <label for="perfil">Perfil del usuario (obligatorio)</label> 
                 <div class="formulario-register-perfil-usuario">
@@ -32,17 +26,12 @@
                 <label id="label-sin-weight" for="jugueteria">Juguetería</label> <input type="checkbox" name="categorias" id="jugueteria" value="jugueteria">
                 <label id="label-sin-weight" for="vida-sana">Vida sana</label> <input type="checkbox" name="categorias" id="vida-sana" value="vida-sana">
             </div>
-            <label for="subeTuFoto">Sube tu Foto</label>                      
-                <input class="formulario-register-input" type="file" id="subeTuFoto" name="subeTuFoto">            
-            <label for="password">Elige una contraseña (obligatorio)</label>                   
-                <input class="formulario-register-input" type="password" id="password" name="password" placeholder="Password" required>            
-            <label for="passwordConfirmatoria"> Confirma contraseña (obligatorio)</label>
-                <input class="formulario-register-input" type="password" id="passwordConfirmatoria" name="passwordConfirmatoria" placeholder="Confirmar Password" required>            
             <div class="formulario-register-botones-container">
-                <button type="submit" name="" value="">Enviar</button>
+                <button type="button" name="" value="">Enviar</button>
                 <button type="reset" name="" value="">Borrar</button>
             </div>
         </form>
+        </div>        
     </main>
 
     <%- include ("partials/footer") %>

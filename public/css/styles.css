@@ -62,6 +62,10 @@ hr {
   border-bottom: solid 1px var(--light-gray);
 }
 
+main {
+  min-height: 70vh;
+}
+
 @media(min-width: 320px) { 
 
   .header-compra-en-cuotas-icono
@@ -147,13 +151,13 @@ hr {
   }
 
   .header-compra-en-cuotas {
-    width: 20vw;
-    font-size: 14px;
+    width: 20rem;
+    font-size: 1.2rem;
   }
 
   .header-left-menu ul li a,
   .header-right-menu ul li a {
-    font-size: 14px;
+    font-size: 1.2rem;
   }
 
   .caja-general-articulo {
@@ -162,7 +166,7 @@ hr {
 
   .formulario-register-container,
   .formulario-login-container {
-    width: 60%;
+    width: 50rem;
   }
 
   .pie-de-pagina-articulo {
