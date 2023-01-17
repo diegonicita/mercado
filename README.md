@@ -1,4 +1,4 @@
-# mercado liebre
+# eCommerce
 
 ## Proyecto de un Comercio Electrónico (eCommerce)
 

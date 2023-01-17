@@ -1,6 +1,6 @@
 
 .header-main {
-    background-color: #EAC926;
+    background-color: var(--primary);
     font-family: Roboto;
     display: flex;
     width: 100%;
