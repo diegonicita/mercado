@@ -132,26 +132,13 @@ main {
   }
 }
 
-
-@media(min-width: 600px) {
-  /* Proporciones para Tablet */
-  .header-banner {
-    width: 30vw;
-    display: none!important;
-  }
-
-  .header-banner-big {
-    display: inline-block;  
-  }
-}
-
 @media(min-width: 768px) {
   .header-banner {
-    width: 20vw;
+    
   }
 
   .header-compra-en-cuotas {
-    width: 20rem;
+    
     font-size: 1.2rem;
   }
 
