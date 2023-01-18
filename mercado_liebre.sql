@@ -1,3 +1,6 @@
+CREATE DATABASE mercadoliebre;
+use mercadoliebre;
+
 CREATE TABLE `usuarios` (
    `id` INT NOT NULL AUTO_INCREMENT,
    `nombre` VARCHAR(255) NOT NULL,
@@ -29,7 +32,7 @@ ALTER TABLE `productos` ADD CONSTRAINT `FK_8b39e278-d59c-4ea4-b605-8a3553cf8882`
 
 INSERT INTO `categorias` (id, name) VALUES (1, "a");
 INSERT INTO `categorias` (id, name) VALUES (2, "b");
-INSERT INTO `productos` (id,titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES (1,'Cafetera Moulinex','1900-01-01 00:00:00',NULL,NULL,1,NULL,NULL,'img-cafetera-moulinex.jpg',1);
-INSERT INTO `productos` (titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES ('MacBook Pro 2019','1900-01-01 00:00:00',NULL,NULL,1,NULL,NULL,'img-macbook-pro-2019.jpg',1);
-INSERT INTO `productos` (titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES ('Samsung Galaxy S10','1900-01-01 00:00:00',NULL,NULL,1,NULL,NULL,'img-samsung-galaxy-s10.jpg',1);
-INSERT INTO `productos` (titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES ('TV Samsung Smart','1900-01-01 00:00:00',NULL,NULL,1,NULL,NULL,'img-tv-samsung-smart.jpg',1);
+INSERT INTO `productos` (id,titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES (1,'Cafetera Moulinex','1900-01-01 00:00:00',NULL,NULL,1,1000,10,'img-cafetera-moulinex.jpg',1);
+INSERT INTO `productos` (titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES ('MacBook Pro 2019','1900-01-01 00:00:00',NULL,NULL,1,500,5,'img-macbook-pro-2019.jpg',1);
+INSERT INTO `productos` (titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES ('Samsung Galaxy S10','1900-01-01 00:00:00',NULL,NULL,1,500,25,'img-samsung-galaxy-s10.jpg',1);
+INSERT INTO `productos` (titulo,`fecha_de_creacion`,`fecha_de_modificacion`,descripcion,eliminable,precio,descuento,imagen,categoria) VALUES ('TV Samsung Smart','1900-01-01 00:00:00',NULL,NULL,1,1500,33,'img-tv-samsung-smart.jpg',1);
