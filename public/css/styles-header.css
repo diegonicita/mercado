@@ -7,20 +7,22 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;      
-    padding-bottom: 1rem;  
+    padding: 0.5rem 1rem;  
+    gap: 5px;    
   } 
 
   .header-banner-col-1 {                 
-	flex: 0 1 auto;
-    text-align: center;    
+	flex: 0.1 1 auto;
+  text-align: center;    
+  padding-right: 0rem;  
   } 
 
- .header-banner-col-1 > a {    
+ .header-banner-col-1 a {    
     margin: 0px;
     padding: 0px;
   }
 
-  .header-banner-col-1 > a > img {    
+  .header-banner-col-1 img {    
     height: 3rem;
   }
   
@@ -36,33 +38,39 @@
   }
   
   .header-search-bar-col-2 form input[type=search] {     
-    font-size: 1.5rem;
-    border: 1px solid #EEE;
-	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    font-size: 1.2rem;
+    border: 0;
+    height: 2.5rem;
+    /* border: 1px solid #EEE; */
+	  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
     /* border-bottom: 1px solid #999; */
-    width: 95%;	      
+    width: 95%;	 
+    max-width: 800px;  
+    padding-left: 1rem;  
+    border-radius: 2px;    
   }
   
   .header-search-bar-col-2 form input[type=search]::placeholder {
     color: rgb(137, 137, 137);
-    opacity: 1;
+    opacity: 0.5;
+    font-weight: 100;   
   }
   
   .header-search-bar-col-2 form button {          
-    height: 3rem;
+    height: 2.5rem;
     width: 2.5rem;
-    background: #fff;
+    background: #F0F0F0;
     font-size: 1.5rem;    
+    font-weight: 600;
     cursor: pointer;
-    border: 1px solid #EEE;
-	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
-    /* border-bottom: 1px solid #999; */
+    border: 0 solid #EEE;
+	  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);    
     padding: 0;  
   }
   
-  .header-compra-en-cuotas-col-3 {  
+  .header-banner-col-3 {  
     display: flex;    
-	flex: 0 1 auto;	    
+	  flex: 0 1 auto;	    
     justify-content: center;  
     align-items: flex-start;       
     font-size: 1.25rem;      
@@ -74,4 +82,17 @@
     color: black;   
     text-align: right;         
   }
+
+  @media(min-width: 1024px) {
+ 
+   .header-banner-col-1 {                 
+     flex: 0.15 1 auto; 
+     text-align: right;   
+     padding-right: 1rem;  
+     } 
+    .header-col-3 {                 
+      flex: 0.15 1 5rem;    
+      } 
+   
+ }
   

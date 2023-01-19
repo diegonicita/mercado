@@ -1,40 +1,33 @@
 
 .header-navbar-main {
-    background-color: var(--primary);
-    font-family: Roboto;
     display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+    background-color: var(--primary);    
     align-items: center;
-    justify-content: center;      
+    justify-content: center;          
   } 
   
   .header-left-menu {    
-    display: none;
-    justify-content: flex-start;
+    display: none;    
   }
   
   .header-right-menu {    
-    display: none;
-    justify-content: flex-end;
+    display: none;  
   }
   
   .header-left-menu ul,
   .header-right-menu ul {
-    display: flex;
-    flex-wrap: nowrap;
+    display: flex;    
   }
   
   .header-left-menu ul li,
   .header-right-menu ul li {
-    padding: 5px;
     list-style-type: none;
+    padding: 5px;
   }
   
   .header-left-menu ul li a,
   .header-right-menu ul li a {
-    text-decoration: none;
-    color: black;
+    text-decoration: none;    
     font-size: 1.0rem;
   }  
  
@@ -61,15 +54,14 @@
     text-align: center;    
   }
   
-  .header-burger-menu-button {
-    /* align-items: center; */
-    /* text-align: center; */
+  .header-burger-menu-button {    
     /* background-color: var(--green); */
     /* color: white; */
     /* border-radius: 5px; */
     /* padding: 10px 10px; */
     /* margin: 0 auto; */
-    font-size: 2rem;
+    padding: 0.2rem;
+    font-size: 1.5rem;
   }
   
   .header-cart-container {	
@@ -84,5 +76,34 @@
     /* border-radius: 5px; */
     /* padding: 10px 10px; */
     /* margin: 0 auto; */
-    font-size: 2rem;
+    padding: 0.2rem;
+    font-size: 1.5rem;
   }
+
+  
+  @media(min-width: 1024px) {
+	
+    /* Icono Hamburguesa Oculto */
+   
+   .header-burger-menu-container {
+     display: none;
+   }  
+   
+   .header-cart-container {
+     display: none;
+   } 
+ 
+   /* Muestra los menus */
+   .header-left-menu {
+     display: flex;
+     width: 46vw;
+     justify-content: flex-start;
+   }
+ 
+   .header-right-menu {
+     display: flex;
+     width: 46vw;
+     justify-content: flex-end;
+   }
+ 
+ }

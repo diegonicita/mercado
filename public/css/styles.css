@@ -59,26 +59,7 @@ main {
   min-height: 70vh;
 }
 
-@media(min-width: 320px) { 
-
-  /* .header-compra-en-cuotas-icono */
-  /* { */
-   /* width: 20%; */
-   /* display: inline-block!important; */
-  /* } */
-
-}
-
-
-@media(min-width: 500px) {  
-
-  /* .header-search-bar { */
-    /* width: 30vw; */
-  /* } */
-
-  /* .header-compra-en-cuotas { */
-    /* width: 30vw; */
-  /* } */
+@media(min-width: 500px) {
 
   .contenedor-main {
     flex-direction: row;
@@ -109,20 +90,7 @@ main {
   }
 }
 
-@media(min-width: 768px) {
-  .header-banner {
-    
-  }
-
-  .header-compra-en-cuotas {
-    
-    font-size: 1.2rem;
-  }
-
-  .header-left-menu ul li a,
-  .header-right-menu ul li a {
-    font-size: 1.2rem;
-  }
+@media(min-width: 768px) {  
 
   .caja-general-articulo {
     width: 22%;
@@ -142,26 +110,4 @@ main {
     flex-wrap: nowrap;
   }
 
-}
-
-@media(min-width: 1024px) {
-	
-   /* Icono Hamburguesa Oculto */
-	
-  .header-burger-menu-container {
-    display: none;
-  }   
-
-  /* Muestra los menus */
-  .header-left-menu {
-    display: flex;
-    width: 46vw;
-  }
-
-  .header-right-menu {
-    display: flex;
-    width: 46vw;
-  }
-
-  
 }
