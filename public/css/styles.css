@@ -9,6 +9,7 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
+  --green-dark: #267a32;
   --base-font-family: 'Roboto', sans-serif
 }
 
@@ -18,13 +19,12 @@
 }
 
 html,
-body {
-  min-height: 100vh;
+body {  
   margin: 0;
   font-size: 0.8rem;
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: var(--light-gray);  
 }
 
 ul,
@@ -56,7 +56,7 @@ hr {
 }
 
 main {
-  min-height: 70vh;
+  min-height: 70vh;  
 }
 
 @media(min-width: 500px) {

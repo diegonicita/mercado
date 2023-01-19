@@ -6,7 +6,7 @@ const {hardcodedData, useHardcodedData} = require("./hardcodedData")
 const controller = {
     detail: (req, res) => 
         {
-    if (useHardcodedData) {
+    if (!useHardcodedData) {
     Product.findByPk(req.params.id).then((result) => {
 
         res.render("detail", { product: result, toThousand });
@@ -17,7 +17,7 @@ const controller = {
     });
         }    
     else {
-     const product = hardcodedData()[req.params.id]      
+     const product = hardcodedData()[req.params.id-1]      
       res.render("detail", { product: product, toThousand });
     }
 }

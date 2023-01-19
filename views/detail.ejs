@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<body>
 	<%- include('partials/header', {title: product.titulo}) %>
+	
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -14,7 +12,7 @@
 				<div class="col-12 col-lg-8">
 					<img src="/images/<%= product.imagen %>" alt="product image" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= product.descripcion %>
+						<%= product.description %>
 					</p>
 				</div>
 				<div class="col-12 col-lg-4">
@@ -22,14 +20,14 @@
 						<h2 class="product-detail-title"><%= product.titulo %></h2>
 						
 							<p class="product-detail-price small">
-								<span>$<%= product.precio && toThousand(product.precio) %></span>
+								<span>$ <%= product.precio && toThousand(product.precio) %></span>
 								/
 								<b><%= product.descuento %>% OFF</b>
 							</p>
 							<p class="product-detail-price">
 								$<%= product.precio && toThousand((product.precio - product.precio*product.descuento/100)) %>
 							</p>
-							<p class="product-detail-price">
+							<p class="product-detail-price-before">
 								Antes $  <%= product.precio && toThousand(product.precio) %>
 							</p>
 
@@ -44,13 +42,8 @@
 							</li>
 						</ul>
 
-						<a href="#" id="comprarahora" class="buy-now-button">COMPRAR AHORA</a>
-						<hr>
-
-						<!-- <a href="/products/edit/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-						<form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
-						</form> -->
+						<a href="#" id="comprarahora" class="buy-now-button">Comprar</a>
+						<hr>						
 					</article>
 				</div>
 			</div>
@@ -70,7 +63,3 @@
 			alert("falta implementar comprar ahora");		  
 		  });
 	  </script>
-
-</body>	
-
-</html>

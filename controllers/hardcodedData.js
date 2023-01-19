@@ -4,7 +4,7 @@ const hardcodedData = () => [
     titulo: 'TV Samsung',
     create: '1900-01-01 00:00:00',
     edited: null,
-    description: 'Hola',
+    description: 'TV Samsung. Ultima tecnologia LED 4K Wide Screen Bluetooth 5.1 WiFi USB-C. Mira el mundial de Qatar!',
     eliminalbe: 1,
     precio: 10000,
     descuento: 10,
@@ -16,7 +16,7 @@ const hardcodedData = () => [
     titulo: 'MacBook Pro',
     create: '1900-01-01 00:00:00',
     edited: null,
-    description: 'Hola',
+    description: 'MacBook Pro. Ultima tecnologia LED 4K Wide Screen Bluetooth 5.1 WiFi USB-C. Mira el mundial de Qatar por la TV publica!',
     eliminalbe: 1,
     precio: 250000,
     descuento: 12,
@@ -28,7 +28,7 @@ const hardcodedData = () => [
     titulo: 'Cafetera Moulinex',
     create: '1900-01-01 00:00:00',
     edited: null,
-    description: 'Hola',
+    description: 'Cafetera Moulinex. Ultima tecnologia LED 4K Wide Screen Bluetooth 5.1 WiFi USB-C. Tambien prepara Cafe!',
     eliminalbe: 1,
     precio: 5000,
     descuento: 8,
@@ -40,7 +40,7 @@ const hardcodedData = () => [
     titulo: 'Samsung Galaxy',
     create: '1900-01-01 00:00:00',
     edited: null,
-    description: 'Hola',
+    description: 'Samsung Galaxy. Ultima tecnologia LED 4K Wide Screen Bluetooth 5.1 WiFi USB-C. Mira el mundial de Qatar!',
     eliminalbe: 1,
     precio: 8000,
     descuento: 15,
@@ -49,6 +49,6 @@ const hardcodedData = () => [
   }
 ]
 
-const useHardcodedData = false;
+const useHardcodedData = true;
 
 module.exports = { hardcodedData, useHardcodedData} 

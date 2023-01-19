@@ -1,34 +1,29 @@
-.formulario-register-container,
-.formulario-login-container {
-
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+.formulario-container {  
+  display: flex;  
+  flex-direction: column;  
   background-color: white;
-  width: 100%;
-  margin: auto;
-  margin-top: 10px;
-  border-radius: 15px;
-  padding: 16px 32px;
+  width: 100%;  
+  margin-top: 2rem;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px 4px rgb(0 0 0 / 10%);
+  font-size: 1rem;
+  max-width: 40rem;
 }
 
-.formulario-login-container a {
+.formulario-container a {
   text-decoration: none;
 }
 
-.formulario-register-titulo,
-.formulario-login-titulo {
+.formulario-titulo {
   font-size: 1.25rem;
   font-weight: bolder;
   width: 100%;
   letter-spacing: .0125rem;
-  padding: 10px;
+  padding: 0.8rem;
 }
 
-.formulario-register,
-.formulario-login {
+.formulario {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -37,94 +32,68 @@
   width: 100%;
 }
 
-.formulario-register label,
-.formulario-login label {
+.formulario > label {
   margin: 0 0 .4285714286em .4285714286em;
-  color: #666;
-  padding-top: 10px;
+  color: #000;
+  padding-top: 1rem;
   font-weight: bold;
 }
 
-#label-sin-weight {
-  font-weight: 200;
+.label-sin-weight {
+  font-weight: 100;
 }
 
-.formulario-register div,
-.formulario-login div {
-  padding: 5px 10px;
+.formulario div
+{
+  padding: 0.3rem 0.5rem;
 }
 
-.formulario-register-perfil-usuario {
+.formulario-perfil-usuario {
   flex-direction: row;
 }
 
-.formulario-register-botones-container {  
-  width: 40rem;  
-  margin: auto;
+.formulario-botones-container { 
+  width: 100%;    
+  margin: 0 auto;
+  min-width: 5rem;
 }
 
-.formulario-register button,
-.formulario-login button {
-  margin-top: 5px;
-  width: 40rem;
-  height: 40px;
+.formulario button {
+  margin-top: 0.5rem;
+  width: 100%;  
+  height: 3rem;
   font-size: 1.2rem;
-  border: 2px solid #1259c3;
-  border-radius: 5px;
+  border: 0;
+  border-radius: 3px;
   font-weight: 600;
   box-shadow: none;
   transition: background-color 0.5s;
-  background-color: #1259c3;
+  background-color: var(--green);
   color: white;
   cursor: pointer;
 }
 
-.formulario-login button:hover,
-.formulario-register button:hover {
-  background-color: #0022AA;
+.formulario button:hover {
+  background-color: var(--green-dark);
 }
 
 .olvidaste-contrasenia {
-  color: #0022AA;
+  color: var(--green-dark);
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
   justify-content: flex-start;
 }
 
-.formulario-register input[type="password"],
-.formulario-register input[type="text"],
-.formulario-register input[type="file"],
-.formulario-register input[type="date"],
-.formulario-login input[type="password"],
-.formulario-login input[type="text"],
-.formulario-login input[type="file"],
-.formulario-login input[type="datetime-local"] {
+.formulario input[type="password"],
+.formulario input[type="text"],
+.formulario input[type="file"],
+.formulario input[type="datetime-local"] {
   background-color: white;
-  padding: 15px;
-  border: 3px solid #ebebeb;
-  ;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  padding: 1rem;
+  border: 0.2rem solid #ebebeb;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
-}
-
-.formulario-login input:invalid {}
-
-.formulario-register input:invalid {
-  /* border: 2px dashed red; */
-}
-
-.formulario-login input:invalid:required {
-  background-image: none;
-}
-
-.formulario-register input:invalid:required {
-  /* background-image: linear-gradient(to right, pink, lightgreen); */
-}
-
-.formulario-login input:valid,
-.formulario-register input:valid {
-  /* border: 2px solid black; */
 }

@@ -6,7 +6,7 @@ const { hardcodedData, useHardcodedData } = require('./hardcodedData')
 
 const controller = {
   index: (req, res) => {
-    if (useHardcodedData) {
+    if (!useHardcodedData) {
       res.locals.ads = true // muestras las propagandas del header //
       Product.findAll()
         .then((p) => {

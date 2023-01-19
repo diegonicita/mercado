@@ -1,18 +1,17 @@
 <%- include ("partials/header") %>
 
-<main>
-    <br />
-    <br />
-    <br />
-    <div class="formulario-login-container">
-        <div class="formulario-login-titulo">¡Hola! para seguir, ingresá tu usuario</div>        
-        <form  class="formulario-login" action="/" method="POST">
+<main style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">  
+    <div class="formulario-container">
+        <div class="formulario-titulo">¡Hola! para seguir, ingresá tu usuario</div>        
+        <form  class="formulario" action="/" method="POST">
         <label for="nombre"> Nombre de Usuario</label>
-        <input class="formulario-register-input" type="text" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
+        <input class="formulario-input" type="text" id="nombre" name="nombre" placeholder="Nombre de Usuario" required>
         <label for="password"> Apellido de usuario</label>
-        <input class="formulario-register-input" type="text" id="password" name="password" placeholder="Ingresa tu apellido" required>
+        <input class="formulario-input" type="text" id="password" name="password" placeholder="Ingresa tu apellido" required>
         <a href="/error"> <div class="olvidaste-contrasenia"> ¿ Olvidaste tu contraseña ? </div></a>
-         <button class="formulario-register-button" type="button" id="button" name="button">Ingresar</button>
+        <div class="formulario-botones-container">
+            <button class="formulario-button" type="button" id="button" name="button">Ingresar</button>
+        </div> 
         </form>    
     </div>
     <br>

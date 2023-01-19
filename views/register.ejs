@@ -1,37 +1,34 @@
 <%- include ("partials/header") %>
 
-    <main>
-        <br />
-        <br />
-        <br />
-        <div class="formulario-register-container"> 
-        <div class="formulario-register-titulo">Registrate!</div>
-        <form action="/" method="POST" class="formulario-register">
+    <main style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">       
+        <div class="formulario-container"> 
+        <div class="formulario-titulo">Registrate!</div>
+        <form action="/" method="POST" class="formulario">
             <label for="nombre">Nombre y Apellido (obligatorio)</label>
-                <input class="formulario-register-input" type="text" id="nombre" name="nombre" placeholder="Juan Perez" required>
-            
+                <input class="formulario-input" type="text" id="nombre" name="nombre" placeholder="Juan Perez" required>            
             <label for="perfil">Perfil del usuario (obligatorio)</label> 
-                <div class="formulario-register-perfil-usuario">
-                    <label id="label-sin-weight" for="comprar"> Comprar </label>
+                <div class="formulario-perfil-usuario">
+                    <label class="label-sin-weight" for="comprar"> Comprar </label>
                     <input type="radio" name="perfil" id="comprar" value="comprar">            
-                    <label id="label-sin-weight" for="vender"> Vender </label>
+                    <label class="label-sin-weight" for="vender"> Vender </label>
                     <input type="radio" name="perfil" id="vender" value="vender">
                 </div>
-
             <label for="categorias">Categorías de interés</label>
             <div>
-                <label id="label-sin-weight" for="electro">Electro</label> <input type="checkbox" name="categorias" id="electro" value="electro">
-                <label id="label-sin-weight" for="moda">Moda</label> <input type="checkbox" name="categorias" id="moda" value="moda">
-                <label id="label-sin-weight" for="hogar">Hogar</label> <input type="checkbox" name="categorias" id="hogar" value="hogar">
-                <label id="label-sin-weight" for="jugueteria">Juguetería</label> <input type="checkbox" name="categorias" id="jugueteria" value="jugueteria">
-                <label id="label-sin-weight" for="vida-sana">Vida sana</label> <input type="checkbox" name="categorias" id="vida-sana" value="vida-sana">
+                <label class="label-sin-weight" for="electro">Electro</label> <input type="checkbox" name="categorias" id="electro" value="electro">
+                <label class="label-sin-weight" for="moda">Moda</label> <input type="checkbox" name="categorias" id="moda" value="moda">
+                <label class="label-sin-weight" for="hogar">Hogar</label> <input type="checkbox" name="categorias" id="hogar" value="hogar">
+                <label class="label-sin-weight" for="jugueteria">Juguetería</label> <input type="checkbox" name="categorias" id="jugueteria" value="jugueteria">
+                <label class="label-sin-weight" for="vida-sana">Vida sana</label> <input type="checkbox" name="categorias" id="vida-sana" value="vida-sana">
             </div>
-            <div class="formulario-register-botones-container">
-                <button type="button" name="" value="">Enviar</button>
-                <button type="reset" name="" value="">Borrar</button>
+            <div class="formulario-botones-container">
+                <button class="formulario-button" type="button" name="" value="">Enviar</button>
+                <button class="formulario-button" type="reset" name="" value="">Borrar</button>
             </div>
         </form>
-        </div>        
+        </div> 
+        <br>
+        <p style="text-align: center;"> Protegido por reCAPTCHA - Privacidad - Condiciones </p>       
     </main>
 
     <%- include ("partials/footer") %>
