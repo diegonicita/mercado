@@ -3,7 +3,7 @@
 
 /*====== Global Variables ======*/
 :root {
-  --primary: #e0f5b2;
+  --primary: #e5f5c4;
   --logo: #B6FF00;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -99,15 +99,6 @@ main {
   .formulario-register-container,
   .formulario-login-container {
     width: 50rem;
-  }
-
-  .pie-de-pagina-articulo {
-    max-width: 250px;
-  }
-
-  #pie-de-pagina {
-    flex-direction: row;
-    flex-wrap: nowrap;
   }
 
 }
