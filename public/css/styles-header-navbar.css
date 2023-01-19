@@ -35,32 +35,54 @@
   .header-right-menu ul li a {
     text-decoration: none;
     color: black;
-    font-size: 10px;
+    font-size: 1.0rem;
   }  
  
-  .header-right-menu-icono {
+  .header-right-menu-icono-1,
+  .header-right-menu-icono-2,
+  .header-right-menu-icono-3 {
     color: black;
-    padding-left: 2px;
-    font-size: 12px;
+    padding-left: 0.35rem;
+    font-size: 1rem;
     display: inline-block;
     text-align: right;
+  }
+  
+  .header-right-menu-icono-2 
+  {   
+   padding: 0;
   }
 
   .header-right-menu-icono {
     width: 10%;    
   } 
   
-  .header-burger-menu-container {
+  .header-burger-menu-container {	
     text-align: center;    
   }
   
   .header-burger-menu-button {
-    align-items: center;
-    text-align: center;
-    background-color: #1259c3;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 10px;
-    margin: 0 auto;
-    font-size: 1.3rem;
+    /* align-items: center; */
+    /* text-align: center; */
+    /* background-color: var(--green); */
+    /* color: white; */
+    /* border-radius: 5px; */
+    /* padding: 10px 10px; */
+    /* margin: 0 auto; */
+    font-size: 2rem;
+  }
+  
+  .header-cart-container {	
+    text-align: center;    
+  }
+  
+  .header-cart-button {
+    /* align-items: center; */
+    /* text-align: center; */
+    /* background-color: var(--green); */
+    /* color: white; */
+    /* border-radius: 5px; */
+    /* padding: 10px 10px; */
+    /* margin: 0 auto; */
+    font-size: 2rem;
   }

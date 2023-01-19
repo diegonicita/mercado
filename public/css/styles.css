@@ -21,10 +21,7 @@ html,
 body {
   min-height: 100vh;
   margin: 0;
-  font-size: 10px;
-}
-
-body {
+  font-size: 0.8rem;
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
@@ -48,10 +45,6 @@ figure {
   padding: 0;
 }
 
-img {
-  width: 80%;
-}
-
 input,
 textarea {
   font-family: inherit;
@@ -68,40 +61,24 @@ main {
 
 @media(min-width: 320px) { 
 
-  .header-compra-en-cuotas-icono
-  {
-   width: 20%;
-   display: inline-block!important;
-  }
+  /* .header-compra-en-cuotas-icono */
+  /* { */
+   /* width: 20%; */
+   /* display: inline-block!important; */
+  /* } */
 
 }
 
 
 @media(min-width: 500px) {  
 
-  .header-search-bar {
-    width: 30vw;
-  }
+  /* .header-search-bar { */
+    /* width: 30vw; */
+  /* } */
 
-  .header-compra-en-cuotas {
-    width: 30vw;
-  }
-
-  /* Icono Hamburguesa Oculto */
-  .header-burger-menu-container {
-    display: none;
-  }
-
-  /* Muestra los menus */
-  .header-left-menu {
-    display: flex;
-    width: 46vw;
-  }
-
-  .header-right-menu {
-    display: flex;
-    width: 46vw;
-  }
+  /* .header-compra-en-cuotas { */
+    /* width: 30vw; */
+  /* } */
 
   .contenedor-main {
     flex-direction: row;
@@ -165,4 +142,26 @@ main {
     flex-wrap: nowrap;
   }
 
+}
+
+@media(min-width: 1024px) {
+	
+   /* Icono Hamburguesa Oculto */
+	
+  .header-burger-menu-container {
+    display: none;
+  }   
+
+  /* Muestra los menus */
+  .header-left-menu {
+    display: flex;
+    width: 46vw;
+  }
+
+  .header-right-menu {
+    display: flex;
+    width: 46vw;
+  }
+
+  
 }

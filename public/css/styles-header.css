@@ -6,14 +6,12 @@
     width: 100%;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;  
-    padding-top: 1rem;  
+    justify-content: center;      
     padding-bottom: 1rem;  
   } 
 
   .header-banner-col-1 {                 
-    flex-grow: 0.5;    
-    flex-basis: 10rem;    
+	flex: 0 1 auto;
     text-align: center;    
   } 
 
@@ -23,26 +21,26 @@
   }
 
   .header-banner-col-1 > a > img {    
-    max-height: 10rem;
+    height: 3rem;
   }
   
   .header-search-bar-col-2 {    
-    flex-grow: 1; 
+    flex: 1 0 auto; 
     align-self: center;
     justify-self: center;      
   }
   
   .header-search-bar-col-2 form {
-    display: flex;
-    justify-content: center;        
+    display: flex;    	
+	justify-content: center;
   }
   
   .header-search-bar-col-2 form input[type=search] {     
     font-size: 1.5rem;
     border: 1px solid #EEE;
-    border-bottom: 1px solid #999;
-    width: 90%;
-      
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    /* border-bottom: 1px solid #999; */
+    width: 95%;	      
   }
   
   .header-search-bar-col-2 form input[type=search]::placeholder {
@@ -57,19 +55,18 @@
     font-size: 1.5rem;    
     cursor: pointer;
     border: 1px solid #EEE;
-    border-bottom: 1px solid #999;
+	box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+    /* border-bottom: 1px solid #999; */
     padding: 0;  
   }
   
   .header-compra-en-cuotas-col-3 {  
-    flex-basis: 200px; 
-    display: flex;
-    flex-grow: 0.75;
+    display: flex;    
+	flex: 0 1 auto;	    
     justify-content: center;  
     align-items: flex-start;       
-    font-size: 1.5rem;  
-    flex-grow: 0.5rem;  
-    text-align: center;      
+    font-size: 1.25rem;      
+    text-align: center;  	
   } 
 
   .header-compra-en-cuotas-icono {
