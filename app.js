@@ -11,7 +11,7 @@ app.use(express.static(publicPath));
 app.use(morgan('tiny'));
 app.set('view engine', 'ejs')
 
-app.listen(process.env.PORT, () => console.log('Server Running on port: ' + process.env.PORT));
+app.listen(process.env.PORT, () => console.log('Server Running on port: http://localhost:' + process.env.PORT));
 
 const mainRoutes = require('./routes/main.js');
 const userRoutes = require('./routes/user.js');

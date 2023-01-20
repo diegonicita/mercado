@@ -83,11 +83,12 @@ main {
     display: inline-block;
     display: none;
     transform: opacity 1seg;
-    opacity: 0;
+    opacity: 1;
   }
   
   .caja-general-articulo:hover .descripciones {
     opacity: 1.0;
+    color: var(--green-dark);
     /* border: 1px solid red; */
   }
   

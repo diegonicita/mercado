@@ -33,9 +33,9 @@
         </a>
       </div>
       <div class="header-search-bar-col-2">	  
-        <form action="search" method="get" target="_blank">
-          <input size="1" type="search" name="busqueda" placeholder="Buscar productos, marcas y más..." />
-          <button class="fas fa-search" type="submit" value="Buscar"></button>
+        <form action="/" method="get" target="_self">
+          <input size="1" type="search" name="search" placeholder="Buscar productos, marcas y más..." />
+          <button class="fas fa-search" type="submit"></button>
         </form>		
       </div>	  
       <div class="header-col-3">	 
@@ -78,15 +78,6 @@
     </header>
 
     <script>
-      document
-        .getElementById("buscador")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("falta implementar el buscador");
-        //   var busqueda =
-        //     document.getElementById("buscador").elements.busqueda.value;
-        //   window.location.href = "/search?busqueda=" + busqueda;
-        });
     document.getElementById("miscompras").addEventListener("click", function (e) {
       e.preventDefault();
       alert("falta implementar mis compras");
