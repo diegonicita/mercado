@@ -5,14 +5,12 @@ main {
     margin: 0 auto;
     font-family: Roboto;
   }
-  
-  section h2 {
-    font-size: 24px;
-    text-align: left;
-    padding: 10px;
+
+  main section {
+    
   }
   
-  .contenedor-main {
+  .subcontenedor-main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +24,7 @@ main {
     margin: 5px;
     background-color: white;
     /* box-shadow: 0px 0px 0px rgb(100,100,100); */
-    width: 100%;
+    width: 80%;
     padding: 10px 10px;
     position: relative;
   }
@@ -124,5 +122,62 @@ main {
     /*justify-self: self-end;*/
     /*margin-left: 10px;*/
     text-align: left;
+  }
+
+  @media(min-width: 500px) {
+
+    .contenedor-main {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    } 
+  
+    .caja-general-articulo {
+      width: 45%;
+    }
+  
+    .descripciones {
+      display: block;
+    }
+  
+    .caja-general-articulo:hover {
+      box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+  
+    .precios {
+      font-size: 24px;
+      width: 100%;
+    }
+  
+    .descuentos {
+      font-size: 10px;
+    }
+  }
+  
+  @media(min-width: 768px) {  
+  
+    .caja-general-articulo {
+      width: 22%;
+    }
+  
+    .formulario-register-container,
+    .formulario-login-container {
+      width: 50rem;
+    }
+  
+  }
+
+  @media(min-width: 1200px) {  
+  
+    .caja-general-articulo {
+      width: 20rem;
+    }
+  
+    .formulario-register-container,
+    .formulario-login-container {
+      width: 50rem;
+    }
+  
   }
   
