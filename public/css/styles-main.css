@@ -2,15 +2,10 @@
 
 main {
     width: 90%;
-    margin: 0 auto;
-    font-family: Roboto;
-  }
-
-  main section {
-    
+    margin: 0 auto;    
   }
   
-  .subcontenedor-main {
+.subcontenedor-main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -20,7 +15,7 @@ main {
     flex-grow: 1;
   }
   
-  .caja-general-articulo {
+.caja-general-articulo {
     margin: 5px;
     background-color: white;
     /* box-shadow: 0px 0px 0px rgb(100,100,100); */
@@ -29,17 +24,17 @@ main {
     position: relative;
   }
   
-  .caja-general-articulo:hover {
+ .caja-general-articulo:hover {
     box-shadow: 0px 0px 0px #ebebeb;
   }
   
-  .caja-general-articulo img {
+.caja-general-articulo img {
     margin: 0 auto;
     width: 100%;
     padding: 10px;
   }
   
-  .caja-interior-articulo {
+.caja-interior-articulo {
     border-top: 1px solid #ebebed;
     background-color: white;
     display: flex;
@@ -50,7 +45,7 @@ main {
     position: relative;
   }
   
-  .articulo-icon {
+.articulo-icon {
     display: inline-block;
     font-size: 16px;
     padding: 5px;
@@ -68,11 +63,11 @@ main {
     z-index: 1;
   }
   
-  .caja-general-articulo:hover .articulo-icon {
+.caja-general-articulo:hover .articulo-icon {
     transform: rotateZ(-90deg);
   }
   
-  .descripciones {
+.descripciones {
     font-size: 12px;
     font-weight: 200;
     text-align: left;
@@ -84,15 +79,14 @@ main {
     opacity: 1;
   }
   
-  .caja-general-articulo:hover .descripciones {
+.caja-general-articulo:hover .descripciones {
     opacity: 1.0;
     color: var(--green-dark);
     /* border: 1px solid red; */
   }
   
-  .precios {
-    font-size: 24px;
-    font-family: Roboto;
+.precios {
+    font-size: 24px;    
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
@@ -102,9 +96,8 @@ main {
     text-align: left;
   }
   
-  .precios-small {
-    font-size: 12px;
-    font-family: Roboto;
+.precios-small {
+    font-size: 12px;    
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 5px;
@@ -114,9 +107,8 @@ main {
     text-decoration: line-through;
   }
   
-  .descuentos {
-    font-size: 14px;
-    font-family: Roboto;
+.descuentos {
+    font-size: 14px;    
     color: #39b54a;
     /*flex-grow: 0.7;*/
     /*justify-self: self-end;*/
@@ -124,7 +116,7 @@ main {
     text-align: left;
   }
 
-  @media(min-width: 500px) {
+@media(min-width: 500px) {
 
     .contenedor-main {
       flex-direction: row;
@@ -155,10 +147,10 @@ main {
     }
   }
   
-  @media(min-width: 768px) {  
+@media(min-width: 768px) {  
   
     .caja-general-articulo {
-      width: 22%;
+      width: 23%;
     }
   
     .formulario-register-container,
@@ -168,10 +160,10 @@ main {
   
   }
 
-  @media(min-width: 1200px) {  
+@media(min-width: 1200px) {  
   
     .caja-general-articulo {
-      width: 20rem;
+      width: 15rem;
     }
   
     .formulario-register-container,
