@@ -1,21 +1,21 @@
 	<%- include('partials/header', {title: product.titulo}) %>
 	
 	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
+	<div class="layout-main">	
+		<div>
+			<div>
 				<h2 class="products-title"><%= product.titulo %></h2>
 			</div>
 		</div>
 		<div class="product-detail">
-			<div class="row">
-				<div class="col-12 col-lg-8">
+			<div class="product-row">
+				<div class="product-col-1">
 					<img src="/images/<%= product.imagen %>" alt="product image" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= product.description %>
 					</p>
 				</div>
-				<div class="col-12 col-lg-4">
+				<div class="product-col-2">
 					<article class="product-detail-info">
 						<h2 class="product-detail-title"><%= product.titulo %></h2>
 						

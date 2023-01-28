@@ -1,19 +1,4 @@
 /* MAIN */
-
-main {
-    width: 90%;
-    margin: 0 auto;    
-  }
-  
-.subcontenedor-main {
-    
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    flex-grow: 1;
-  }
   
 .caja-general-articulo {
     margin: 5px;
@@ -116,14 +101,7 @@ main {
     text-align: left;
   }
 
-@media(min-width: 500px) {
-
-    .contenedor-main {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: flex-start;
-    } 
+@media(min-width: 500px) {  
   
     .caja-general-articulo {
       width: 45%;

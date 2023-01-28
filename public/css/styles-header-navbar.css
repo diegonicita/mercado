@@ -1,34 +1,20 @@
 
-.header-navbar-main {
-    display: flex;
-    background-color: var(--primary);    
-    align-items: center;
-    justify-content: center;          
-  } 
-  
-  .header-left-menu {    
-    display: none;    
-  }
-  
-  .header-right-menu {    
-    display: none;  
-  }
-  
-  .header-left-menu ul,
-  .header-right-menu ul {
+  .layout-header-left-menu ul,
+  .layout-header-right-menu ul {
     display: flex;    
   }
   
-  .header-left-menu ul li,
-  .header-right-menu ul li {
+  .layout-header-left-menu ul li,
+  .layout-header-right-menu ul li {
     list-style-type: none;
     padding: 5px;
   }
   
-  .header-left-menu ul li a,
-  .header-right-menu ul li a {
+  .layout-header-left-menu ul li a,
+  .layout-header-right-menu ul li a {
     text-decoration: none;    
-    font-size: 1.0rem;
+    font-size: 0.9rem;
+    color: var(--gray);
   }  
  
   .header-right-menu-icono-1,
@@ -62,8 +48,7 @@
   .header-burger-menu-button {  
     padding: 0.2rem;
     font-size: 1.8rem;
-    width: 5rem;
-    /* color: var(--green); */
+    width: 5rem;    
     padding-left: 1.5rem;
   }
   
@@ -74,36 +59,15 @@
   .header-cart-button {   
     padding: 0.2rem;
     font-size: 1.8rem;
-    width: 5rem;
-    /* color: var(--green); */
+    width: 5rem;    
   }
 
   
-  @media(min-width: 1024px) {
-	
-    /* Icono Hamburguesa Oculto */
-   
+  @media(min-width: 1024px) {   
    .header-burger-menu-container {
      display: none;
-   }  
-   
+   }     
    .header-cart-container {
      display: none;
-   } 
- 
-   /* Muestra los menus */
-   .header-left-menu {
-     display: flex;
-     width: 46%;
-     max-width: 25rem;
-     justify-content: flex-start;
-   }
- 
-   .header-right-menu {
-     display: flex;
-     width: 46%;
-     max-width: 25rem;
-     justify-content: flex-end;
-   }
- 
+   }  
  }

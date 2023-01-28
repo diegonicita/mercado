@@ -6,7 +6,7 @@
   --primary: #e5f5c4;
   --logo: #B6FF00;
   --light-blue: #1259c3;
-  --gray: #666666;
+  --gray: #666;
   --light-gray: #ebebeb;
   --green: #39b54a;
   --green-dark: #267a32;
@@ -47,6 +47,3 @@ hr {
   border-bottom: solid 1px var(--light-gray);
 }
 
-main {
-  min-height: calc(100vh - 10rem);  
-}

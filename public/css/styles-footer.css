@@ -1,24 +1,4 @@
 
-/* FOOTER */
-
-footer {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: var(--primary);
-  min-height: 10rem;
-  padding-top: 1rem;
-  }
-
-footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-  
 .footer-articulo {
   text-align: center;    
   max-width: 15rem;  
@@ -27,7 +7,7 @@ footer-wrapper {
 
 .footer-articulo p {
   text-align: center;
-  color: #666;
+  color: var(--gray);
   font-size: 0.8rem;
 }
 
@@ -47,10 +27,4 @@ footer-wrapper {
   padding: 10px;    
   color: #666;
   background-color: var(--primary);
-}
-
-@media(min-width: 600px) {
-  footer-wrapper {
-   flex-direction: row;
-  }
 }
