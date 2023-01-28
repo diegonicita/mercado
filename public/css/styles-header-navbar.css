@@ -94,13 +94,15 @@
    /* Muestra los menus */
    .header-left-menu {
      display: flex;
-     width: 46vw;
+     width: 46%;
+     max-width: 25rem;
      justify-content: flex-start;
    }
  
    .header-right-menu {
      display: flex;
-     width: 46vw;
+     width: 46%;
+     max-width: 25rem;
      justify-content: flex-end;
    }
  

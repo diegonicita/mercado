@@ -1,32 +1,35 @@
 <%- include ("partials/header") %>
 
     <main>  
-        <section> 
-            
-        <h2 class="products-title">Productos</h2>            
-        
-        <div class="subcontenedor-main">        
-
-            <% productos.forEach( p => { %>
-
-            <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
-
-            <% }) %>
-        </div>
-
+        <section>
+            <h2 class="products-title">Productos</h2>                    
+            <div class="subcontenedor-main">
+                <% productos.forEach( p => { %>
+                <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
+                <% }) %>
+            </div>
         </section>
         
-        <!-- <section>
-            <h2>Ofertas</h2> 
-
-        <div class="contenedor-main"> -->
-            
-            <!-- <% productos.forEach( p => { %>
-
+        <section>
+            <h2 class="products-title">Ofertas</h2> 
+            <div class="subcontenedor-main">             
+                 <% productos.forEach( p => { %>
                 <%- include ("partials/product", {p : p, toThousand: toThousand}) %>    
-                <% }) %> -->
-        <!-- </div>       
-        </section>          -->
+                <% }) %> 
+            </div>       
+        </section> 
+
+        <section>
+            <h2 class="products-title">Productos</h2>                    
+            <div class="subcontenedor-main">
+                <% productos.forEach( p => { %>
+                <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
+                <% }) %>
+            </div>
+        </section>
+        
+     
+
     </main>
     <script type="application/javascript">
         function showMsg(item) {

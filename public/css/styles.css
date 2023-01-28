@@ -48,5 +48,5 @@ hr {
 }
 
 main {
-  min-height: 85vh;  
+  min-height: calc(100vh - 10rem);  
 }

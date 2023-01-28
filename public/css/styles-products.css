@@ -1,12 +1,13 @@
 /*====== Products ======*/
 .products-wrapper {    
     margin-bottom: 2rem;
-    min-height: calc(80vh - 60px);
+    min-height: calc(80vh - 60px);    
   }
   
   .products-title {
     font-size: 2.4rem;
-    font-weight: bold;    
+    font-weight: bold;
+    text-align: center;    
   }
   
   .product-box {
