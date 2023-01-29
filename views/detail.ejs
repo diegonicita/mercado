@@ -1,5 +1,10 @@
-	<%- include('partials/header', {title: product.titulo}) %>
-	
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("partials/head") %>
+<%- include ("partials/header") %>
+
+<body>
 	<!-- product detail -->
 	<div class="layout-main">	
 		<div>
@@ -51,10 +56,6 @@
 	</div>
 	<!-- /product detail -->
 
-	<!-- footer -->
-	<%- include('partials/footer') %>
-	<!-- /footer -->
-
 	<script>
 		document
 		  .getElementById("comprarahora")
@@ -63,3 +64,12 @@
 			alert("falta implementar comprar ahora");		  
 		  });
 	  </script>
+
+	<!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
+
+</body>
+</html>
+
+	

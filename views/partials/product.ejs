@@ -2,7 +2,7 @@
 <article class="caja-general-articulo"> 
     <a href="/products/detail/<%= p.id %>">    
     <% let imagen = "/images/" + p.imagen %>
-    <img src= <%= imagen %> alt="<%= p.titulo %>">
+    <img src="<%= imagen %>" alt="<%= p.titulo %>">
     <div class="caja-interior-articulo">                              
         <p class="precios-small">$ <%=toThousand(p.precio)%> </p>
         <p class="descuentos"><%= p.descuento %>% off</p>        
