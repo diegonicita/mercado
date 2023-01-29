@@ -1,55 +1,62 @@
-
-   <header class="layout-header-main"> 
-    <div class="layout-header-wrapper">             
-        <div class="layout-header-row-1">	 
-          <a href="/">          
-            <img class="img-banner" src="/images/compra-en-linea.svg" alt="eCommerce" />          
-          </a>           
-          <form action="/" method="get" target="_self">
-            <input size="1" type="search" name="search" placeholder="Buscar productos, marcas y más..." />
-            <button class="fas fa-search" type="submit"></button>
-          </form>		
-          <span class="header-burger-menu-container">
-              <a href="#"></a><i class="fas fa-bars header-burger-menu-button"></i>
-            </span>		
-          <span class="header-cart-container">
-              <a href="#"></a><i class="fas fa-shopping-cart header-cart-button"></i>
-            </span>		
-        </div>
-          
-      <div class="layout-header-row-2">
-        <nav class="layout-header-left-menu">
-          <ul>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Tiendas Oficiales</a></li>
-            <li><a href="#">Vender</a></li>
-            <li><a href="#">Ayuda</a></li>
-          </ul>
-        </nav>
-        <nav class="layout-header-right-menu">
-          <ul>
-            <li>
-              <a href="/users/register">Crea tu cuenta</a
-              ><i class="far fa-address-card header-right-menu-icono-1"></i>
-            </li>
-            <li>
-              <a href="/users/login">Ingresa</a>
-              <i class="fas fa-sign-in-alt header-right-menu-icono-2"></i>
-            </li>
-            <li>
-              <a id="miscompras" href="">Mis Compras</a
-              ><i class="fas fa-shopping-cart header-right-menu-icono-3"></i>
-            </li>
-          </ul>
-        </nav> 
-      </div>
+<header class="layout-header-main">
+  <div class="layout-header-wrapper">
+    <div class="layout-header-row-1">
+      <a href="/">
+        <img
+          class="img-banner"
+          src="/images/compra-en-linea.svg"
+          alt="eCommerce"
+        />
+      </a>
+      <form action="/" method="get" target="_self">
+        <input
+          size="1"
+          type="search"
+          name="search"
+          placeholder="Buscar productos, marcas y más..."
+        />
+        <button class="fas fa-search" type="submit"></button>
+      </form>
+      <span class="header-burger-menu-container">
+        <a href="#"></a><i class="fas fa-bars header-burger-menu-button"></i>
+      </span>
+      <span class="header-cart-container">
+        <a href="#"></a><i class="fas fa-shopping-cart header-cart-button"></i>
+      </span>
     </div>
-   </header>
 
-    <script>
-    document.getElementById("miscompras").addEventListener("click", function (e) {
-      e.preventDefault();
-      alert("falta implementar mis compras");
-    });
-    </script>
-  
+    <div class="layout-header-row-2">
+      <nav class="layout-header-left-menu">
+        <ul>
+          <li><a href="#">Ofertas</a></li>
+          <li><a href="#">Tiendas Oficiales</a></li>
+          <li><a href="#">Vender</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </nav>
+      <nav class="layout-header-right-menu">
+        <ul>
+          <li>
+            <a href="/users/register">Crea tu cuenta</a
+            ><i class="far fa-address-card header-right-menu-icono-1"></i>
+          </li>
+          <li>
+            <a href="/users/login">Ingresa</a>
+            <i class="fas fa-sign-in-alt header-right-menu-icono-2"></i>
+          </li>
+          <li>
+            <a id="miscompras" href="">Mis Compras</a
+            ><i class="fas fa-shopping-cart header-right-menu-icono-3"></i>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.getElementById('miscompras').addEventListener('click', function (e) {
+    e.preventDefault()
+    alert('falta implementar mis compras')
+  })
+</script>

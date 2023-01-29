@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include ("partials/head") %> <%- include ("partials/header") %>
 
-<%- include ("partials/head") %>
-<%- include ("partials/header") %>
-
-<body>
-
-    <main style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">       
-        <div class="formulario-container"> 
+  <body>
+    <main
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      "
+    >
+      <div class="formulario-container">
         <div class="formulario-titulo">Registro</div>
         <form action="/" method="POST" class="formulario">
-            <label for="nombre">Nombre y Apellido (obligatorio)</label>
-                <input class="formulario-input" type="text" id="nombre" name="nombre" placeholder="Juan Perez" required>            
-            <label for="perfil">Perfil del usuario (obligatorio)</label> 
-                <div class="formulario-perfil-usuario">
-                    <label class="label-sin-weight" for="comprar"> Comprar </label>
-                    <input type="radio" name="perfil" id="comprar" value="comprar">            
-                    <label class="label-sin-weight" for="vender"> Vender </label>
-                    <input type="radio" name="perfil" id="vender" value="vender">
-                </div>
-            <label for="categorias">Categorías de interés</label>
-            <div>
-                <label class="label-sin-weight" for="electro">Electro</label> <input type="checkbox" name="categorias" id="electro" value="electro">
-                <label class="label-sin-weight" for="moda">Moda</label> <input type="checkbox" name="categorias" id="moda" value="moda">
-                <label class="label-sin-weight" for="hogar">Hogar</label> <input type="checkbox" name="categorias" id="hogar" value="hogar">
-                <label class="label-sin-weight" for="jugueteria">Juguetería</label> <input type="checkbox" name="categorias" id="jugueteria" value="jugueteria">
-                <label class="label-sin-weight" for="vida-sana">Vida sana</label> <input type="checkbox" name="categorias" id="vida-sana" value="vida-sana">
-            </div>
-            <div class="formulario-botones-container">
-                <button class="formulario-button" type="button" name="" value="">Enviar</button>
-                <button class="formulario-button" type="reset" name="" value="">Borrar</button>
-            </div>
+          <label for="nombre">Nombre y Apellido (obligatorio)</label>
+          <input
+            class="formulario-input"
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Juan Perez"
+            required
+          />
+          <label for="perfil">Perfil del usuario (obligatorio)</label>
+          <div class="formulario-perfil-usuario">
+            <label class="label-sin-weight" for="comprar"> Comprar </label>
+            <input type="radio" name="perfil" id="comprar" value="comprar" />
+            <label class="label-sin-weight" for="vender"> Vender </label>
+            <input type="radio" name="perfil" id="vender" value="vender" />
+          </div>
+          <label for="categorias">Categorías de interés</label>
+          <div>
+            <label class="label-sin-weight" for="electro">Electro</label>
+            <input
+              type="checkbox"
+              name="categorias"
+              id="electro"
+              value="electro"
+            />
+            <label class="label-sin-weight" for="moda">Moda</label>
+            <input type="checkbox" name="categorias" id="moda" value="moda" />
+            <label class="label-sin-weight" for="hogar">Hogar</label>
+            <input type="checkbox" name="categorias" id="hogar" value="hogar" />
+            <label class="label-sin-weight" for="jugueteria">Juguetería</label>
+            <input
+              type="checkbox"
+              name="categorias"
+              id="jugueteria"
+              value="jugueteria"
+            />
+            <label class="label-sin-weight" for="vida-sana">Vida sana</label>
+            <input
+              type="checkbox"
+              name="categorias"
+              id="vida-sana"
+              value="vida-sana"
+            />
+          </div>
+          <div class="formulario-botones-container">
+            <button class="formulario-button" type="button" name="" value="">
+              Enviar
+            </button>
+            <button class="formulario-button" type="reset" name="" value="">
+              Borrar
+            </button>
+          </div>
         </form>
-        </div> 
-    
-        <p style="text-align: center;"> Protegido por reCAPTCHA - Privacidad - Condiciones </p>       
+      </div>
+
+      <p style="text-align: center">
+        Protegido por reCAPTCHA - Privacidad - Condiciones
+      </p>
     </main>
 
     <%- include ("partials/footer") %>
-    
-</body>
+  </body>
 </html>

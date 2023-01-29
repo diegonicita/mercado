@@ -1,8 +1,8 @@
-.formulario-container {  
-  display: flex;  
-  flex-direction: column;  
+.formulario-container {
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  width: 100%;  
+  width: 100%;
   margin-top: 7rem;
   border-radius: 4px;
   padding: 1rem 2rem;
@@ -17,8 +17,8 @@
 
 .formulario-titulo {
   font-weight: 400;
-  font-size: 1.6rem;  
-  font-weight: bolder;  
+  font-size: 1.6rem;
+  font-weight: bolder;
   letter-spacing: .0125rem;
   padding: 0.8rem;
   text-align: center;
@@ -29,24 +29,23 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;  
+  justify-content: flex-start;
 }
 
-.formulario > label {
+.formulario>label {
   font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 .4285714286em .4285714286em;
   color: #000;
-  padding-top: 1rem;  
+  padding-top: 1rem;
 }
 
 .label-sin-weight {
   font-weight: 100;
-  font-size: 1.2rem;  
+  font-size: 1.2rem;
 }
 
-.formulario div
-{
+.formulario div {
   padding: 0.3rem 0.5rem;
 }
 
@@ -54,13 +53,13 @@
   flex-direction: row;
 }
 
-.formulario-botones-container { 
-  width: 100%;    
+.formulario-botones-container {
+  width: 100%;
   margin: 0 auto;
   min-width: 5rem;
 }
 
-.formulario button {  
+.formulario button {
   margin-top: 15px;
   display: flex;
   justify-content: center;

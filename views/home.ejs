@@ -1,49 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include ("partials/head") %> <%- include ("partials/header") %>
 
-<%- include ("partials/head") %>
-<%- include ("partials/header") %>
+  <body>
+    <main class="layout-main">
+      <section>
+        <h2 class="products-title">Productos</h2>
+        <div class="layout-contenedor">
+          <% productos.forEach( p => { %> <%- include ("partials/product", {p :
+          p, toThousand: toThousand}) %> <% }) %>
+        </div>
+      </section>
 
-<body>
+      <section>
+        <h2 class="products-title">Ofertas</h2>
+        <div class="layout-contenedor">
+          <% productos.forEach( p => { %> <%- include ("partials/product", {p :
+          p, toThousand: toThousand}) %> <% }) %>
+        </div>
+      </section>
 
-    <main class="layout-main">  
-        <section>
-            <h2 class="products-title">Productos</h2>                    
-            <div class="layout-contenedor">
-                <% productos.forEach( p => { %>
-                <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
-                <% }) %>
-            </div>
-        </section>
-        
-        <section>
-            <h2 class="products-title">Ofertas</h2> 
-            <div class="layout-contenedor">             
-                 <% productos.forEach( p => { %>
-                <%- include ("partials/product", {p : p, toThousand: toThousand}) %>    
-                <% }) %> 
-            </div>       
-        </section> 
-
-        <section>
-            <h2 class="products-title">Productos</h2>                    
-            <div class="layout-contenedor">
-                <% productos.forEach( p => { %>
-                <%- include ("partials/product", {p : p, toThousand: toThousand}) %>
-                <% }) %>
-            </div>
-        </section>
-        
-     
-
+      <section>
+        <h2 class="products-title">Productos</h2>
+        <div class="layout-contenedor">
+          <% productos.forEach( p => { %> <%- include ("partials/product", {p :
+          p, toThousand: toThousand}) %> <% }) %>
+        </div>
+      </section>
     </main>
     <script type="application/javascript">
-        function showMsg(item) {
-        alert(item);
-    }
+      function showMsg(item) {
+        alert(item)
+      }
     </script>
-    
-    <%- include ("partials/footer") %>
 
-</body>
+    <%- include ("partials/footer") %>
+  </body>
 </html>

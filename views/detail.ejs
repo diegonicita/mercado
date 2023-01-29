@@ -1,75 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include ("partials/head") %> <%- include ("partials/header") %>
 
-<%- include ("partials/head") %>
-<%- include ("partials/header") %>
+  <body>
+    <div class="layout-main">
+      <div>
+        <div>
+          <h2 class="products-title"><%= product.titulo %></h2>
+        </div>
+      </div>
+      <div class="product-detail">
+        <div class="product-row">
+          <div class="product-col-1">
+            <img
+              src="/images/<%= product.imagen %>"
+              alt="product image"
+              class="product-detail-img"
+            />
+            <p class="product-detail-description"><%= product.description %></p>
+          </div>
+          <div class="product-col-2">
+            <article class="product-detail-info">
+              <h2 class="product-detail-title"><%= product.titulo %></h2>
 
-<body>
-	<!-- product detail -->
-	<div class="layout-main">	
-		<div>
-			<div>
-				<h2 class="products-title"><%= product.titulo %></h2>
-			</div>
-		</div>
-		<div class="product-detail">
-			<div class="product-row">
-				<div class="product-col-1">
-					<img src="/images/<%= product.imagen %>" alt="product image" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= product.description %>
-					</p>
-				</div>
-				<div class="product-col-2">
-					<article class="product-detail-info">
-						<h2 class="product-detail-title"><%= product.titulo %></h2>
-						
-							<p class="product-detail-price small">
-								<span>$ <%= product.precio && toThousand(product.precio) %></span>
-								/
-								<b><%= product.descuento %>% OFF</b>
-							</p>
-							<p class="product-detail-price">
-								$<%= product.precio && toThousand((product.precio - product.precio*product.descuento/100)) %>
-							</p>
-							<p class="product-detail-price-before">
-								Antes $  <%= product.precio && toThousand(product.precio) %>
-							</p>
+              <p class="product-detail-price small">
+                <span
+                  >$ <%= product.precio && toThousand(product.precio) %></span
+                >
+                /
+                <b><%= product.descuento %>% OFF</b>
+              </p>
+              <p class="product-detail-price">
+                $<%= product.precio && toThousand((product.precio -
+                product.precio*product.descuento/100)) %>
+              </p>
+              <p class="product-detail-price-before">
+                Antes $ <%= product.precio && toThousand(product.precio) %>
+              </p>
 
-						<ul class="actions-list">
-							<li>
-								<i class="fas fa-credit-card"></i>
-								<p>Pagá en 12 cuotas sin interes</p>
-							</li>
-							<li>
-								<i class="fas fa-store"></i>
-								<p>Retiro gratis en locales del vendedor</p>
-							</li>
-						</ul>
+              <ul class="actions-list">
+                <li>
+                  <i class="fas fa-credit-card"></i>
+                  <p>Pagá en 12 cuotas sin interes</p>
+                </li>
+                <li>
+                  <i class="fas fa-store"></i>
+                  <p>Retiro gratis en locales del vendedor</p>
+                </li>
+              </ul>
 
-						<a href="#" id="comprarahora" class="buy-now-button">Comprar</a>
-						<hr>						
-					</article>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /product detail -->
+              <a href="#" id="comprarahora" class="buy-now-button">Comprar</a>
+              <hr />
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<script>
-		document
-		  .getElementById("comprarahora")
-		  .addEventListener("click", function (e) {
-			e.preventDefault();
-			alert("falta implementar comprar ahora");		  
-		  });
-	  </script>
+    <script>
+      document
+        .getElementById('comprarahora')
+        .addEventListener('click', function (e) {
+          e.preventDefault()
+          alert('falta implementar comprar ahora')
+        })
+    </script>
 
-	<!-- footer -->
-	<%- include('partials/footer') %>
-	<!-- /footer -->
-
-</body>
+    <%- include('partials/footer') %>
+  </body>
 </html>
-
-	

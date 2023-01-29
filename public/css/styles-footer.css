@@ -1,7 +1,6 @@
-
 .footer-articulo {
-  text-align: center;    
-  max-width: 15rem;  
+  text-align: center;
+  max-width: 15rem;
   padding: 0 1rem;
 }
 
@@ -12,19 +11,20 @@
 }
 
 .footer-icono {
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    color: var(--green);
-  }
-  
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: var(--green);
+}
+
 .footer-copyright-wrapper {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
-.footer-copyright {  
+
+.footer-copyright {
   font-size: 1rem;
   text-align: left;
-  padding: 10px;    
+  padding: 10px;
   color: #666;
   background-color: var(--primary);
 }

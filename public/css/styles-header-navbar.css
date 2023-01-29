@@ -1,73 +1,72 @@
+.layout-header-left-menu ul,
+.layout-header-right-menu ul {
+  display: flex;
+}
 
-  .layout-header-left-menu ul,
-  .layout-header-right-menu ul {
-    display: flex;    
-  }
-  
-  .layout-header-left-menu ul li,
-  .layout-header-right-menu ul li {
-    list-style-type: none;
-    padding: 5px;
-  }
-  
-  .layout-header-left-menu ul li a,
-  .layout-header-right-menu ul li a {
-    text-decoration: none;    
-    font-size: 0.9rem;
-    color: var(--gray);
-  }  
- 
-  .header-right-menu-icono-1,
-  .header-right-menu-icono-2,
-  .header-right-menu-icono-3 {
-    color: black;
-    padding-left: 0.35rem;
-    font-size: 1rem;
-    display: inline-block;
-    text-align: right;
-  }
-  
-  .header-right-menu-icono-2 
-  {   
-   padding: 0;
+.layout-header-left-menu ul li,
+.layout-header-right-menu ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.layout-header-left-menu ul li a,
+.layout-header-right-menu ul li a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.header-right-menu-icono-1,
+.header-right-menu-icono-2,
+.header-right-menu-icono-3 {
+  color: black;
+  padding-left: 0.35rem;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: right;
+}
+
+.header-right-menu-icono-2 {
+  padding: 0;
+}
+
+.header-right-menu-icono {
+  width: 10%;
+}
+
+.invisible {
+  background-color: red;
+  opacity: 0;
+}
+
+.header-burger-menu-container {
+  text-align: center;
+}
+
+.header-burger-menu-button {
+  padding: 0.2rem;
+  font-size: 1.8rem;
+  width: 5rem;
+  padding-left: 1.5rem;
+}
+
+.header-cart-container {
+  text-align: center;
+}
+
+.header-cart-button {
+  padding: 0.2rem;
+  font-size: 1.8rem;
+  width: 5rem;
+}
+
+
+@media(min-width: 1024px) {
+  .header-burger-menu-container {
+    display: none;
   }
 
-  .header-right-menu-icono {
-    width: 10%;    
-  } 
-
-  .invisible {
-    background-color: red;
-    opacity: 0;
+  .header-cart-container {
+    display: none;
   }
-  
-  .header-burger-menu-container {	
-    text-align: center;    
-  }
-  
-  .header-burger-menu-button {  
-    padding: 0.2rem;
-    font-size: 1.8rem;
-    width: 5rem;    
-    padding-left: 1.5rem;
-  }
-  
-  .header-cart-container {	
-    text-align: center;    
-  }
-  
-  .header-cart-button {   
-    padding: 0.2rem;
-    font-size: 1.8rem;
-    width: 5rem;    
-  }
-
-  
-  @media(min-width: 1024px) {   
-   .header-burger-menu-container {
-     display: none;
-   }     
-   .header-cart-container {
-     display: none;
-   }  
- }
+}
