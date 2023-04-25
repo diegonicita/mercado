@@ -4,12 +4,20 @@
 /*====== Global Variables ======*/
 :root {
   --primary: #e5f5c4;
-  --logo: #B6FF00;
+  --layout-main: lightgray;
+  --layout-contenedor: lightgray;
+  --layout-footer: #232F3E;
+  --layout-header: #232F3E;
+  --layout-header-row-1: #232F3E;
+  --layout-header-row-2: #232F3E;
+  --header-font-color: white;
+  --header-icon-color: #217608;
+  --logo: #AAAA00;
   --light-blue: #1259c3;
-  --gray: #666;
+  --gray: #E3E6E6;
   --light-gray: #ebebeb;
-  --green: #39b54a;
-  --green-dark: #267a32;
+  --green: #54a008;
+  --green-dark: #217608;
   --base-font-family: 'Roboto', sans-serif
 }
 

@@ -1,6 +1,7 @@
 .layout-header-left-menu ul,
 .layout-header-right-menu ul {
   display: flex;
+  color: var(--header-font-color)
 }
 
 .layout-header-left-menu ul li,
@@ -13,13 +14,13 @@
 .layout-header-right-menu ul li a {
   text-decoration: none;
   font-size: 0.9rem;
-  color: var(--gray);
+  color: var(--header-font-color);
 }
 
 .header-right-menu-icono-1,
 .header-right-menu-icono-2,
 .header-right-menu-icono-3 {
-  color: black;
+  color: var(--header-icon-color);
   padding-left: 0.35rem;
   font-size: 1rem;
   display: inline-block;
@@ -48,16 +49,18 @@
   font-size: 1.8rem;
   width: 5rem;
   padding-left: 1.5rem;
+  color: var(--green);
 }
 
 .header-cart-container {
   text-align: center;
+  color: var(--green);
 }
 
 .header-cart-button {
   padding: 0.2rem;
   font-size: 1.8rem;
-  width: 5rem;
+  width: 5rem;  
 }
 
 
