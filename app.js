@@ -16,36 +16,9 @@ app.listen(process.env.PORT, () => console.log('Server Running on port: ' + proc
 const mainRoutes = require('./routes/main.js');
 const userRoutes = require('./routes/user.js');
 const productsRoutes = require('./routes/products.js');
+const apiRoutes = require('./routes/api.js');
 
 app.use("/", mainRoutes);
+app.use("/api", apiRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productsRoutes);
-
-// app.use("/products", productsRoutes);
-
-// const db = require('./database/models');
-// const { Product } = require('./database/models')
-
-// app.get('/login', (req, res) => {res.render("login")});
-// app.get('/register', (req, res) => {res.render("register")});
-// app.get('/', (req, res) => {
-
-//     Product.findAll()
-//         .then( 
-//             p => { 
-//             res.render("home", {productos: p});
-//             })
-//         .catch(error => res.send(error));
-// });
-
-// app.get('/error', (req, res) => {res.render("error")});
-// app.get('*', (req, res) => {res.render("error")});
-
-// Paleta de colores
-
-// Amarillo: #EAC926;
-// Azul: #03264C;
-// Celeste: #1259c3;
-// Gris oscuro: #666;
-// Gris claro: #ebebeb;
-// Verde: #39b54a;
