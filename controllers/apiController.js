@@ -1,5 +1,5 @@
 // const db = require('../database/models');
-const { Product, Clasificacion } = require('../database/models')
+const { Product, Clasificacion, Pregunta } = require('../database/models')
 var toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 
 const controller = {
@@ -15,6 +15,14 @@ const controller = {
     Clasificacion.findAll()
       .then((p) => {
         res.send(JSON.stringify(p))
+      })
+      .catch((error) => res.send(error))
+  },
+  preguntas: (req, res) => {
+    Pregunta.findByPk(req.params.id)
+      .then((p) => {
+        if (p) res.send(JSON.stringify(p))
+        else res.send({ res: 'nada' })
       })
       .catch((error) => res.send(error))
   },
