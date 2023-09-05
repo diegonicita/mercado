@@ -1,7 +1,7 @@
 // const db = require('../database/models');
 const { Product, Clasificacion, Pregunta } = require('../database/models')
 var toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
-const { Op } = require('sequelize')
+const { Op, Sequelize } = require('sequelize')
 
 const controller = {
   index: (req, res) => {
@@ -29,7 +29,7 @@ const controller = {
   },
   examenes: (req, res) => {
     const limite = parseInt(req.query.limite) ?? 10
-    const desde = req.query.desde  ?? 0
+    const desde = req.query.desde ?? 0
     const examen = req.query.examen ?? 0
     const ano = req.query.ano ?? 2004
 
@@ -46,6 +46,41 @@ const controller = {
         else res.send({ res: 'nada' })
       })
       .catch((error) => res.send(error))
+  },
+  examenesDisponibles: (req, res) => {
+    const maxExamenId = 6 // Valor máximo de examenId
+    const examenes = {} // Objeto para almacenar los recuentos de preguntas por año para cada examen
+
+    const iterateExams = (examenId) => {
+      if (examenId > maxExamenId) {
+        // Cuando hayamos iterado a través de todos los exámenes, enviar el objeto examenes como respuesta JSON
+        res.json(examenes)
+        return
+      }
+
+      Pregunta.findAll({
+        attributes: [
+          'ano', // Atributo para agrupar por año
+          [Sequelize.fn('COUNT', Sequelize.col('ano')), 'count'], // Contar preguntas por año
+        ],
+        where: {
+          examen: examenId,
+        },
+        group: ['ano'], // Agrupar resultados por año
+        raw: true, // Devolver resultados como objetos JSON en lugar de instancias de modelos Sequelize
+      })
+        .then((result) => {
+          // Almacenar el resultado en el objeto examenes para el examen actual
+          examenes[examenId] = result
+
+          // Llamar a la función recursivamente para el siguiente examen
+          iterateExams(examenId + 1)
+        })
+        .catch((error) => res.send(error))
+    }
+
+    // Iniciar el bucle desde el examen 0
+    iterateExams(0)
   },
 }
 
