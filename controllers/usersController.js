@@ -34,7 +34,7 @@ const login = async (req, res) => {
         } else {
           res.status(401).send({
             error: true,
-            message: 'Las credenciales son incorrectos',
+            message: 'Las credenciales no son correctos',
             userResponse: {},
             token: null,
           })
