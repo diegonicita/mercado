@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const app = express()
+require('dotenv').config({ path: '.env' })
 // Configurar CORS
 app.use(cors())
 const morgan = require('morgan')
@@ -13,6 +14,8 @@ const publicPath = path.resolve(__dirname, './public')
 app.use(express.static(publicPath))
 app.use(morgan('tiny'))
 app.set('view engine', 'ejs')
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 app.listen(process.env.PORT, () =>
   console.log('Server Running on port: ' + process.env.PORT),
