@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const controller = require('../controllers/usersController.js')
+const { login, list, register } = require('../controllers/usersController.js')
 const verifyToken = require('../middlewares/verifyToken')
 const { body } = require('express-validator')
 
@@ -15,8 +15,8 @@ const registerValidations = [
   body('email').notEmpty().isEmail().withMessage('Email invalido'),
 ]
 
-router.post('/login', loginValidations, controller.login)
-router.post('/register', registerValidations, controller.register)
-router.get('/list', verifyToken, controller.list)
+router.post('/login', loginValidations, login)
+router.post('/register', registerValidations, register)
+router.get('/list', verifyToken, list)
 
 module.exports = router
