@@ -18,6 +18,7 @@ const login = async (req, res) => {
           userFound != null &&
           bcrypt.compareSync(req.body.password, userFound.dataValues.password)
         ) {
+          console.log("contraseña correcta")
           // Create token
           var token = jwt.sign(
             { email: emailFromBody },
@@ -26,6 +27,7 @@ const login = async (req, res) => {
               expiresIn: '2h',
             },
           )
+          console.log(token)
           res.status(200).send({
             error: false,
             message: 'Login exitoso',
