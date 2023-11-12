@@ -13,6 +13,7 @@ const login = async (req, res) => {
       attributes: ['id', 'username', 'password', 'email'],
     })
       .then((userFound) => {
+        console.log(userFound)
         if (
           userFound != null &&
           bcrypt.compareSync(req.body.password, userFound.dataValues.password)
