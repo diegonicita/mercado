@@ -3,9 +3,27 @@ const bcrypt = require('bcryptjs')
 const { User } = require('../database/models')
 const jwt = require('jsonwebtoken')
 
+const createResponse = ({
+  res,
+  status,
+  isError,
+  errors,
+  message,
+  userResponse,
+  token,
+}) => {
+  return res.status(status).send({
+    isError,
+    errors,
+    message,
+    userResponse,
+    token,
+    status,
+  })
+}
+
 const login = async (req, res) => {
   const errors = validationResult(req)
-  console.log(errors)
   const emailFromBody = req.body?.email?.trim()
   if (errors.isEmpty()) {
     await User.findOne({
@@ -13,12 +31,10 @@ const login = async (req, res) => {
       attributes: ['id', 'username', 'password', 'email'],
     })
       .then((userFound) => {
-        console.log(userFound)
         if (
           userFound != null &&
           bcrypt.compareSync(req.body.password, userFound.dataValues.password)
         ) {
-          console.log("contraseña correcta")
           // Create token
           var token = jwt.sign(
             { email: emailFromBody },
@@ -27,16 +43,21 @@ const login = async (req, res) => {
               expiresIn: '2h',
             },
           )
-          console.log(token)
-          res.status(200).send({
-            error: false,
+          createResponse({
+            res: res,
+            status: 200,
+            isError: false,
+            errors: null,
             message: 'Login exitoso',
             userResponse: { email: userFound.email },
-            token,
+            token: token,
           })
         } else {
-          res.status(401).send({
-            error: true,
+          createResponse({
+            res: res,
+            status: 401,
+            isError: true,
+            errors: null,
             message: 'Las credenciales no son correctos',
             userResponse: {},
             token: null,
@@ -45,7 +66,15 @@ const login = async (req, res) => {
       })
       .catch((error) => res.send(error))
   } else {
-    res.json(errors)
+    createResponse({
+      res: res,
+      status: 400,
+      isError: true,
+      errors: errors.array(),
+      message: 'Errores de validacion',
+      userResponse: {},
+      token: null,
+    })
   }
 }
 
@@ -66,9 +95,12 @@ const register = async (req, res) => {
     })
 
     if (existingUser) {
-      return res.status(400).json({
-        error: true,
-        message: 'El usuario con este correo electrónico ya existe',
+      return createResponse({
+        res: res,
+        status: 400,
+        isError: true,
+        errors: null,
+        message: 'El usuario ya existe',
         userResponse: {},
         token: null,
       })
@@ -88,16 +120,21 @@ const register = async (req, res) => {
       const token = jwt.sign({ email: newUser.email }, process.env.TOKEN_KEY, {
         expiresIn: '2h',
       })
-
-      res.status(201).json({
-        error: false,
+      createResponse({
+        res: res,
+        status: 201,
+        isError: false,
+        errors: null,
         message: 'Registro exitoso',
         userResponse: { email: newUser.email },
-        token,
+        token: token,
       })
     } catch (error) {
-      res.status(500).json({
-        error: true,
+      createResponse({
+        res: res,
+        status: 500,
+        isError: true,
+        errors: error,
         message: 'Error al registrar el usuario',
         userResponse: {},
         token: null,
