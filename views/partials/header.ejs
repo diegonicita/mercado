@@ -25,15 +25,23 @@
     />
   </head>
   <body>
-    <header class="header-main">    
+    <header class="header-main">
       <div class="header-banner-col-1">
-        <a href="/">          
-          <img class="img-banner" src="/images/compra-en-linea.svg" alt="eCommerce" />          
+        <a href="/">
+          <img
+            class="img-banner"
+            src="/images/compra-en-linea.svg"
+            alt="eCommerce"
+          />
         </a>
       </div>
       <div class="header-search-bar-col-2">
         <form id="buscador" action="search" method="get" target="_blank">
-          <input type="search" name="busqueda" placeholder="Buscar productos, marcas y más..." />
+          <input
+            type="search"
+            name="busqueda"
+            placeholder="Buscar productos, marcas y más..."
+          />
           <button class="fa fa-search" type="submit" value="Buscar"></button>
         </form>
       </div>
@@ -45,48 +53,61 @@
         <a href="#"></a><i class="fas fa-bars header-burger-menu-button"></i>
       </div>
       <div class="header-navbar-main">
-      <nav class="header-left-menu">
-        <ul>
-          <li><a href="#">Ofertas</a></li>
-          <li><a href="#">Tiendas Oficiales</a></li>
-          <li><a href="#">Vender</a></li>
-          <li><a href="#">Ayuda</a></li>
-        </ul>
-      </nav>
-      <nav class="header-right-menu">
-        <ul>
-          <li>
-            <a href="/users/register">Crea tu cuenta</a
-            ><i class="far fa-address-card header-right-menu-icono"></i>
-          </li>
-          <li>
-            <a href="/users/login">Ingresa</a>
-            <i class="fas fa-sign-in-alt header-right-menu-icono"></i>
-          </li>
-          <li>
-            <a id="miscompras" href="">Mis Compras</a
-            ><i class="fas fa-shopping-basket header-right-menu-icono"></i>
-          </li>
-        </ul>
-      </nav> 
+        <nav class="header-left-menu">
+          <ul>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Tiendas Oficiales</a></li>
+            <li><a href="#">Vender</a></li>
+            <li><a href="#">Ayuda</a></li>
+          </ul>
+        </nav>
+        <nav class="header-right-menu">
+          <ul>
+            <li>
+              <a href="/users/register">Crea tu cuenta</a
+              ><i class="far fa-address-card header-right-menu-icono"></i>
+            </li>
+            <li>
+              <a href="/auth/google">Ingresa</a>
+              <i class="header-right-menu-icono">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="1em"
+                  viewBox="0 0 488 512"
+                >
+                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                  />
+                </svg>
+              </i>
+            </li>
+
+            <li>
+              <a id="miscompras" href="">Mis Compras</a
+              ><i class="fas fa-shopping-basket header-right-menu-icono"></i>
+            </li>
+          </ul>
+        </nav>
       </div>
-     
     </header>
 
     <script>
       document
-        .getElementById("buscador")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("falta implementar el buscador");
-        //   var busqueda =
-        //     document.getElementById("buscador").elements.busqueda.value;
-        //   window.location.href = "/search?busqueda=" + busqueda;
-        });
-    document.getElementById("miscompras").addEventListener("click", function (e) {
-      e.preventDefault();
-      alert("falta implementar mis compras");
-    });
+        .getElementById('buscador')
+        .addEventListener('submit', function (e) {
+          e.preventDefault()
+          alert('falta implementar el buscador')
+          //   var busqueda =
+          //     document.getElementById("buscador").elements.busqueda.value;
+          //   window.location.href = "/search?busqueda=" + busqueda;
+        })
+      document
+        .getElementById('miscompras')
+        .addEventListener('click', function (e) {
+          e.preventDefault()
+          alert('falta implementar mis compras')
+        })
     </script>
   </body>
 </html>

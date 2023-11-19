@@ -15,8 +15,8 @@ const registerValidations = [
   body('email').notEmpty().isEmail().withMessage('Email invalido'),
 ]
 
-router.post('/login', loginValidations, login)
-router.post('/register', registerValidations, register)
-router.get('/list', verifyToken, list)
+ router.post('/login', loginValidations, login)
+ router.post('/register', registerValidations, register)
+ router.get('/list', verifyToken, list)
 
 module.exports = router
