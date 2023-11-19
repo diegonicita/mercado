@@ -22,7 +22,7 @@ router.get('/callback', (req, res) => {
   })
 
   // Obtén la URL del frontend desde la variable de entorno
-  const frontendURL = 'http://localhost:8126'
+  const frontendURL = process.env.FRONTEND_URL
 
   // Redirige al frontend incluyendo el token como parámetro en la URL
   res.redirect(`${frontendURL}?token=${token}`)
