@@ -8,7 +8,7 @@ passport.use("examenes",
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: 'http://localhost:8126/auth/callback',
+      callbackURL: FRONTEND_URL + '/auth/callback',
       scope: ['email', 'profile'],
       passReqToCallback: true,
     },

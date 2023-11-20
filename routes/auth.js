@@ -9,7 +9,6 @@ router.get(
     scope: ['profile', 'email'],
     session: false,
   }),
-  (req, res) => res.json(req.user),
 )
 
 // Ruta de callback de Google después de la autenticación
