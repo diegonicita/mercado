@@ -18,7 +18,8 @@ app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(passport.initialize())
-require('./middlewares/google.js')
+require('./middlewares/google-mercado.js')
+require('./middlewares/google-examenes.js')
 
 app.listen(process.env.PORT, () =>
   console.log('Server Running on port: ' + process.env.PORT),
