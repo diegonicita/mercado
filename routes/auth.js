@@ -44,7 +44,7 @@ router.get('/callback-examenes', (req, res) => {
   })
 
   // Obtén la URL del frontend desde la variable de entorno
-  const frontendURL = process.env.FRONTEND_URL_EXAMENES
+  const frontendURL = process.env.FRONTEND_URL_EXAMENES_REDIRECT
 
   // Redirige al frontend incluyendo el token como parámetro en la URL
   res.redirect(`${frontendURL}?token=${token}`)
