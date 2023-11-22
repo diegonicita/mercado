@@ -30,6 +30,7 @@ const userRoutes = require('./routes/user.js')
 const productsRoutes = require('./routes/products.js')
 const apiRoutes = require('./routes/api.js')
 const authRoutes = require('./routes/auth.js')
+const authRoutes2 = require('./routes/auth2.js')
 
 app.use('/', mainRoutes)
 app.use('/api', apiRoutes)
@@ -42,4 +43,13 @@ app.use(
     session: false,
   }),
   authRoutes,
+)
+
+app.use(
+  '/auth2',
+  passport.authenticate('mercado', {
+    scope: ['profile', 'email'],
+    session: false,
+  }),
+  authRoutes2,
 )

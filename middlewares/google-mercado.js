@@ -8,7 +8,7 @@ passport.use("mercado",
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.FRONTEND_URL_MERCADO + '/auth/callback-mercado',
+      callbackURL: process.env.FRONTEND_URL_MERCADO + '/auth2/callback-mercado',
       scope: ['email', 'profile'],
       passReqToCallback: true,
     },
@@ -22,11 +22,7 @@ passport.use("mercado",
         else {
             emails.push(profile.emails[0].value)
             return done(null, profile)
-        }
-
-    //   User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //     return done(err, user)
-    //   })
+        }   
 
     },
   ),
