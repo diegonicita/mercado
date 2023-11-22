@@ -22,12 +22,7 @@ passport.use("examenes",
         else {
             emails.push(profile.emails[0].value)
             return done(null, profile)
-        }
-
-    //   User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //     return done(err, user)
-    //   })
-
+        }   
     },
   ),
 )

@@ -35,4 +35,11 @@ app.use('/', mainRoutes)
 app.use('/api', apiRoutes)
 app.use('/users', userRoutes)
 app.use('/products', productsRoutes)
-app.use('/auth', authRoutes)
+app.use(
+  '/auth',
+  passport.authenticate('examenes', {
+    scope: ['profile', 'email'],
+    session: false,
+  }),
+  authRoutes,
+)
