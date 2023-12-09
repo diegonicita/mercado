@@ -5,7 +5,7 @@ module.exports = (sequelize, dataTypes) => {
     tema: { type: dataTypes.STRING(100), allowNull: false },
   }
   let config = {
-    tableName: 'Clasificaciones',
+    tableName: 'clasificaciones',
     timestamps: false,
   }
 
