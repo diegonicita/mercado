@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
       comentario: { type: dataTypes.TEXT, allowNull: false },
     }
     let config = {
-      tableName: 'Preguntas',
+      tableName: 'preguntas',
       timestamps: false,
     }
   
