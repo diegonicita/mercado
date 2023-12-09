@@ -2,13 +2,16 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const app = express()
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
 const passport = require('passport')
 require('dotenv').config({ path: '.env' })
 // Configurar CORS
-app.use(cors())
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',')
+  : []
+app.use(cors({ origin: allowedOrigins, credentials: true }))
 const morgan = require('morgan')
-const dotenv = require('dotenv')
-dotenv.config()
 
 // Middleware
 const publicPath = path.resolve(__dirname, './public')

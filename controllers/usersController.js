@@ -43,6 +43,15 @@ const login = async (req, res) => {
               expiresIn: '2h',
             },
           )
+
+          res.cookie('token', token, {
+            httpOnly: true,
+            maxAge: 900000, 
+            secure: false,
+            sameSite: 'strict',
+            path: '/',           
+          })
+         
           createResponse({
             res: res,
             status: 200,
