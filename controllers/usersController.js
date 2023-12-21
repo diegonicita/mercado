@@ -28,7 +28,7 @@ const login = async (req, res) => {
   if (errors.isEmpty()) {
     await User.findOne({
       where: { email: emailFromBody },
-      attributes: ['id', 'username', 'password', 'email'],
+      attributes: ['id', 'username', 'password', 'email', 'role'],
     })
       .then((userFound) => {
         if (
@@ -37,7 +37,11 @@ const login = async (req, res) => {
         ) {
           // Create token
           var token = jwt.sign(
-            { email: emailFromBody },
+            {
+              email: emailFromBody,
+              username: userFound.dataValues.username,
+              role: userFound.dataValues.role,
+            },
             process.env.TOKEN_KEY,
             {
               expiresIn: '2h',
@@ -46,19 +50,23 @@ const login = async (req, res) => {
 
           res.cookie('token', token, {
             httpOnly: process.env.HTTP_ONLY,
-            maxAge: process.env.MAX_AGE, 
+            maxAge: process.env.MAX_AGE,
             secure: process.env.SECURE_COOKIE,
             sameSite: process.env.SAME_SITE,
-            path: '/',           
+            path: '/',
           })
-         
+
           createResponse({
             res: res,
             status: 200,
             isError: false,
             errors: null,
             message: 'Login exitoso',
-            userResponse: { email: userFound.email },
+            userResponse: {
+              username: userFound.username,
+              email: userFound.email,
+              rol: userFound.role,
+            },
             token: token,
           })
         } else {
@@ -123,19 +131,32 @@ const register = async (req, res) => {
         username,
         email: email.trim(),
         password: hashedPassword,
+        role: 'user',
       })
 
       // Create token for the new user
-      const token = jwt.sign({ email: newUser.email }, process.env.TOKEN_KEY, {
-        expiresIn: '2h',
-      })
+      const token = jwt.sign(
+        {
+          email: emailFromBody,
+          username: userFound.dataValues.username,
+          role: userFound.dataValues.role,
+        },
+        process.env.TOKEN_KEY,
+        {
+          expiresIn: '2h',
+        },
+      )
       createResponse({
         res: res,
         status: 201,
         isError: false,
         errors: null,
         message: 'Registro exitoso',
-        userResponse: { email: newUser.email },
+        userResponse: {
+          username: newUser.username,
+          email: newUser.email,
+          role: newUser.role,
+        },
         token: token,
       })
     } catch (error) {
