@@ -137,9 +137,9 @@ const register = async (req, res) => {
       // Create token for the new user
       const token = jwt.sign(
         {
-          email: emailFromBody,
-          username: userFound.dataValues.username,
-          role: userFound.dataValues.role,
+          email: email.trim(),
+          username: username,
+          role: 'user',
         },
         process.env.TOKEN_KEY,
         {
@@ -160,6 +160,8 @@ const register = async (req, res) => {
         token: token,
       })
     } catch (error) {
+      console.log(error)
+
       createResponse({
         res: res,
         status: 500,
