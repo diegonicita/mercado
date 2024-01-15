@@ -34,10 +34,11 @@ const login = async (req, res) => {
         if (
           userFound != null &&
           bcrypt.compareSync(req.body.password, userFound.dataValues.password)
-        ) {
+        ) {          
           // Create token
           var token = jwt.sign(
             {
+              id: userFound.dataValues.id,
               email: emailFromBody,
               username: userFound.dataValues.username,
               role: userFound.dataValues.role,
@@ -63,6 +64,7 @@ const login = async (req, res) => {
             errors: null,
             message: 'Login exitoso',
             userResponse: {
+              id: userFound.id,
               username: userFound.username,
               email: userFound.email,
               rol: userFound.role,
@@ -132,11 +134,12 @@ const register = async (req, res) => {
         email: email.trim(),
         password: hashedPassword,
         role: 'user',
-      })
+      })      
 
       // Create token for the new user
       const token = jwt.sign(
         {
+          id: newUser.id,
           email: email.trim(),
           username: username,
           role: 'user',
@@ -153,6 +156,7 @@ const register = async (req, res) => {
         errors: null,
         message: 'Registro exitoso',
         userResponse: {
+          id: newUser.id,
           username: newUser.username,
           email: newUser.email,
           role: newUser.role,
