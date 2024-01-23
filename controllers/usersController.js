@@ -34,7 +34,7 @@ const login = async (req, res) => {
         if (
           userFound != null &&
           bcrypt.compareSync(req.body.password, userFound.dataValues.password)
-        ) {          
+        ) {
           // Create token
           var token = jwt.sign(
             {
@@ -134,7 +134,7 @@ const register = async (req, res) => {
         email: email.trim(),
         password: hashedPassword,
         role: 'user',
-      })      
+      })
 
       // Create token for the new user
       const token = jwt.sign(
@@ -181,4 +181,16 @@ const register = async (req, res) => {
   }
 }
 
-module.exports = { login, list, register }
+const profile = async (req, res) => {
+  User.findByPk(req.params.id)
+    .then((result) => {
+      result.password = undefined
+      res.json(result.dataValues)
+      console.log(result.dataValues)
+    })
+    .catch((err) => {
+      res.send(err)
+    })
+}
+
+module.exports = { login, list, register, profile }
