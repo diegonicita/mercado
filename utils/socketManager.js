@@ -1,42 +1,73 @@
-const socketManager = (io) => {
-  let users = []
+class SocketManager {
+  constructor(io) {
+    this.io = io
+    this.users = []
+    this.initializeSocketEvents()
+  }
 
-  io.on('connection', (socket) => {
-    console.log('User Connected: ' + socket.id)
+  initializeSocketEvents() {
+    this.io.on('connection', (socket) => {
+      console.log('User Connected: ' + socket.id)
 
-    socket.on('join_room', (data) => {
-      socket.join(data.room)
-      console.log(
-        'User ' +
-          data.author +
-          ' with Id ' +
-          socket.id +
-          'have joined room: ' +
-          data.room,
-      )
-      result = users.filter((u) => u.id !== socket.id)
-      users = [...result, { user: data.author, id: socket.id, room: data.room }]
-      socket.to(data.room).emit('have_joined_room', data)
-      io.in(data.room).emit('update_users_list', users)
-      console.log(users)
-    })
-
-    socket.on('send_message', (data) => {
-      console.log(data)
-      socket.to(data.room).emit('receive_message', data)
-    })
-
-    socket.on('disconnect', () => {
-      const found = users.find((element) => element.id === socket.id)
-      users = users.filter(function (item) {
-        return item.id !== socket.id
+      socket.on('join_room', (data) => {
+        this.handleJoinRoom(socket, data)
       })
-      console.log('User Disconnected ' + socket.id) // + "from Room " + found && found.room);
-      console.log(users)
-      if (found && found.room)
-        io.in(found.room).emit('update_users_list', users)
+
+      socket.on('send_message', (data) => {
+        this.handleSendMessage(socket, data)
+      })
+
+      socket.on('disconnect', () => {
+        this.handleDisconnect(socket)
+      })
     })
-  })
+  }
+
+  handleJoinRoom(socket, data) {
+    socket.join(data.room)
+    console.log(
+      `User ${data.author} with Id ${socket.id} have joined room: ${data.room}`,
+    )
+
+    this.users = this.users.filter((u) => u.id !== socket.id)
+    this.users.push({ user: data.author, id: socket.id, room: data.room })
+
+    socket.to(data.room).emit('have_joined_room', data)
+    this.io.in(data.room).emit('update_users_list', this.users)
+    console.log(this.users)
+  }
+
+  handleSendMessage(socket, data) {
+    // Verificar si el usuario ha ingresado a alguna sala
+    if (!this.isUserInRoom(socket.id)) {
+      // Si no ha ingresado a ninguna sala, unirlo a la sala 100
+      const defaultRoom = 100
+      socket.join(defaultRoom)
+      console.log(`User ${socket.id} joined default room: ${defaultRoom}`)
+
+      // Actualizar la lista de usuarios y enviar mensaje a la sala
+      this.users.push({ user: data.author, id: socket.id, room: defaultRoom })
+      this.io.in(defaultRoom).emit('update_users_list', this.users)
+    }
+
+    // Enviar el mensaje a la sala correspondiente
+    socket.to(data.room).emit('receive_message', data)
+  }
+
+  isUserInRoom(userId) {
+    // Verificar si el usuario está en alguna sala
+    return this.users.some((user) => user.id === userId && user.room)
+  }
+
+  handleDisconnect(socket) {
+    const disconnectedUser = this.users.find((user) => user.id === socket.id)
+    this.users = this.users.filter((user) => user.id !== socket.id)
+    console.log('User Disconnected ' + socket.id)
+    console.log(this.users)
+    if (disconnectedUser && disconnectedUser.room) {
+      this.io.in(disconnectedUser.room).emit('update_users_list', this.users)
+    }
+  }
 }
 
-module.exports = socketManager
+module.exports = SocketManager

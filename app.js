@@ -59,7 +59,7 @@ app.use(
 )
 
 const socketManager = require('./utils/socketManager.js')
-socketManager(io, cors)
+new socketManager(io, cors)
 
 server.listen(process.env.PORT, () =>
   console.log('Server Running on localhost:' + process.env.PORT),
