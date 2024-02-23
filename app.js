@@ -1,7 +1,12 @@
 const express = require('express')
+const app = express()
+const http = require('http')
+const { Server } = require('socket.io')
+const server = http.createServer(app)
+const io = new Server(server)
 const cors = require('cors')
 const path = require('path')
-const app = express()
+
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 const passport = require('passport')
@@ -23,10 +28,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(passport.initialize())
 require('./middlewares/google-mercado.js')
 require('./middlewares/google-examenes.js')
-
-app.listen(process.env.PORT, () =>
-  console.log('Server Running on port: ' + process.env.PORT),
-)
 
 const mainRoutes = require('./routes/main.js')
 const userRoutes = require('./routes/user.js')
@@ -55,4 +56,11 @@ app.use(
     session: false,
   }),
   authRoutes2,
+)
+
+const socketManager = require('./utils/socketManager.js')
+socketManager(io, cors)
+
+server.listen(process.env.PORT, () =>
+  console.log('Server Running on localhost:' + process.env.PORT),
 )
