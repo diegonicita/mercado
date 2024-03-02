@@ -2,6 +2,8 @@
 const { Product, Clasificacion, Pregunta } = require('../database/models')
 var toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 const { Op, Sequelize } = require('sequelize')
+const transporter = require('../utils/mailer.js')
+const { randomUUID } = require('node:crypto');
 
 const controller = {
   index: (req, res) => {
@@ -81,6 +83,17 @@ const controller = {
 
     // Iniciar el bucle desde el examen 0
     iterateExams(0)
+  },
+  emailCode: async (req, res) => {
+    const { email } = req.params
+    const result = await transporter.sendMail({
+      from: 'Examenes ' + process.env.EMAIL,
+      to: email,
+      subject: 'Codigo de Verificación',
+      text: randomUUID().toString(),
+    })
+    console.log(result)
+    res.status(200).json({ ok: true, message: 'Código enviado con éxito!' })
   },
 }
 

@@ -5,6 +5,7 @@ const {
   list,
   register,
   profile,
+  sendEmail,
 } = require('../controllers/usersController.js')
 const verifyToken = require('../middlewares/verifyToken')
 const { body } = require('express-validator')
@@ -24,5 +25,6 @@ router.post('/login', loginValidations, login)
 router.post('/register', registerValidations, register)
 router.get('/profile/:id', verifyToken, profile)
 router.get('/list', verifyToken, list)
+router.post('/sendEmail', verifyToken, sendEmail)
 
 module.exports = router

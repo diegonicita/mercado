@@ -12,6 +12,8 @@ module.exports = (sequelize, dataTypes) => {
     password: { type: dataTypes.STRING(100), allowNull: false },
     role: { type: dataTypes.STRING(100), allowNull: false },
     image: { type: dataTypes.STRING(255), allowNull: true },
+    code: { type: dataTypes.STRING(100), allowNull: true },
+    verify: { type: dataTypes.TINYINT, allowNull: true, defaultValue: 0 },
   }
   let config = {
     tableName: 'usuarios',

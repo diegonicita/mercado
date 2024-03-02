@@ -2,6 +2,8 @@ const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 const { User } = require('../database/models')
 const jwt = require('jsonwebtoken')
+const transporter = require('../utils/mailer.js')
+const { randomUUID } = require('node:crypto')
 
 const createResponse = ({
   res,
@@ -28,7 +30,7 @@ const login = async (req, res) => {
   if (errors.isEmpty()) {
     await User.findOne({
       where: { email: emailFromBody },
-      attributes: ['id', 'username', 'password', 'email', 'role'],
+      attributes: ['id', 'username', 'password', 'email', 'role', 'verify'],
     })
       .then((userFound) => {
         if (
@@ -42,6 +44,7 @@ const login = async (req, res) => {
               email: emailFromBody,
               username: userFound.dataValues.username,
               role: userFound.dataValues.role,
+              verify: userFound.dataValues.verify,
             },
             process.env.TOKEN_KEY,
             {
@@ -98,7 +101,7 @@ const login = async (req, res) => {
 }
 
 const list = (req, res) => {
-  res.render('list')
+  res.send('list')
 }
 
 const register = async (req, res) => {
@@ -134,6 +137,8 @@ const register = async (req, res) => {
         email: email.trim(),
         password: hashedPassword,
         role: 'user',
+        verify: false,
+        code: randomUUID().toString(),
       })
 
       // Create token for the new user
@@ -143,6 +148,7 @@ const register = async (req, res) => {
           email: email.trim(),
           username: username,
           role: 'user',
+          verify: false,
         },
         process.env.TOKEN_KEY,
         {
@@ -193,4 +199,28 @@ const profile = async (req, res) => {
     })
 }
 
-module.exports = { login, list, register, profile }
+const sendEmail = async (req, res) => {
+  const emailFromBody = req.body?.email?.trim()
+  const usuario = await User.findOne({
+    where: { email: emailFromBody },
+    attributes: ['email', 'code', 'verify'],
+  })
+  if (usuario && usuario.verify) {
+    return res.status(400).json({ isError: true, message: 'user verified' })
+  }
+  if (usuario) {
+    const result = await transporter.sendMail({
+      from: 'Examenes ' + process.env.EMAIL,
+      to: emailFromBody,
+      subject: 'Codigo de Verificación',
+      text: usuario?.code,
+    })
+    console.log(result)
+    return res.status(200).json({ isError: false, message: 'success' })
+  } else {
+    await new Promise((res) => setTimeout(res, 2000))
+    return res.status(400).json({ isError: true, message: 'error' })
+  }
+}
+
+module.exports = { login, list, register, profile, sendEmail }
