@@ -223,4 +223,30 @@ const sendEmail = async (req, res) => {
   }
 }
 
-module.exports = { login, list, register, profile, sendEmail }
+const sendCode = async (req, res) => {
+  const emailFromBody = req.body?.email?.trim()
+  const codeFromBody = req.body?.code?.trim()
+  const usuario = await User.findOne({
+    where: { email: emailFromBody },
+    attributes: ['email', 'code', 'verify'],
+  })
+  console.log(usuario)
+  if (usuario && usuario.verify) {
+    return res.status(400).json({ isError: true, message: 'user verified' })
+  }
+  console.log(codeFromBody)
+  console.log(usuario.code)  
+  if (usuario && codeFromBody === usuario.code) {
+    const updatedUser = await User.update(
+      { verify: true },
+      { where: { email: emailFromBody } },
+    )
+    console.log(updatedUser)
+    return res.status(200).json({ isError: false, message: 'success' })
+  } else {
+    // await new Promise((res) => setTimeout(res, 2000))
+    return res.status(400).json({ isError: true, message: 'error' })
+  }
+}
+
+module.exports = { login, list, register, profile, sendEmail, sendCode }
