@@ -27,11 +27,12 @@ router.get('/callback-examenes', (req, res) => {
       expiresIn: '2h',
     },
   )
+  // Establecer la cookie en la respuesta
+  res.cookie('token', token, { maxAge: 2 * 60 * 60 * 1000, httpOnly: true });
   // Obtén la URL del frontend desde la variable de entorno
   const frontendURL = process.env.FRONTEND_URL_EXAMENES_REDIRECT
-
   // Redirige al frontend incluyendo el token como parámetro en la URL
-  res.redirect(`${frontendURL}?token=${token}`)
+  res.redirect(`${frontendURL}`)
 })
 
 module.exports = router
