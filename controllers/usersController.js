@@ -59,7 +59,7 @@ const login = async (req, res) => {
             sameSite: process.env.SAME_SITE,
             path: '/',
             domain:
-              process.env.ENVIRONMENT === 'development' ? '' : `.examenes.com.ar`, 
+              process.env.ENVIRONMENT === 'development' ? '' : `examenes.com.ar`, 
           })
 
           createResponse({
