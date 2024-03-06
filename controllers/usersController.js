@@ -58,6 +58,8 @@ const login = async (req, res) => {
             secure: process.env.SECURE_COOKIE === 'true',
             sameSite: process.env.SAME_SITE,
             path: '/',
+            domain:
+              process.env.ENVIRONMENT === 'development' ? '' : `.examenes.com.ar`, 
           })
 
           createResponse({
