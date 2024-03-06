@@ -53,9 +53,9 @@ const login = async (req, res) => {
           )
 
           res.cookie('token', token, {
-            httpOnly: process.env.HTTP_ONLY,
-            maxAge: process.env.MAX_AGE,
-            secure: process.env.SECURE_COOKIE,
+            httpOnly: process.env.HTTP_ONLY === 'true',
+            maxAge: parseInt(process.env.MAX_AGE, 10),
+            secure: process.env.SECURE_COOKIE === 'true',
             sameSite: process.env.SAME_SITE,
             path: '/',
           })
@@ -235,7 +235,7 @@ const sendCode = async (req, res) => {
     return res.status(400).json({ isError: true, message: 'user verified' })
   }
   console.log(codeFromBody)
-  console.log(usuario.code)  
+  console.log(usuario.code)
   if (usuario && codeFromBody === usuario.code) {
     const updatedUser = await User.update(
       { verify: true },
