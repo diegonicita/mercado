@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 router.get('/google-mercado', (req, res) => res.send(req.user))
 
 // Ruta de callback de Google después de la autenticación
-router.get('/callback-mercado', (req, res) => {
+router.get('/callback-mercado', async (req, res) => {
   const secretKey = process.env.TOKEN_KEY
   const clientId = req.user.id
   const displayName = req.user.displayName
@@ -28,10 +28,19 @@ router.get('/callback-mercado', (req, res) => {
       expiresIn: '2h',
     },
   )
-
+  const headers = new Headers()
+  headers.append('Cookie', `token=${token}`)
   // Obtén la URL del frontend desde la variable de entorno
   const frontendURL = process.env.FRONTEND_URL_MERCADO
-
+  const response = await fetch(frontendURL + '/api/revalidate', {
+    method: 'POST',
+    headers,
+    credentials: 'include',
+    body: JSON.stringify({
+      // Datos a enviar en el cuerpo de la solicitud
+    }),
+  })
+  console.log('response', response)
   // Redirige al frontend incluyendo el token como parámetro en la URL
   res.redirect(`${frontendURL}?token=${token}`)
 })

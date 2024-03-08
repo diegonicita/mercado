@@ -3,7 +3,8 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy
 
 const emails = ['diegonicita@gmail.com']
 
-passport.use("examenes",
+passport.use(
+  'examenes',
   new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
@@ -13,16 +14,22 @@ passport.use("examenes",
       passReqToCallback: true,
     },
     function (request, accessToken, refreshToken, profile, done) {
+      const response = emails.includes(profile.emails[0].value)
 
-        const response = emails.includes(profile.emails[0].value)
-
-        if (response) {
-            return done(null, profile)
-        }
-        else {
-            emails.push(profile.emails[0].value)
-            return done(null, profile)
-        }   
+      if (response) {
+        return done(null, profile)
+      } else {
+        emails.push(profile.emails[0].value)
+        return done(null, profile)
+      }
     },
   ),
 )
+
+passport.serializeUser(function (user, done) {
+  done(null, user)
+})
+
+passport.deserializeUser(function (user, done) {
+  done(null, user)
+})
