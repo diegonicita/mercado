@@ -39,7 +39,7 @@ router.get('/callback-examenes', async (req, res) => {
   headers.append('Cookie', `token=${req.cookies.token}`)
   // Obtén la URL del frontend desde la variable de entorno
   const frontendURL = process.env.FRONTEND_URL_EXAMENES
-  const response = await fetch(frontendURL + 'api/revalidate', {
+  const response = await fetch(frontendURL + '/api/revalidate', {
     method: 'POST',
     headers,
     credentials: 'include',
@@ -49,7 +49,7 @@ router.get('/callback-examenes', async (req, res) => {
   })
   console.log(response)
   // Redirige al frontend incluyendo el token como parámetro en la URL
-  res.redirect(`${frontendURL}`)
+  res.redirect(`${frontendURL}?token=${token}`)
 })
 
 module.exports = router
