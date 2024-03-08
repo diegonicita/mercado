@@ -38,8 +38,8 @@ router.get('/callback-examenes', async (req, res) => {
   const headers = new Headers()
   headers.append('Cookie', `token=${req.cookies.token}`)
   // Obtén la URL del frontend desde la variable de entorno
-  const frontendURL = process.env.FRONTEND_URL_MERCADO
-  const response = await fetch(frontendURL + '/api/revalidate', {
+  const frontendURL = process.env.FRONTEND_URL_EXAMENES
+  const response = await fetch(frontendURL + 'api/revalidate', {
     method: 'POST',
     headers,
     credentials: 'include',
