@@ -9,7 +9,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: process.env.FRONTEND_URL_MERCADO + '/auth/callback-examenes',
+      callbackURL: process.env.FRONTEND_URL_MERCADO + '/auth-examenes/callback',
       scope: ['email', 'profile'],
       passReqToCallback: true,
     },
