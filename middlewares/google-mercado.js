@@ -1,5 +1,5 @@
-import { use } from 'passport'
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
+var passport = require('passport')
+var GoogleStrategy = require('passport-google-oauth20').Strategy
 
 use(
   'mercado',
