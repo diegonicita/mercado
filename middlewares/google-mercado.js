@@ -11,7 +11,7 @@ passport.use(
       scope: ['email', 'profile'],
       passReqToCallback: true,
     },
-    function (accessToken, refreshToken, profile, cb) {
+    function (response, accessToken, refreshToken, profile, cb) {
       if (response) {
         return cb(null, profile)
       } else {
