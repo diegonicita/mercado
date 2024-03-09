@@ -29,6 +29,11 @@ router.get('/callback', async (req, res) => {
     },
   )
   res.cookie('token', token, { domain: '.examenes.com.ar' })
+  if (req.user.email === 'diegonicita@gmail.com') {
+    res.cookie('admin', true, { domain: '.examenes.com.ar' })
+  } else {
+    res.cookie('admin', false, { domain: '.examenes.com.ar' })
+  }
   res.redirect(`https://examenes.com.ar`)
 })
 
