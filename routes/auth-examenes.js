@@ -29,7 +29,7 @@ router.get('/callback', async (req, res) => {
     },
   )
   res.cookie('token', token, { domain: '.examenes.com.ar' })
-
+  console.log(req?.user)
   res.redirect(`https://examenes.com.ar`)
 })
 
