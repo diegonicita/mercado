@@ -28,7 +28,7 @@ router.get('/callback-mercado', async (req, res) => {
       expiresIn: '2h',
     },
   )
-  res.cookie('token', token, { domain: '.examenes.ar' })
+  res.cookie('token', token, { domain: '.examenes.com.ar' })
   // Obtén la URL del frontend desde la variable de entorno
   const frontendURL = process.env.FRONTEND_URL_MERCADO
   // Redirige al frontend incluyendo el token como parámetro en la URL
