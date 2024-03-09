@@ -28,21 +28,11 @@ router.get('/callback-mercado', async (req, res) => {
       expiresIn: '2h',
     },
   )
-  const headers = new Headers()
-  headers.append('Cookie', `token=${token}`)
+  res.cookie('token', token)
   // Obtén la URL del frontend desde la variable de entorno
   const frontendURL = process.env.FRONTEND_URL_MERCADO
-  const response = await fetch(frontendURL + '/api/revalidate', {
-    method: 'POST',
-    headers,
-    credentials: 'include',
-    body: JSON.stringify({
-      // Datos a enviar en el cuerpo de la solicitud
-    }),
-  })
-  console.log('response', response)
   // Redirige al frontend incluyendo el token como parámetro en la URL
-  res.redirect(`${frontendURL}?token=${token}`)
+  res.redirect(`${frontendURL}`)
 })
 
 module.exports = router

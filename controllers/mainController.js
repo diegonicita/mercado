@@ -6,6 +6,13 @@ const controller = {
     index: (req, res) => 
         {
             res.locals.ads = true; // muestras las propagandas del header //
+            const headers = req.headers;
+            console.log(headers);
+            if (headers.hasOwnProperty('Cookie')) {
+                // Cookie exists in the header
+                const cookieString = headers['Cookie'];
+                console.log(cookieString);
+            }
             Product.findAll()
               .then( 
                     p => { 
