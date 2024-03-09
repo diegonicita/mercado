@@ -33,29 +33,29 @@ const mainRoutes = require('./routes/main.js')
 const userRoutes = require('./routes/user.js')
 const productsRoutes = require('./routes/products.js')
 const apiRoutes = require('./routes/api.js')
-const authRoutes = require('./routes/auth.js')
-const authRoutes2 = require('./routes/auth2.js')
+const authRoutesExamenes = require('./routes/auth-examenes.js')
+const authRoutesMercado = require('./routes/auth-mercado.js')
 
 app.use('/', mainRoutes)
 app.use('/api', apiRoutes)
 app.use('/users', userRoutes)
 app.use('/products', productsRoutes)
 app.use(
-  '/auth',
+  '/auth-examenes',
   passport.authenticate('examenes', {
     scope: ['profile', 'email'],
     session: false,
   }),
-  authRoutes,
+  authRoutesExamenes,
 )
 
 app.use(
-  '/auth2',
+  '/auth-mercado',
   passport.authenticate('mercado', {
     scope: ['profile', 'email'],
     session: false,
   }),
-  authRoutes2,
+  authRoutesMercado,
 )
 
 const socketManager = require('./utils/socketManager.js')

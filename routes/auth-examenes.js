@@ -2,10 +2,10 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 
-router.get('/google-mercado', (req, res) => res.send(req.user))
+router.get('/google', (req, res) => res.send(req.user))
 
 // Ruta de callback de Google después de la autenticación
-router.get('/callback-mercado', async (req, res) => {
+router.get('/callback', async (req, res) => {
   const secretKey = process.env.TOKEN_KEY
   const clientId = req.user.id
   const displayName = req.user.displayName
@@ -29,10 +29,6 @@ router.get('/callback-mercado', async (req, res) => {
     },
   )
   res.cookie('token', token, { domain: '.examenes.com.ar' })
-  // Obtén la URL del frontend desde la variable de entorno
-  const frontendURL = process.env.FRONTEND_URL_MERCADO
-  // Redirige al frontend incluyendo el token como parámetro en la URL
-  // res.redirect(`${frontendURL}`)
   res.redirect(`https://examenes.com.ar`)
 })
 
