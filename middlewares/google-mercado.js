@@ -12,16 +12,16 @@ passport.use("mercado",
       scope: ['email', 'profile'],
       passReqToCallback: true,
     },
-    function (request, accessToken, refreshToken, profile, done) {
+    function (accessToken, refreshToken, profile, cb) {
 
         const response = emails.includes(profile.emails[0].value)
 
         if (response) {
-            return done(null, profile)
+            return cb(null, profile)
         }
         else {
             emails.push(profile.emails[0].value)
-            return done(null, profile)
+            return cb(null, profile)
         }   
 
     },
