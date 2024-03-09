@@ -1,9 +1,8 @@
-var passport = require('passport')
-var GoogleStrategy = require('passport-google-oauth20').Strategy
+import { use } from 'passport'
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
 
-const emails = ['diegonicita@gmail.com']
-
-passport.use("mercado",
+use(
+  'mercado',
   new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
@@ -13,17 +12,11 @@ passport.use("mercado",
       passReqToCallback: true,
     },
     function (accessToken, refreshToken, profile, cb) {
-
-        const response = emails.includes(profile.emails[0].value)
-
-        if (response) {
-            return cb(null, profile)
-        }
-        else {
-            emails.push(profile.emails[0].value)
-            return cb(null, profile)
-        }   
-
+      if (response) {
+        return cb(null, profile)
+      } else {
+        return cb(null, profile)
+      }
     },
   ),
 )
