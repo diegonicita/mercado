@@ -33,7 +33,7 @@ router.get('/callback-mercado', async (req, res) => {
   const frontendURL = process.env.FRONTEND_URL_MERCADO
   // Redirige al frontend incluyendo el token como parámetro en la URL
   // res.redirect(`${frontendURL}`)
-  res.redirect(`https://webapp.ar`)
+  res.redirect(`https://examenes.com.ar`)
 })
 
 module.exports = router
