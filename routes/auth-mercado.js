@@ -28,8 +28,8 @@ router.get('/callback', async (req, res) => {
       expiresIn: '2h',
     },
   )
-  res.cookie('token', token, { domain: process.env.DOMAIN_MERCADO })    
-  res.redirect(process.env.URL_REDIRECT_MERCADO)
+  res.cookie('token', token, { domain: '.webapp.ar' })    
+  res.redirect(`https://webapp.ar`)
 })
 
 module.exports = router
