@@ -28,9 +28,8 @@ router.get('/callback', async (req, res) => {
       expiresIn: '2h',
     },
   )
-  res.cookie('token', token, { domain: '.examenes.com.ar' })
-  console.log(req?.user)
-  res.redirect(`https://examenes.com.ar`)
+  res.cookie('token', token, { domain: process.env.URL_REDIRECT_EXAMENES })
+  res.redirect(process.env.URL_REDIRECT_EXAMENES)
 })
 
 module.exports = router
