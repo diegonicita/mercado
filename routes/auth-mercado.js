@@ -28,7 +28,11 @@ router.get('/callback', async (req, res) => {
       expiresIn: '2h',
     },
   )
-  res.cookie('token', token, { domain: '.webapp.ar' })    
+  res.cookie('token', token, {
+    maxAge: 900000,
+    httpOnly: true,
+    domain: '.webapp.ar',
+  })
   res.redirect(`https://webapp.ar`)
 })
 
