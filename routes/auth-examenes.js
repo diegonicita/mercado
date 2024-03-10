@@ -30,11 +30,11 @@ router.get('/callback', async (req, res) => {
   )
   res.cookie('token', token, {
     maxAge: 900000,
+    httpOnly: false,
     httpOnly: true,
-    domain: '.examenes.com.ar',
+    domain: process.env.DOMAIN_EXAMENES,
   })
-  console.log(req?.user)
-  res.redirect(`https://examenes.com.ar`)
+  res.redirect(process.env.URL_REDIRECT_EXAMENES)
 })
 
 module.exports = router
