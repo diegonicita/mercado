@@ -28,13 +28,24 @@ router.get('/callback', async (req, res) => {
       expiresIn: '2h',
     },
   )
-  res.cookie('token', token, {
+
+  const config = {
     maxAge: 900000,
-    httpOnly: false,
     httpOnly: true,
     domain: process.env.DOMAIN_EXAMENES,
-  })
+    secure: true,
+  }
+  if (process.env.ENVIRONMENT === 'development') {
+    obj.secure = false
+    obj.domain = undefined
+  }
+
+  res.cookie('token', token, config)
   res.redirect(process.env.URL_REDIRECT_EXAMENES)
+})
+
+router.get('/logout', (req, res) => {
+  return res.send(req.user)
 })
 
 module.exports = router
