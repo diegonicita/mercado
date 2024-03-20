@@ -138,7 +138,7 @@ const register = async (req, res) => {
         username,
         email: email.trim(),
         password: hashedPassword,
-        role: 'user',
+        role: 'user-1',
         verify: false,
         code: randomUUID().toString(),
       })
@@ -149,7 +149,7 @@ const register = async (req, res) => {
           id: newUser.id,
           email: email.trim(),
           username: username,
-          role: 'user',
+          role: 'user-1',
           verify: false,
         },
         process.env.TOKEN_KEY,
