@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = 'User'
-  let cols = {
+  const alias = 'User'
+  const cols = {
     id: {
       type: dataTypes.INTEGER,
       allowNull: false,
@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
     code: { type: dataTypes.STRING(100), allowNull: true },
     verify: { type: dataTypes.TINYINT, allowNull: true, defaultValue: 0 },
   }
-  let config = {
+  const config = {
     tableName: 'usuarios',
     timestamps: false,
   }

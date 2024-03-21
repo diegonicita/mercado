@@ -38,7 +38,7 @@ const login = async (req, res) => {
           bcrypt.compareSync(req.body.password, userFound.dataValues.password)
         ) {
           // Create token
-          var token = jwt.sign(
+          const token = jwt.sign(
             {
               id: userFound.dataValues.id,
               email: emailFromBody,
@@ -54,12 +54,14 @@ const login = async (req, res) => {
 
           res.cookie('token', token, {
             httpOnly: process.env.HTTP_ONLY === 'true',
-            maxAge: parseInt(process.env.MAX_AGE, 10),
+            maxAge: Number.parseInt(process.env.MAX_AGE, 10),
             secure: process.env.SECURE_COOKIE === 'true',
             sameSite: process.env.SAME_SITE,
             path: '/',
             domain:
-              process.env.ENVIRONMENT === 'development' ? '' : `examenes.com.ar`, 
+              process.env.ENVIRONMENT === 'development'
+                ? ''
+                : 'examenes.com.ar',
           })
 
           createResponse({
@@ -207,22 +209,21 @@ const sendEmail = async (req, res) => {
     where: { email: emailFromBody },
     attributes: ['email', 'code', 'verify'],
   })
-  if (usuario && usuario.verify) {
+  if (usuario?.verify) {
     return res.status(400).json({ isError: true, message: 'user verified' })
   }
   if (usuario) {
     const result = await transporter.sendMail({
-      from: 'Examenes ' + process.env.EMAIL,
+      from: `Examenes ${process.env.EMAIL}`,
       to: emailFromBody,
       subject: 'Codigo de Verificación',
       text: usuario?.code,
     })
     console.log(result)
     return res.status(200).json({ isError: false, message: 'success' })
-  } else {
-    await new Promise((res) => setTimeout(res, 2000))
-    return res.status(400).json({ isError: true, message: 'error' })
   }
+  await new Promise((res) => setTimeout(res, 2000))
+  return res.status(400).json({ isError: true, message: 'error' })
 }
 
 const sendCode = async (req, res) => {
@@ -233,7 +234,7 @@ const sendCode = async (req, res) => {
     attributes: ['email', 'code', 'verify'],
   })
   console.log(usuario)
-  if (usuario && usuario.verify) {
+  if (usuario?.verify) {
     return res.status(400).json({ isError: true, message: 'user verified' })
   }
   console.log(codeFromBody)
@@ -245,10 +246,8 @@ const sendCode = async (req, res) => {
     )
     console.log(updatedUser)
     return res.status(200).json({ isError: false, message: 'success' })
-  } else {
-    // await new Promise((res) => setTimeout(res, 2000))
-    return res.status(400).json({ isError: true, message: 'error' })
   }
+  return res.status(400).json({ isError: true, message: 'error' })
 }
 
 module.exports = { login, list, register, profile, sendEmail, sendCode }
