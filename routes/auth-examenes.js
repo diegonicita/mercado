@@ -30,7 +30,7 @@ router.get('/callback', async (req, res) => {
   )
 
   const config = {
-    maxAge: 900000,
+    maxAge: 2 * 3600 * 1000,
     httpOnly: true,
     domain: process.env.DOMAIN_EXAMENES,
     secure: true,
