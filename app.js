@@ -3,7 +3,7 @@ const app = express()
 const http = require('node:http')
 const { Server } = require('socket.io')
 const server = http.createServer(app)
-const io = new Server(server)
+const io = new Server(server, {pingTimeout: 1000})
 const cors = require('cors')
 const path = require('node:path')
 
