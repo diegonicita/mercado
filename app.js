@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
-const http = require('http')
+const http = require('node:http')
 const { Server } = require('socket.io')
 const server = http.createServer(app)
 const io = new Server(server)
 const cors = require('cors')
-const path = require('path')
+const path = require('node:path')
 
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
@@ -62,5 +62,5 @@ const socketManager = require('./utils/socketManager.js')
 new socketManager(io, cors)
 
 server.listen(process.env.PORT, () =>
-  console.log('Server Running on localhost:' + process.env.PORT),
+  console.log(`Server Running on localhost:${process.env.PORT}`),
 )
