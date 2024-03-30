@@ -31,9 +31,17 @@ class SocketManager {
       return
     }
 
-    // Verifica si el usuario ya está en la sala
-    if (socket.rooms.has(data.room)) {
-      console.log(`User ${data.author} is already in room ${data.room}`)
+    // Check if the user is already in the room (considering all connections)
+    const existingUser = this.users.find(
+      (user) => user.id === socket.id && user.room === data.room,
+    )
+
+    if (existingUser) {
+      // Close the duplicate connection
+      console.log(
+        `Closing duplicate connection for user ${data.author} in room ${data.room}`,
+      )
+      socket.disconnect()
       return
     }
 
