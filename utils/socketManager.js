@@ -32,17 +32,17 @@ class SocketManager {
     }
 
     // Check if the user is already in the room (considering all connections)
-    const existingUser = this.users.find(
+    const existingUser = this.users.filter(
       (user) => user.id === socket.id && user.room === data.room,
     )
-
-    if (existingUser) {
+    console.log(existingUser, 'users finded')
+    if (existingUser.length > 1) {
       // Close the duplicate connection
       console.log(
         `Closing duplicate connection for user ${data.author} in room ${data.room}`,
       )
-      //socket.disconnect()
-      this.io.sockets.sockets[existingUser.id].disconnect()
+      socket.disconnect(true)
+      // this.io.sockets.sockets[existingUser.id].disconnect()
       return
     }
 
