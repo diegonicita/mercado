@@ -41,7 +41,8 @@ class SocketManager {
       console.log(
         `Closing duplicate connection for user ${data.author} in room ${data.room}`,
       )
-      socket.disconnect()
+      //socket.disconnect()
+      this.io.sockets.sockets[existingUser.id].disconnect()
       return
     }
 
