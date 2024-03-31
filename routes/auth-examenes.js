@@ -41,6 +41,15 @@ router.get('/callback', async (req, res) => {
   }
 
   res.cookie('token', token, config)
+  res.cookie('client', 'login', {
+    maxAge: 2 * 3600 * 1000,
+    httpOnly: false,
+    domain:
+      process.env.ENVIRONMENT === 'development'
+        ? process.env.DOMAIN_EXAMENES
+        : undefined,
+    secure: process.env.ENVIRONMENT === 'development',
+  })
   res.redirect(process.env.URL_REDIRECT_EXAMENES)
 })
 
