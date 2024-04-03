@@ -46,8 +46,8 @@ router.get('/callback', async (req, res) => {
     httpOnly: false,
     domain:
       process.env.ENVIRONMENT === 'development'
-        ? process.env.DOMAIN_EXAMENES
-        : undefined,
+        ? undefined
+        : process.env.DOMAIN_EXAMENES,
     secure: process.env.ENVIRONMENT === 'development',
   })
   res.redirect(process.env.URL_REDIRECT_EXAMENES)
