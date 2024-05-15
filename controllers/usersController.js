@@ -134,15 +134,19 @@ const register = async (req, res) => {
 
     // If the user doesn't exist, hash the password and create a new user
     const hashedPassword = bcrypt.hashSync(password, 10)
+    const defaultImage =
+      'https://mercado.webapp.ar/images_medicina/avatars/walrus.png'
+    const defaultRole = 'user-1'
 
     try {
       const newUser = await User.create({
         username,
         email: email.trim(),
         password: hashedPassword,
-        role: 'user-1',
+        role: defaultRole,
         verify: false,
         code: randomUUID().toString(),
+        image: defaultImage
       })
 
       // Create token for the new user
