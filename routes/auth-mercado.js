@@ -33,7 +33,7 @@ router.get('/callback', async (req, res) => {
     httpOnly: true,
     domain: '.webapp.ar',
   })
-  res.redirect(`https://webapp.ar`)
+  res.redirect("https://webapp.ar")
 })
 
 module.exports = router
