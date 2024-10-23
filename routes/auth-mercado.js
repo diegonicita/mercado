@@ -31,9 +31,9 @@ router.get('/callback', async (req, res) => {
   res.cookie('token', token, {
     maxAge: 900000,
     httpOnly: true,
-    domain: '.webapp.ar',
+    domain: '',
   })
-  res.redirect("https://webapp.ar")
+  res.redirect("http://localhost:8126")
 })
 
 module.exports = router
