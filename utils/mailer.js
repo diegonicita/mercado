@@ -1,13 +1,27 @@
-const nodemailer = require('nodemailer')
+const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.office365.com',
+  service: "gmail",
+  host: "smtp.gmail.com",
   port: 587,
-  secure: false, // upgrade later with STARTTLS
+  secure: false, // true for 465, false for other ports
   auth: {
     user: process.env.EMAIL,
     pass: process.env.EMAIL_PASSWORD,
   },
-})
+  debug: true, // Enable debug logs
+  tls: {
+    rejectUnauthorized: false,
+  },
+});
 
-module.exports = transporter
+// Add verification test
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("SMTP connection error:", error);
+  } else {
+    console.log("SMTP server is ready to take our messages");
+  }
+});
+
+module.exports = transporter;
