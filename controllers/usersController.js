@@ -3,8 +3,12 @@ const bcrypt = require("bcryptjs");
 const { User } = require("../database/models");
 const jwt = require("jsonwebtoken");
 const transporter = require("../utils/mailer.js");
-const { randomUUID } = require("node:crypto");
-const { Op } = require("sequelize");
+const { verifyEmailCode } = require("./auth/emailVerification");
+const {
+  forgotPassword,
+  verifyResetCode,
+  resetPassword,
+} = require("./auth/passwordReset");
 
 const createResponse = ({
   res,
@@ -247,25 +251,6 @@ const sendCode = async (req, res) => {
     attributes: ["email", "code", "verify"],
   });
 
-  if (!usuario) {
-    return res.status(404).json({
-      isError: true,
-      message: "Usuario no encontrado",
-    });
-  }
-
-  if (usuario.verify) {
-    return res.status(400).json({
-      isError: true,
-      message: "Usuario ya verificado",
-    });
-  }
-
-  console.log("Comparing codes:", {
-    provided: codeFromBody,
-    stored: usuario.code,
-  });
-
   console.log(codeFromBody, usuario.code);
 
   if (codeFromBody === usuario.code) {
@@ -277,7 +262,7 @@ const sendCode = async (req, res) => {
 
       return res.status(200).json({
         isError: false,
-        message: "Cuenta verificada exitosamente",
+        message: "Codigo verificado correctamente",
       });
     } catch (error) {
       console.error("Verification error:", error);
@@ -294,130 +279,14 @@ const sendCode = async (req, res) => {
   });
 };
 
-const forgotPassword = async (req, res) => {
-  try {
-    const { email } = req.body;
-
-    // Find user
-    const user = await User.findOne({
-      where: { email: email.trim() },
-    });
-
-    if (!user.verify) {
-      return res.status(400).json({
-        isError: true,
-        message:
-          "Debes verificar tu cuenta antes de poder restablecer la contraseña",
-      });
-    }
-
-    // Generate reset code
-    const resetToken = generateSixDigitCode();
-    const resetTokenExpires = new Date(Date.now() + 3600000); // 1 hour
-
-    // Save reset token and expiry
-    await User.update(
-      {
-        resetToken,
-        resetTokenExpires,
-      },
-      {
-        where: { email: email.trim() },
-      }
-    );
-
-    // Send reset email
-    await transporter.sendMail({
-      from: `"Examenes" <${process.env.EMAIL}>`,
-      to: email.trim(),
-      subject: "Recuperación de Contraseña",
-      text: `Tu código de recuperación es: ${resetToken}`,
-      html: `
-        <h1>Recuperación de Contraseña</h1>
-        <p>Tu código de recuperación es: <strong>${resetToken}</strong></p>
-        <p>Este código expirará en 1 hora.</p>
-        <p>Si no solicitaste este cambio, ignora este mensaje.</p>
-      `,
-    });
-
-    return res.status(200).json({
-      isError: false,
-      message: "Si el email existe, recibirás un código de recuperación",
-    });
-  } catch (error) {
-    console.error("Password reset error:", error);
-    return res.status(500).json({
-      isError: true,
-      message: "Error al procesar la solicitud",
-    });
-  }
-};
-
-// Reset password with code
-const resetPassword = async (req, res) => {
-  try {
-    const { email, code, newPassword } = req.body;
-
-    // Validate input
-    if (!email || !code || !newPassword) {
-      return res.status(400).json({
-        isError: true,
-        message: "Todos los campos son requeridos",
-      });
-    }
-
-    // Find user
-    const user = await User.findOne({
-      where: {
-        email: email.trim(),
-        resetToken: code,
-        resetTokenExpires: {
-          [Op.gt]: new Date(), // Token hasn't expired
-        },
-      },
-    });
-
-    if (!user) {
-      return res.status(400).json({
-        isError: true,
-        message: "Código inválido o expirado",
-      });
-    }
-
-    // Hash new password
-    const hashedPassword = bcrypt.hashSync(newPassword, 10);
-
-    // Update password and clear reset token
-    await User.update(
-      {
-        password: hashedPassword,
-        resetToken: null,
-        resetTokenExpires: null,
-      },
-      {
-        where: { email: email.trim() },
-      }
-    );
-
-    return res.status(200).json({
-      isError: false,
-      message: "Contraseña actualizada exitosamente",
-    });
-  } catch (error) {
-    console.error("Password reset error:", error);
-    return res.status(500).json({
-      isError: true,
-      message: "Error al restablecer la contraseña",
-    });
-  }
-};
-
 module.exports = {
   login,
   list,
   register,
   profile,
   sendCode,
+  verifyEmailCode,
   forgotPassword,
+  verifyResetCode,
   resetPassword,
 };

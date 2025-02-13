@@ -6,7 +6,9 @@ const {
   register,
   profile,
   forgotPassword,
+  verifyResetCode,
   resetPassword,
+  verifyEmailCode,
   sendCode,
 } = require("../controllers/usersController.js");
 const verifyToken = require("../middlewares/verifyToken");
@@ -28,7 +30,13 @@ router.post("/register", registerValidations, register);
 router.get("/profile/:id", verifyToken, profile);
 router.get("/list", verifyToken, list);
 router.post("/sendCode", verifyToken, sendCode);
+
+// Email verification routes
+router.post("/verify-email-code", verifyEmailCode);
+
+// Password reset flow
 router.post("/forgot-password", forgotPassword);
+router.post("/verify-reset-code", verifyResetCode);
 router.post("/reset-password", resetPassword);
 
 module.exports = router;

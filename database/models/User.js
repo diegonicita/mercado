@@ -14,8 +14,15 @@ module.exports = (sequelize, dataTypes) => {
     image: { type: dataTypes.STRING(255), allowNull: true },
     code: { type: dataTypes.STRING(100), allowNull: true },
     verify: { type: dataTypes.TINYINT, allowNull: true, defaultValue: 0 },
-    resetToken: { type: dataTypes.STRING(100), allowNull: true },
-    resetTokenExpires: { type: dataTypes.DATE, allowNull: true },
+    codes: { type: dataTypes.STRING(100), allowNull: true },
+    codeExpires: { type: dataTypes.DATE, allowNull: true },
+    resetCode: { type: dataTypes.STRING(100), allowNull: true },
+    resetCodeExpires: { type: dataTypes.DATE, allowNull: true },
+    resetCodeAttempts: {
+      type: dataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0,
+    },
   };
   const config = {
     tableName: "usuarios",
