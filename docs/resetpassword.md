@@ -1,17 +1,5 @@
 ## after register user 
 
-### Verify Email
-**POST** `/users/sendCode`
-
-Verifies user's email using the verification code.
-
-#### Headers
-Authorization: Bearer {token}
-
-#### Request Body
-{
-  "email": "user@example.com"
-}
 
 ### Forgot Password
 **POST** `/users/forgot-password`
@@ -23,27 +11,46 @@ Initiates password reset process by sending a reset code.
   "email": "user@example.com"
 }
 
-### 4. Reset Password
-**POST** `/users/reset-password`
+### 2. Verify Reset Code
+**POST** `/users/verify-reset-code`
 
-Resets user's password using the reset code.
+Verifies the reset code and returns a temporary token.
 
 #### Request Body
 {
   "email": "user@example.com",
-  "code": "123456",
-  "password": "newPassword"
+  "code": "123456"
+}
+
+#### Response
+{
+  "isError": false,
+  "message": "Código verificado correctamente",
+  "tempToken": "jwr_token_here"
+}
+
+### 3. Reset Password
+**POST** `/users/reset-password`
+Resets user's password using the temporary token.
+
+#### Request Body
+{
+  "tempToken": "jwr_token_here",
+  "newPassword": "newPassword"
 }
 
 ## notes
-elimine sendEmail function in usercontroller no se si lo usabas para otra cosa y cambie el code de uuidv4 por 6 numeros random
+el codigo de 6 digitos es el que se envia al email expira en 1 hora y el token tambien tendriamos que definir eso cuanto lo dejamos o si asi esta bien y el limite de intentos que se le permitira al usuario para el envio del codigo
 
-## add resetToken and resetTokenExpires in user model
-agregue el campo resetToken y resetTokenExpires en el modelo de usuario
+## add codes, codeExpires, resetCode, resetCodeExpires, resetCodeAttempts in user model
 
 ALTER TABLE usuarios
-ADD COLUMN resetToken VARCHAR(100),
-ADD COLUMN resetTokenExpires DATETIME;
+ALTER TABLE usuarios
+ADD COLUMN codes VARCHAR(100),
+ADD COLUMN codeExpires DATETIME,
+ADD COLUMN resetCode VARCHAR(100),
+ADD COLUMN resetCodeExpires DATETIME,
+ADD COLUMN resetCodeAttempts INT DEFAULT 0
 
 ## env
 y en el env cambie el email y la contraseña puse esta EMAIL=everjosejr18@gmail.com
