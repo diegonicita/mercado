@@ -26,6 +26,7 @@
     "socket.io": "^4.7.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "nodemon": "^3.0.1",
     "typescript": "^5.4.3"
   }
