@@ -61,12 +61,13 @@ app.use(
 const socketManager = require("./utils/socketManager.js");
 new socketManager(io, cors);
 
-server.listen(process.env.PORT, () =>
+server.listen(
+	process.env.PORT,
+	() => console.log(`Server Running on localhost:${process.env.PORT}`),
 	console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
+	console.log(`Server Running on localhost:${process.env.PORT}`),
+	console.log(`Server Running on localhost:${process.env.PORT}`),
+	console.log(`Server Running on localhost:${process.env.PORT}`),
+	console.log(`Server Running on localhost:${process.env.PORT}`),
+	console.log(`Server Running on localhost:${process.env.PORT}`),
 );

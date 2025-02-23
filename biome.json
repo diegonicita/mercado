@@ -12,7 +12,7 @@
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
-		"indentWidth": 4,
+		"indentWidth": 1,
 		"lineWidth": 80,
 		"formatWithErrors": false
 	},
