@@ -13,8 +13,8 @@ const passport = require("passport");
 require("dotenv").config({ path: ".env" });
 // Configurar CORS
 const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(",")
-  : [];
+	? process.env.ALLOWED_ORIGINS.split(",")
+	: [];
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 const morgan = require("morgan");
 
@@ -41,33 +41,33 @@ app.use("/api", apiRoutes);
 app.use("/users", userRoutes);
 app.use("/products", productsRoutes);
 app.use(
-  "/auth-examenes",
-  passport.authenticate("examenes", {
-    scope: ["profile", "email"],
-    session: false,
-  }),
-  authRoutesExamenes
+	"/auth-examenes",
+	passport.authenticate("examenes", {
+		scope: ["profile", "email"],
+		session: false,
+	}),
+	authRoutesExamenes,
 );
 
 app.use(
-  "/auth-mercado",
-  passport.authenticate("mercado", {
-    scope: ["profile", "email"],
-    session: false,
-  }),
-  authRoutesMercado
+	"/auth-mercado",
+	passport.authenticate("mercado", {
+		scope: ["profile", "email"],
+		session: false,
+	}),
+	authRoutesMercado,
 );
 app.use((err, req, res, next) => {
-  if (err.name === "sequelizeConnectionRefusedError") {
-    res.status(503).json({ message: "Error connecting to database" });
-  } else {
-    next(err);
-  }
+	if (err.name === "sequelizeConnectionRefusedError") {
+		res.status(503).json({ message: "Error connecting to database" });
+	} else {
+		next(err);
+	}
 });
 
 const socketManager = require("./utils/socketManager.js");
 new socketManager(io, cors);
 
 server.listen(process.env.PORT, () =>
-  console.log(`Server Running on localhost:${process.env.PORT}`)
+	console.log(`Server Running on localhost:${process.env.PORT}`),
 );
