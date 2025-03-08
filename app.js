@@ -57,16 +57,17 @@ app.use(
 	}),
 	authRoutesMercado,
 );
+app.use((err, req, res, next) => {
+	if (err.name === "sequelizeConnectionRefusedError") {
+		res.status(503).json({ message: "Error connecting to database" });
+	} else {
+		next(err);
+	}
+});
 
 const socketManager = require("./utils/socketManager.js");
 new socketManager(io, cors);
 
 server.listen(process.env.PORT, () =>
 	console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
-console.log(`Server Running on localhost:${process.env.PORT}`),
 );
