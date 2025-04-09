@@ -122,9 +122,6 @@ const login = async (req, res) => {
 const list = (req, res) => {
 	res.send("list");
 };
-function generateSixDigitCode() {
-	return Math.floor(100000 + Math.random() * 900000).toString();
-}
 
 const register = async (req, res) => {
 	const errors = validationResult(req);
@@ -156,7 +153,6 @@ const register = async (req, res) => {
 			const defaultImage =
 				"https://mercado.webapp.ar/images_medicina/avatars/walrus.png";
 			const defaultRole = "user-1";
-			const verificationCode = generateSixDigitCode();
 
 			const newUser = await User.create({
 				username,
@@ -164,31 +160,9 @@ const register = async (req, res) => {
 				password: hashedPassword,
 				role: defaultRole,
 				verify: false,
-				code: verificationCode,
+				code: null,
 				image: defaultImage,
 			});
-
-			console.log(
-				"User created successfully, attempting to send email...",
-			);
-
-			// Send verification email
-			const verificationEmail = await transporter.sendMail({
-				from: `"Examenes" <${process.env.EMAIL}>`,
-				to: email.trim(),
-				subject: "Codigo de Verificación",
-				text: `Tu código de verificación es: ${verificationCode}`,
-				html: `
-          <h1>Bienvenido a Examenes!</h1>
-          <p>Tu código de verificación es: <strong>${verificationCode}</strong></p>
-          <p>Por favor usa este código para verificar tu cuenta.</p>
-        `,
-			});
-
-			console.log(
-				"Verification email sent:",
-				verificationEmail.messageId,
-			);
 
 			// Create token AFTER user is created
 			const token = jwt.sign(
@@ -211,8 +185,7 @@ const register = async (req, res) => {
 				status: 201,
 				isError: false,
 				errors: null,
-				message:
-					"Registro exitoso, por favor verifica tu correo para activar tu cuenta",
+				message: "Registro exitoso",
 				userResponse: {
 					id: newUser.id,
 					username: newUser.username,
