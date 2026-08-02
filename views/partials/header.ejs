@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>eCommerce</title>
+    <title>Mercado WebApp - eCommerce</title>
     <link href="/css/styles-footer.css" rel="stylesheet" />
     <link href="/css/styles-forms.css" rel="stylesheet" />
     <link href="/css/styles-header.css" rel="stylesheet" />
@@ -16,98 +16,209 @@
     <!-- Bootstrap Grid Stylesheet -->
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- Main Header -->
     <header class="header-main">
+      <!-- Logo Section -->
       <div class="header-banner-col-1">
         <a href="/">
           <img
             class="img-banner"
             src="/images/compra-en-linea.svg"
-            alt="eCommerce"
+            alt="Mercado WebApp - eCommerce"
           />
         </a>
       </div>
+
+      <!-- Search Bar Section -->
       <div class="header-search-bar-col-2">
-        <form id="buscador" action="search" method="get" target="_blank">
+        <form id="buscador" action="search" method="get" role="search">
           <input
             type="search"
             name="busqueda"
             placeholder="Buscar productos, marcas y más..."
+            autocomplete="off"
+            aria-label="Buscar productos"
           />
-          <button class="fa fa-search" type="submit" value="Buscar"></button>
+          <button type="submit" title="Buscar" aria-label="Realizar búsqueda">
+            <i class="fas fa-search"></i>
+          </button>
         </form>
       </div>
+
+      <!-- Promo Section -->
       <div class="header-compra-en-cuotas-col-3">
-        <i class="fas fa-hand-holding-usd header-compra-en-cuotas-icono"></i>
-        <div>Compra en cuotas y sin tarjeta de credito</div>
+        <i class="fas fa-credit-card header-compra-en-cuotas-icono"></i>
+        <div>
+          <strong>Cuotas sin interés</strong>
+          <span>Ver promociones bancarias</span>
+        </div>
       </div>
-      <div class="header-burger-menu-container">
-        <a href="#"></a><i class="fas fa-bars header-burger-menu-button"></i>
+
+      <!-- Mobile Menu Button -->
+      <div class="header-burger-menu-container" id="burger-menu-btn">
+        <i class="fas fa-bars header-burger-menu-button"></i>
       </div>
-      <div class="header-navbar-main">
-        <nav class="header-left-menu">
-          <ul>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Tiendas Oficiales</a></li>
-            <li><a href="#">Vender</a></li>
-            <li><a href="#">Ayuda</a></li>
-          </ul>
-        </nav>
-        <nav class="header-right-menu">
-          <ul>
-            <li>
-              <a href="/users/register">Crea tu cuenta</a
-              ><i class="far fa-address-card header-right-menu-icono"></i>
-            </li>
-            <li>
-              <a href="/auth-mercado/google">Ingresa</a>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="header-navbar-main">
+      <!-- Left Menu -->
+      <div class="header-left-menu">
+        <ul>
+          <li>
+            <a href="#"> <i class="fas fa-tags"></i> Ofertas </a>
+          </li>
+          <li>
+            <a href="#"> <i class="fas fa-store"></i> Tiendas Oficiales </a>
+          </li>
+          <li>
+            <a href="#"> <i class="fas fa-hand-holding-usd"></i> Vender </a>
+          </li>
+          <li>
+            <a href="#"> <i class="fas fa-question-circle"></i> Ayuda </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right Menu -->
+      <div class="header-right-menu">
+        <ul>
+          <!-- Create Account -->
+          <li>
+            <a href="/users/register" title="Crea tu cuenta">
+              <i class="fas fa-user-circle header-right-menu-icono"></i>
+              <span>Crea tu cuenta</span>
+            </a>
+          </li>
+
+          <!-- Login with Google -->
+          <li>
+            <a href="/auth-mercado/google" title="Ingresa con Google">
               <i class="header-right-menu-icono">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 488 512"
                 >
-                  <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                   <path
                     d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
                   />
                 </svg>
               </i>
-            </li>
+              <span>Ingresa</span>
+            </a>
+          </li>
 
-            <li>
-              <a id="miscompras" href="">Mis Compras</a
-              ><i class="fas fa-shopping-basket header-right-menu-icono"></i>
-            </li>
-          </ul>
-        </nav>
+          <!-- My Purchases -->
+          <li>
+            <a id="miscompras" href="#" title="Mis Compras">
+              <i class="fas fa-shopping-bag header-right-menu-icono"></i>
+              <span>Mis Compras</span>
+            </a>
+          </li>
+
+          <!-- Cart -->
+          <li>
+            <a href="#" class="cart-icon-container" title="Carrito de compras">
+              <i class="fas fa-shopping-cart header-right-menu-icono"></i>
+              <span class="cart-badge-count">3</span>
+            </a>
+          </li>
+        </ul>
       </div>
-    </header>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+      <div class="mobile-menu-close" id="mobile-menu-close">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="mobile-menu-content">
+        <a href="#"><i class="fas fa-tags"></i> Ofertas</a>
+        <a href="#"><i class="fas fa-store"></i> Tiendas Oficiales</a>
+        <a href="#"><i class="fas fa-hand-holding-usd"></i> Vender</a>
+        <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+        <a href="/users/register"
+          ><i class="fas fa-user-circle"></i> Crea tu cuenta</a
+        >
+        <a href="/auth-mercado/google"
+          ><i class="fab fa-google"></i> Ingresa con Google</a
+        >
+        <a href="#" id="miscompras-mobile"
+          ><i class="fas fa-shopping-bag"></i> Mis Compras</a
+        >
+        <a href="#"><i class="fas fa-shopping-cart"></i> Carrito (3)</a>
+      </div>
+    </div>
 
     <script>
+      // Search form handler
       document
         .getElementById('buscador')
         .addEventListener('submit', function (e) {
-          e.preventDefault()
-          alert('falta implementar el buscador')
-          //   var busqueda =
-          //     document.getElementById("buscador").elements.busqueda.value;
-          //   window.location.href = "/search?busqueda=" + busqueda;
-        })
+          e.preventDefault();
+          const busqueda = this.elements.busqueda.value.trim();
+          if (busqueda) {
+            alert('Buscador en desarrollo. Término: ' + busqueda);
+            // window.location.href = "/search?busqueda=" + encodeURIComponent(busqueda);
+          }
+        });
+
+      // My Purchases handler
       document
         .getElementById('miscompras')
         .addEventListener('click', function (e) {
-          e.preventDefault()
-          alert('falta implementar mis compras')
-        })
+          e.preventDefault();
+          alert('Sección "Mis Compras" en desarrollo');
+        });
+
+      // Mobile menu handler
+      const burgerBtn = document.getElementById('burger-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+      if (burgerBtn && mobileMenu) {
+        burgerBtn.addEventListener('click', function () {
+          mobileMenu.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+
+      if (mobileMenuClose && mobileMenu) {
+        mobileMenuClose.addEventListener('click', function () {
+          mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+
+      // Close mobile menu on link click
+      const mobileLinks = mobileMenu?.querySelectorAll('a');
+      mobileLinks?.forEach((link) => {
+        link.addEventListener('click', function () {
+          if (!this.id) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      // My Purchases mobile handler
+      const misComprasMobile = document.getElementById('miscompras-mobile');
+      if (misComprasMobile) {
+        misComprasMobile.addEventListener('click', function (e) {
+          e.preventDefault();
+          alert('Sección "Mis Compras" en desarrollo');
+        });
+      }
     </script>
   </body>
 </html>
