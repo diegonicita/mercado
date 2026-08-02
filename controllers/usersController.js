@@ -63,13 +63,13 @@ const login = async (req, res) => {
 						},
 						process.env.TOKEN_KEY,
 						{
-							expiresIn: "2h",
+							expiresIn: "30d",
 						},
 					);
 
 					res.cookie("token", token, {
 						httpOnly: process.env.HTTP_ONLY === "true",
-						maxAge: Number.parseInt(process.env.MAX_AGE, 10),
+						maxAge: 30 * 24 * 3600 * 1000, // 30 days
 						secure: process.env.SECURE_COOKIE === "true",
 						sameSite: process.env.SAME_SITE,
 						path: "/",

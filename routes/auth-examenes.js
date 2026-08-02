@@ -25,12 +25,12 @@ router.get("/callback", async (req, res) => {
 		},
 		secretKey,
 		{
-			expiresIn: "2h",
+			expiresIn: "30d",
 		},
 	);
 
 	const config = {
-		maxAge: 2 * 3600 * 1000,
+		maxAge: 30 * 24 * 3600 * 1000,
 		httpOnly: true,
 		domain: process.env.DOMAIN_EXAMENES,
 		secure: true,
@@ -42,7 +42,7 @@ router.get("/callback", async (req, res) => {
 
 	res.cookie("token", token, config);
 	res.cookie("client", "login", {
-		maxAge: 2 * 3600 * 1000,
+		maxAge: 30 * 24 * 3600 * 1000,
 		httpOnly: false,
 		domain:
 			process.env.ENVIRONMENT === "development"
